@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/src_main.dir/main.cpp.o -o src_main  ../lib/liblib.a -Wl,-Bstatic -lSDLmain -Wl,-Bdynamic -lSDL -lGL -lGLU -lGLEW 

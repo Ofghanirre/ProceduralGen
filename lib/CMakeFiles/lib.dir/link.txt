@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblib.a CMakeFiles/lib.dir/include/glm/detail/dummy.cpp.o CMakeFiles/lib.dir/include/glm/detail/glm.cpp.o
+/usr/bin/ranlib liblib.a
