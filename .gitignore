@@ -36,3 +36,4 @@ cmake-build-debug/*
 *.out
 *.app
 /build/
+/docs/
