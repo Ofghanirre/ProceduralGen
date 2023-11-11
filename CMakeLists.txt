@@ -41,7 +41,9 @@ set(CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/CMake)
 
 # Adding File projects :
 set(SRC ${SRC_DIR}Main.cpp
-        ${INC_DIR}Main.h)
+        ${INC_DIR}Main.h
+        sources/src/Test.cpp
+        sources/inc/Test.h)
 
 add_executable(proceduralGen ${SRC})
 

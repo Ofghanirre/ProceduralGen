@@ -5,7 +5,9 @@
 #ifndef PROCEDURALGEN_MAIN_H
 #define PROCEDURALGEN_MAIN_H
 
-
+/**
+ * @brief Test for Main class
+ */
 class Main{
 
 };

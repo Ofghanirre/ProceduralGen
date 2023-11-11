@@ -3,6 +3,7 @@
 //
 
 #include "../inc/Main.h"
+#include "../inc/Test.h"
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
@@ -15,8 +16,14 @@ void processInput(GLFWwindow *window);
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
+/**
+ * @brief TEST
+ * @return
+ */
 int main()
 {
+    Test test(2, 3);
+
     // glfw: initialize and configure
     // ------------------------------
     glfwInit();
