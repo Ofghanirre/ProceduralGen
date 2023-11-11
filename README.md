@@ -15,3 +15,14 @@ To compile this project you will have to follow these steps:
 > $ cmake --build .
 - Start the project
 > $ proceduralGen
+
+## Documentation Generation
+To generate documentation of the project you'll have to install `Doxygen`
+
+Then follow theses steps:
+> $ cd sources/docs
+> $ doxygen doxygen.conf
+
+The documentation will be stored in the folder `docs` at the **root** if the project
+
+The main file to start is the `./docs/html/index.html`
