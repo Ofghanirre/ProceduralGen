@@ -96,7 +96,7 @@ CMAKE_CPACK_COMMAND:INTERNAL=/opt/homebrew/Cellar/cmake/3.27.7/bin/cpack
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=/opt/homebrew/Cellar/cmake/3.27.7/bin/ctest
 //Path to cache edit program executable.
-CMAKE_EDIT_COMMAND:INTERNAL=/opt/homebrew/Cellar/cmake/3.27.7/bin/ccmake
+CMAKE_EDIT_COMMAND:INTERNAL=/opt/homebrew/Cellar/CMake/3.27.7/bin/ccmake
 //ADVANCED property for variable: CMAKE_EXPORT_COMPILE_COMMANDS
 CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.

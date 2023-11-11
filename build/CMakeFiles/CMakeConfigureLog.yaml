@@ -4,16 +4,16 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineSystem.cmake:211 (message)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineSystem.CMake:211 (message)"
       - "CMakeLists.txt:2 (project)"
     message: |
       The system is: Darwin - 22.5.0 - arm64
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerId.CMake:17 (message)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerId.CMake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCXXCompiler.CMake:126 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
@@ -30,9 +30,9 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerId.CMake:17 (message)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerId.CMake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCXXCompiler.CMake:126 (CMAKE_DETERMINE_COMPILER_ID)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
@@ -52,8 +52,8 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerABI.CMake:57 (try_compile)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeTestCXXCompiler.CMake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
@@ -114,8 +114,8 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerABI.CMake:127 (message)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeTestCXXCompiler.CMake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
@@ -136,8 +136,8 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerABI.CMake:152 (message)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeTestCXXCompiler.CMake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit link information:
@@ -210,9 +210,9 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerId.CMake:17 (message)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerId.CMake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCCompiler.CMake:123 (CMAKE_DETERMINE_COMPILER_ID)"
       - "build/_deps/glfw-src/CMakeLists.txt:3 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
@@ -229,9 +229,9 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerId.CMake:17 (message)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerId.CMake:64 (__determine_compiler_id_test)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCCompiler.CMake:123 (CMAKE_DETERMINE_COMPILER_ID)"
       - "build/_deps/glfw-src/CMakeLists.txt:3 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
@@ -251,8 +251,8 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerABI.CMake:57 (try_compile)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeTestCCompiler.CMake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "build/_deps/glfw-src/CMakeLists.txt:3 (project)"
     checks:
       - "Detecting C compiler ABI info"
@@ -310,8 +310,8 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerABI.CMake:127 (message)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeTestCCompiler.CMake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "build/_deps/glfw-src/CMakeLists.txt:3 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
@@ -330,8 +330,8 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeDetermineCompilerABI.CMake:152 (message)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CMakeTestCCompiler.CMake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "build/_deps/glfw-src/CMakeLists.txt:3 (project)"
     message: |
       Parsed C implicit link information:
@@ -402,10 +402,10 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
-      - "/opt/homebrew/Cellar/cmake/3.27.7/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/Internal/CheckSourceCompiles.CMake:101 (try_compile)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/CheckCSourceCompiles.CMake:52 (cmake_check_source_compiles)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/FindThreads.CMake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/opt/homebrew/Cellar/CMake/3.27.7/share/CMake/Modules/FindThreads.CMake:163 (_threads_check_libc)"
       - "build/_deps/glfw-src/CMakeLists.txt:58 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
