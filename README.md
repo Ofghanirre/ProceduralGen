@@ -20,8 +20,7 @@ To compile this project you will have to follow these steps:
 To generate documentation of the project you'll have to install `Doxygen`
 
 Then follow theses steps:
-> $ cd sources/docs
-> $ doxygen doxygen.conf
+> $ doxygen sources/docs/doxygen.conf
 
 The documentation will be stored in the folder `docs` at the **root** if the project
 
