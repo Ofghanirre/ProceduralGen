@@ -4,7 +4,7 @@
 # compile C with /Library/Developer/CommandLineTools/usr/bin/cc
 C_DEFINES = -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I/Users/antoninjean/Documents/work/university/M2/S1/projects/ProceduralGen/build/_deps/glfw-src/include -I/Users/antoninjean/Documents/work/university/M2/S1/projects/ProceduralGen/build/_deps/glfw-src/src -I/Users/antoninjean/Documents/work/university/M2/S1/projects/ProceduralGen/build/_deps/glfw-build/src
+C_INCLUDES = -I/Users/antoninjean/Documents/work/university/M2/S1/projects/ProceduralGen/sources/inc -I/Users/antoninjean/Documents/work/university/M2/S1/projects/ProceduralGen/build/_deps/glfw-src/include -I/Users/antoninjean/Documents/work/university/M2/S1/projects/ProceduralGen/build/_deps/glfw-src/src -I/Users/antoninjean/Documents/work/university/M2/S1/projects/ProceduralGen/build/_deps/glfw-build/src
 
 C_FLAGSarm64 = -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -Wall
 
