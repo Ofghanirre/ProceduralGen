@@ -4,7 +4,7 @@
 # compile C with /Library/Developer/CommandLineTools/usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/antoninjean/Documents/work/university/M2/S1/projects/ProceduralGen/build/include
+C_INCLUDES = -I/Users/antoninjean/Documents/work/university/M2/S1/projects/ProceduralGen/sources/inc -I/Users/antoninjean/Documents/work/university/M2/S1/projects/ProceduralGen/build/include
 
 C_FLAGSarm64 =  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
 

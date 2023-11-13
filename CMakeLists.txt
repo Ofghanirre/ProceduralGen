@@ -39,10 +39,11 @@ set(INC_DIR ${SOURCE_DIR}/inc/)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 set(CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/CMake)
 
+include_directories(${INC_DIR})
+
 # Adding File projects :
 set(SRC ${SRC_DIR}Main.cpp
         ${INC_DIR}Main.h)
-
 add_executable(proceduralGen ${SRC})
 
 # Perform dependency linkage

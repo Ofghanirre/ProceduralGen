@@ -15,6 +15,10 @@ void processInput(GLFWwindow *window);
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
+/**
+ * @brief TEST
+ * @return
+ */
 int main()
 {
     // glfw: initialize and configure
