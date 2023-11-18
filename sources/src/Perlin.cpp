@@ -9,28 +9,16 @@
 
 #include "../inc/Perlin.hpp"
 
-// TODO Use struct from glm
-struct Point
+vec2 generate_random_vect()
 {
-    int x; // width
-    int y; // height
-};
-
-typedef struct
-{
-    float x, y;
-} Vector2D;
-
-Vector2D generate_random_vect()
-{
-    Vector2D v;
+    vec2 v;
     v.x = sin(rand());
     v.y = cos(rand());
     return v;
 }
 
 // Generate a random gradient vector
-Vector2D randomGradient(int ix, int iy, int seed = 0)
+vec2 randomGradient(int ix, int iy, int seed = 0)
 {
     // No precomputed gradients mean this works for any number of grid coordinates
     const unsigned w = 8 * sizeof(unsigned);
@@ -46,7 +34,7 @@ Vector2D randomGradient(int ix, int iy, int seed = 0)
     float random = a * (3.14159265 / ~(~0u >> 1)); // in [0, 2*Pi]
 
     // Create the vector from the angle
-    Vector2D v;
+    vec2 v;
     v.x = sin(random);
     v.y = cos(random);
 
@@ -56,7 +44,7 @@ Vector2D randomGradient(int ix, int iy, int seed = 0)
 // Compute the dot product of the distance and gradient vectors
 float dotGridGradient(int grid_x, int grid_y, float x, float y)
 {
-    Vector2D gradiant = randomGradient(grid_x, grid_y);
+    vec2 gradiant = randomGradient(grid_x, grid_y);
 
     // Compute distance from grid point to our pixel
     float dx = x - (float)grid_x;
