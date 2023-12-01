@@ -7,33 +7,20 @@
 
 #include "../inc/Worley_noise.h"
 
+BitMap Worley_noise::generate(uint seed, uint width, uint height, uint nbPoints) {
 
-// Frequence => si grosse freq grid plus petite / si petite grid + grosse
-// freq = nb de points
+    // Init a 2D Vector with zeros
+    std::vector<std::vector<float>> pixels(height, std::vector<float>(width, 0));
 
-
-uint **Worley_noise::generate(uint width, uint height, uint nbPoints, int seed) {
-
-    uint **pixels = new uint *[height];
-    std::default_random_engine generator(seed); // Default seed is 0
+    std::default_random_engine generator(seed);
     std::uniform_int_distribution<int> distrib_width(0, width);
     std::uniform_int_distribution<int> distrib_height(0, height);
-
-    for (int y = 0; y < height; y++) {
-        pixels[y] = new uint[width];
-        for (int x = 0; x < width; x++) {
-            // std::cout << "hey " << x << " " << y << std::endl;
-            uint index = y * width + x;
-            pixels[y][x] = 0;
-        }
-    }
 
     // random points
     vec2 points[nbPoints];
     for (int i = 0; i < nbPoints; i++) {
         int x = distrib_width(generator);
         int y = distrib_height(generator);
-        // std::cout << "hey " << x << " " << y << std::endl;
         pixels[y][x] = 255;
         points[i] = vec2{x, y};
     }
@@ -45,13 +32,9 @@ uint **Worley_noise::generate(uint width, uint height, uint nbPoints, int seed) 
             double distances[nbPoints];
             for (int i = 0; i < nbPoints; i++) {
                 distances[i] = distance(points[i], {x, y});
-                // std::cout << distances[i] << std::endl;
             }
 
             std::sort(distances, distances + nbPoints);
-            for (int i = 0; i < nbPoints; i++) {
-                // std::cout << distances[i] << std::endl;
-            }
 
             pixels[y][x] = distances[0]; // need to normalize
         }
@@ -65,8 +48,11 @@ void Worley_noise::test() {
     int width = 20, height = 20;
     int seed = 5;
     uint nbPoints = 2;
-    uint **img = Worley_noise::generate(width, height, nbPoints, seed);
+    BitMap img = Worley_noise::generate(seed, width, height, nbPoints);
 
+
+    std::cout << std::fixed;
+    std::cout.precision(2);
     for (int y = 0; y < width; y++) {
         for (int x = 0; x < height; x++) {
             std::cout << img[y][x] << "\t";
