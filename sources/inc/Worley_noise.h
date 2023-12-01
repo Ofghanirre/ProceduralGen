@@ -14,7 +14,7 @@ using BitMap = std::vector<std::vector<float>>;
 
 class Worley_noise {
 public:
-    static BitMap generate(uint seed, uint width, uint height, uint nbPoints);
+    static BitMap generate(uint seed, uint width, uint height, uint gridSize);
 
     static void hello();
     static void test();
