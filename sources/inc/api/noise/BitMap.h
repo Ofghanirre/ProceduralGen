@@ -9,10 +9,12 @@
 template<typename T>
 class BitMap {
 public:
-    explicit BitMap(const std::vector<std::vector<T> > &data) : m_data(data) {}
-
-    explicit BitMap(size_t width, size_t height, T defaultValue) : m_width(width), m_height(height), m_data(std::vector<std::vector<T> >(height, std::vector<T>(width)))
-    {}
+    explicit BitMap(size_t width, size_t height, T defaultValue) : m_width(width), m_height(height), m_data(std::vector<std::vector<T> >(height))
+    {
+        for (int i = 0; i < m_height; i++) {
+            m_data[i] = std::vector<T>(width, defaultValue);
+        }
+    }
 
     unsigned int getHeight() {
         return m_height;
@@ -26,8 +28,6 @@ public:
         return m_height * m_width;
     }
 
-
-
     friend bool operator==(const BitMap &self, const BitMap &other);
 
     friend bool operator!=(const BitMap &self, const BitMap &other);
@@ -36,6 +36,7 @@ public:
 
     friend BitMap<T> operator+(BitMap<T> self, BitMap<T> other);
 
+
     T& operator[](size_t index);
 
     T& operator[](std::pair<size_t, size_t> indexs);
@@ -43,13 +44,12 @@ public:
     const T& operator[](size_t index) const;
 
     const T& operator[](std::pair<size_t, size_t> indexs) const;
-
 private:
     const size_t m_height;
     const size_t m_width;
-    const std::vector<std::vector<T> > m_data;
+    std::vector<std::vector<T> > m_data;
 
-    T& _get(const size_t& col, const size_t& line) const {
+    T& _get(const size_t col, const size_t line) {
         if (col >= this->m_width || line >= this->m_height) {
             throw std::invalid_argument("Invalid index (" + std::to_string(col) + ", " + std::to_string(line) +
                                         "), in Bitmap of size (" + std::to_string(m_width) + ", " + std::to_string(m_height) + ").");
