@@ -1,0 +1,100 @@
+\doxysection{Main.\+cpp}
+\hypertarget{_main_8cpp_source}{}\label{_main_8cpp_source}\index{sources/src/Main.cpp@{sources/src/Main.cpp}}
+\mbox{\hyperlink{_main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Antonin\ Jean\ on\ 09/11/2023.}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../inc/Main.h"{}}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../inc/Test.h"{}}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00012}00012\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_main_8cpp_a5180f7bf2b71421af837035824a8c8ac}{framebuffer\_size\_callback}}(GLFWwindow*\ window,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00013}00013\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_main_8cpp_a2d03c6f2666863543429a06ef642fe6a}{processInput}}(GLFWwindow\ *window);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00015}00015\ \textcolor{comment}{//\ settings}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00016}\mbox{\hyperlink{_main_8cpp_a74ba59acbf346c2b19bc1ce5170f755d}{00016}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_main_8cpp_a74ba59acbf346c2b19bc1ce5170f755d}{SCR\_WIDTH}}\ =\ 800;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00017}\mbox{\hyperlink{_main_8cpp_aca03a77ac5a7f2e26d08cd6de43f9a17}{00017}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_main_8cpp_aca03a77ac5a7f2e26d08cd6de43f9a17}{SCR\_HEIGHT}}\ =\ 600;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00023}\mbox{\hyperlink{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00023}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_test}{Test}}\ test(2,\ 3);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ glfw:\ initialize\ and\ configure}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00029}00029\ \ \ \ \ glfwInit();}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00030}00030\ \ \ \ \ glfwWindowHint(GLFW\_CONTEXT\_VERSION\_MAJOR,\ 3);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00031}00031\ \ \ \ \ glfwWindowHint(GLFW\_CONTEXT\_VERSION\_MINOR,\ 3);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00032}00032\ \ \ \ \ glfwWindowHint(GLFW\_OPENGL\_PROFILE,\ GLFW\_OPENGL\_CORE\_PROFILE);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00034}00034\ \textcolor{preprocessor}{\#ifdef\ \_\_APPLE\_\_}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00035}00035\ \ \ \ \ glfwWindowHint(GLFW\_OPENGL\_FORWARD\_COMPAT,\ GL\_TRUE);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00036}00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ glfw\ window\ creation}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00040}00040\ \ \ \ \ GLFWwindow*\ window\ =\ glfwCreateWindow(\mbox{\hyperlink{_main_8cpp_a74ba59acbf346c2b19bc1ce5170f755d}{SCR\_WIDTH}},\ \mbox{\hyperlink{_main_8cpp_aca03a77ac5a7f2e26d08cd6de43f9a17}{SCR\_HEIGHT}},\ \textcolor{stringliteral}{"{}LearnOpenGL"{}},\ NULL,\ NULL);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (window\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ create\ GLFW\ window"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ glfwTerminate();}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00047}00047\ \ \ \ \ glfwMakeContextCurrent(window);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00048}00048\ \ \ \ \ glfwSetFramebufferSizeCallback(window,\ \mbox{\hyperlink{_main_8cpp_a5180f7bf2b71421af837035824a8c8ac}{framebuffer\_size\_callback}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00049}00049\ \ \ \ \ glm::vec3\ v1(1.0f,\ 2.0f,\ 3.0f);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ glad:\ load\ all\ OpenGL\ function\ pointers}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ initialize\ GLAD"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ render\ loop}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{while}\ (!glfwWindowShouldClose(window))}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ input}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_main_8cpp_a2d03c6f2666863543429a06ef642fe6a}{processInput}}(window);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ render}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ glClearColor(0.2f,\ 0.3f,\ 0.3f,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ glfw:\ swap\ buffers\ and\ poll\ IO\ events\ (keys\ pressed/released,\ mouse\ moved\ etc.)}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ glfwSwapBuffers(window);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ glfwPollEvents();}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{comment}{//\ glfw:\ terminate,\ clearing\ all\ previously\ allocated\ GLFW\ resources.}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00079}00079\ \ \ \ \ glfwTerminate();}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00083}00083\ \textcolor{comment}{//\ process\ all\ input:\ query\ GLFW\ whether\ relevant\ keys\ are\ pressed/released\ this\ frame\ and\ react\ accordingly}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00084}00084\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00085}\mbox{\hyperlink{_main_8cpp_a2d03c6f2666863543429a06ef642fe6a}{00085}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_main_8cpp_a2d03c6f2666863543429a06ef642fe6a}{processInput}}(GLFWwindow\ *window)}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00086}00086\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{if}(glfwGetKey(window,\ GLFW\_KEY\_ESCAPE)\ ==\ GLFW\_PRESS)}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ glfwSetWindowShouldClose(window,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00089}00089\ \}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00091}00091\ \textcolor{comment}{//\ glfw:\ whenever\ the\ window\ size\ changed\ (by\ OS\ or\ user\ resize)\ this\ callback\ function\ executes}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00092}00092\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00093}\mbox{\hyperlink{_main_8cpp_a5180f7bf2b71421af837035824a8c8ac}{00093}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_main_8cpp_a5180f7bf2b71421af837035824a8c8ac}{framebuffer\_size\_callback}}(GLFWwindow*\ window,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00094}00094\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{comment}{//\ make\ sure\ the\ viewport\ matches\ the\ new\ window\ dimensions;\ note\ that\ width\ and}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{comment}{//\ height\ will\ be\ significantly\ larger\ than\ specified\ on\ retina\ displays.}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00097}00097\ \ \ \ \ glViewport(0,\ 0,\ width,\ height);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00098}00098\ \}}
+
+\end{DoxyCode}
