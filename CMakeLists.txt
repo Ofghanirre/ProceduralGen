@@ -8,7 +8,7 @@ project (Procedural_Generation)
 
 if (CMAKE_COMPILER_IS_GNUCXX)
     add_definitions(
-        -std=c++14
+        -std=c++17
     )
 endif()
 
