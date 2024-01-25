@@ -9,16 +9,10 @@
 template<typename T>
 class BitMap {
 public:
-    explicit BitMap(const std::vector<std::vector<T>> &data) : m_data(data) {}
+    explicit BitMap(const std::vector<std::vector<T> > &data) : m_data(data) {}
 
-    explicit BitMap(size_t width, size_t height, T defaultValue) : m_data(std::vector(height, std::vector<T>(width))
-    {
-        m_width = width;
-        m_height = height;
-        for (int i = 0; i < height; i++) {
-            m_data[i] = std::vector<T>(width, defaultValue);
-        }
-    }
+    explicit BitMap(size_t width, size_t height, T defaultValue) : m_width(width), m_height(height), m_data(std::vector<std::vector<T> >(height, std::vector<T>(width)))
+    {}
 
     unsigned int getHeight() {
         return m_height;
@@ -53,7 +47,7 @@ public:
 private:
     const size_t m_height;
     const size_t m_width;
-    const std::vector<std::vector<T>> m_data;
+    const std::vector<std::vector<T> > m_data;
 
     T& _get(const size_t& col, const size_t& line) const {
         if (col >= this->m_width || line >= this->m_height) {
