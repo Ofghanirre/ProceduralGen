@@ -10,7 +10,7 @@ macro(LinkGLFW TARGET ACCESS)
     FetchContent_GetProperties(glfw)
 
     if (NOT glfw_POPULATED)
-        FetchContent_Populate(glfw)
+        FetchContent_Populate(GLFW)
 
         # Just configure GLFW only
         set(GLFW_BUILD_EXAMPLES     OFF CACHE BOOL "Build Examples" FORCE)
