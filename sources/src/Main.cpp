@@ -7,7 +7,7 @@
 
 int main(void) {
     BitMap<int> bitmap(16,16, 0);
-    bitmap[0] = 1;
+    bitmap[(int) 0] = 1;
     std::cout << bitmap[0] << std::endl;
     return 0;
 }
