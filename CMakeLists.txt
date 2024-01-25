@@ -16,9 +16,9 @@ message("Starting compilation for Project ${CMAKE_PROJECT_NAME}")
 
 # Create a sources variable with a link to all cpp files to compile
 file(GLOB_RECURSE SOURCES
-        "*.cpp"
-        "*.h"
-        "*.hpp"
+        ${PROJECT_SOURCE_DIR}/sources/*.cpp
+        ${PROJECT_SOURCE_DIR}/sources/*.h
+        ${PROJECT_SOURCE_DIR}/sources/*.hpp
 )
 
 # Add an executable with the above sources
