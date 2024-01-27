@@ -1,81 +1,32 @@
-cmake_minimum_required(VERSION 3.11 FATAL_ERROR)
-project(ProceduralGen CXX)
+# Set the minimum version of CMake that can be used
+# To find the cmake version run
+# $ cmake --version
+cmake_minimum_required(VERSION 3.5)
 
-#===========================================================================================
-# OPTIONAL LIBRARiES
-#
-# The following libraries can be pulled down and added to the project by turning the
-# desired options on. Open an issue for additional default support.
-# See: https://github.com/Hoshiningen/OpenGL-Template/issues
+# Set the project name
+project (Procedural_Generation)
 
-#set(ENABLE_ASSIMP   ON CACHE BOOL "Add Open Asset Import Library (assimp) to the project" FORCE)
-set(ENABLE_GLM   ON CACHE BOOL "Add GLM to the project" FORCE)
-
-#===========================================================================================
-# GLAD CONFIGURATION
-#
-# Configure GLAD loader generation variables (lines below pulled from the GLAD top-level
-# CMakeLists.txt file, with slight modifications.
-# Refer to https://github.com/Dav1dde/glad for more information)
-
-set(GLAD_OUT_DIR        "${CMAKE_CURRENT_BINARY_DIR}" CACHE STRING "Output directory" FORCE)
-set(GLAD_PROFILE        "core" CACHE STRING "OpenGL profile" FORCE)
-set(GLAD_API            "gl=4.6" CACHE STRING "API type/version pairs, like \"gl=3.2,gles=\", no version means latest" FORCE)
-set(GLAD_GENERATOR      "c" CACHE STRING "Language to generate the binding for" FORCE)
-set(GLAD_EXTENSIONS     "" CACHE STRING "Path to extensions file or comma separated list of extensions, if missing all extensions are included" FORCE)
-set(GLAD_SPEC           "gl" CACHE STRING "Name of the spec" FORCE)
-set(GLAD_ALL_EXTENSIONS OFF CACHE BOOL "Include all extensions instead of those specified by GLAD_EXTENSIONS" FORCE)
-set(GLAD_NO_LOADER      OFF CACHE BOOL "No loader" FORCE)
-set(GLAD_REPRODUCIBLE   OFF CACHE BOOL "Reproducible build" FORCE)
-
-#===========================================================================================
-
-set_property(GLOBAL PROPERTY USE_FOLDERS OFF)
-
-# Set directory paths
-set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/sources)
-set(SRC_DIR ${SOURCE_DIR}/src/)
-set(INC_DIR ${SOURCE_DIR}/inc/)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
-set(CMAKE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/CMake)
-
-# Adding File projects :
-set(SRC ${SRC_DIR}Main.cpp
-        ${INC_DIR}Main.h)
-
-add_executable(proceduralGen ${SRC})
-
-# Perform dependency linkage
-include(${CMAKE_DIR}/LinkGLFW.cmake)
-LinkGLFW(proceduralGen PRIVATE)
-
-include(${CMAKE_DIR}/LinkGLAD.cmake)
-LinkGLAD(proceduralGen PRIVATE)
-
-find_package(OpenGL REQUIRED)
-if (OpenGL_FOUND)
-    target_include_directories(proceduralGen PRIVATE ${OPENGL_INCLDUE_DIRS})
-    target_link_libraries(proceduralGen PRIVATE ${OPENGL_LIBRARIES})
-else()
-    message(FATAL_ERROR "OpenGL was not found on the system")
+if (CMAKE_COMPILER_IS_GNUCXX)
+    add_definitions(
+        -std=c++17
+    )
 endif()
 
-# Handle the optional libraries
-if (${ENABLE_ASSIMP})
-    include(${CMAKE_DIR}/LinkASSIMP.cmake)
-    LinkASSIMP(proceduralGen PRIVATE)
-endif()
+message("Starting compilation for Project ${CMAKE_PROJECT_NAME}")
 
-if (${ENABLE_GLM})
-    include(${CMAKE_DIR}/LinkGLM.cmake)
-    LinkGLM(proceduralGen PRIVATE)
-endif()
+# Create a sources variable with a link to all cpp files to compile
+file(GLOB_RECURSE SOURCES
+        ${PROJECT_SOURCE_DIR}/sources/*.cpp
+        ${PROJECT_SOURCE_DIR}/sources/*.h
+        ${PROJECT_SOURCE_DIR}/sources/*.hpp
+)
 
-# Enable C++17
-set_target_properties(proceduralGen PROPERTIES
-    CXX_STANDARD 17
-    CXX_STANDARD_REQUIRED YES
-    CXX_EXTENSIONS NO)
+# Add an executable with the above sources
+add_executable(procGen ${SOURCES})
 
-# Set project folders
-set_target_properties(proceduralGen PROPERTIES FOLDER ${PROJECT_NAME})
+# Set the directories that should be included in the build command for this target
+# when running g++ these will be included as -I/directory/path/
+target_include_directories(procGen
+        PRIVATE
+        ${PROJECT_SOURCE_DIR}/sources
+)

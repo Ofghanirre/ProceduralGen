@@ -1,8 +1,3 @@
-# Custom:
-**/.idea/
-/.DS_Store
-cmake-build-debug/*
-
 # Prerequisites
 *.d
 
@@ -35,4 +30,8 @@ cmake-build-debug/*
 *.exe
 *.out
 *.app
-/build/
+
+build/
+.idea/
+.vscode/
+cmake-build-debug
