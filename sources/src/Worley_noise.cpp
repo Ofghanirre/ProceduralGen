@@ -29,6 +29,7 @@ BitMap<int> Worley_noise::generate(uint seed, uint width, uint height, uint grid
     }
 
     // Calculate distance
+    float max = 0;
     for (int y = 0; y < width; y++) {
         for (int x = 0; x < height; x++) {
 
@@ -41,15 +42,21 @@ BitMap<int> Worley_noise::generate(uint seed, uint width, uint height, uint grid
             std::sort(distances, distances + points.size());
 
             pixels[y][x] = distances[0]; // need to normalize
+            if (max < distances[0]) {
+                max = distances[0];
+            }
         }
     }
+    // Normalization scale
+    float scale = 255 / max;
 
     // After calculation in float, create a BitMap Object in int
     BitMap<int> bitmap(width,height, 0);
 
     for (int y = 0; y < width; y++) {
         for (int x = 0; x < height; x++) {
-            bitmap[y*width+x]= (int)  pixels[y][x];
+            // Fill the new BitMap object
+            bitmap[y*width+x]= (int)  (pixels[y][x] * scale);
         }
     }
     return bitmap;
