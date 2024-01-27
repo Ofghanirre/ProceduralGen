@@ -7,7 +7,7 @@
 
 #include "../inc/Worley_noise.h"
 
-BitMap Worley_noise::generate(uint seed, uint width, uint height, uint gridSize) {
+BitMap<int> Worley_noise::generate(uint seed, uint width, uint height, uint gridSize) {
 
     // Init a 2D Vector with zeros
     std::vector<std::vector<float>> pixels(height, std::vector<float>(width, 0));
@@ -18,25 +18,24 @@ BitMap Worley_noise::generate(uint seed, uint width, uint height, uint gridSize)
     std::uniform_int_distribution<int> distrib_height(0, gridSize);
 
     // Generate random points in grid
-    std::vector<vec2> points;
+    std::vector<vec2<float>> points;
 
     for (int gridY = 0; gridY < width - gridSize+1; gridY+= gridSize) {
         for (int gridX = 0; gridX < height - gridSize+1; gridX+= gridSize) {
             int x = distrib_width(generator);
             int y = distrib_height(generator);
-            points.emplace_back(vec2{x+gridX,y+gridY});
-            std::cout << x+gridX << " hey " << y+gridY << std::endl;
+            points.emplace_back(static_cast<float>(x+gridX),static_cast<float>(y+gridY));
         }
     }
-    std::cout << points.size() << std::endl;
+
     // Calculate distance
     for (int y = 0; y < width; y++) {
         for (int x = 0; x < height; x++) {
 
             // Find closest point
-            double distances[points.size()];
+            float distances[points.size()];
             for (int i = 0; i < points.size(); i++) {
-                distances[i] = distance(points[i], {x, y});
+                distances[i] = distance(points[i], {static_cast<float>(x), static_cast<float>(y)});
             }
 
             std::sort(distances, distances + points.size());
@@ -44,31 +43,26 @@ BitMap Worley_noise::generate(uint seed, uint width, uint height, uint gridSize)
             pixels[y][x] = distances[0]; // need to normalize
         }
     }
-    for (int i = 0; i < points.size(); i++) {
-        pixels[points[i].x][points[i].y] = 255;
-    }
 
-    return pixels;
-}
+    // After calculation in float, create a BitMap Object in int
+    BitMap<int> bitmap(width,height, 0);
 
-void Worley_noise::test() {
-
-    int width = 10, height = 10;
-    int seed = 5;
-    uint gridSize = 4;
-    BitMap img = Worley_noise::generate(seed, width, height, gridSize);
-
-
-    std::cout << std::fixed;
-    std::cout.precision(2);
     for (int y = 0; y < width; y++) {
         for (int x = 0; x < height; x++) {
-            std::cout << img[y][x] << "\t";
+            bitmap[y*width+x]= (int)  pixels[y][x];
+        }
+    }
+    return bitmap;
+}
+
+void Worley_noise::test(int width, int height, int seed, int gridSize) {
+    std::cout << "Worley noise test" << std::endl;
+    BitMap img = Worley_noise::generate(seed, width, height, gridSize);
+
+    for (int y = 0; y < width; y++) {
+        for (int x = 0; x < height; x++) {
+            std::cout << img[y*img.getWidth()+x] << "\t";
         }
         std::cout << std::endl;
     }
-}
-
-int main() {
-    Worley_noise::test();
 }

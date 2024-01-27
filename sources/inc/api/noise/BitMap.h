@@ -5,6 +5,8 @@
 #include <vector>
 #include <exception>
 #include <string>
+#include <stdexcept>
+#include "../Utils.hpp"
 
 template<typename T>
 class BitMap {
