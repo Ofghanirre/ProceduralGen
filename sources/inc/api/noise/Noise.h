@@ -20,7 +20,7 @@ public:
      */
     Noise(BitMap<int> bitmap, size_t seed, size_t width, size_t height, size_t frequency);
 
-    const BitMap<int> &getBitmap() const;
+    BitMap<int> &getBitmap();
 
     size_t getSeed() const;
 
@@ -30,7 +30,7 @@ public:
 
     size_t getFrequency() const;
 private:
-    const BitMap<int> m_bitmap;
+    BitMap<int> m_bitmap;
     const size_t m_seed;
     const size_t m_width;
     const size_t m_height;
