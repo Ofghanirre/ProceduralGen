@@ -32,5 +32,5 @@ add_executable(procGen ${SOURCES} )
 # when running g++ these will be included as -I/directory/path/
 target_include_directories(procGen
         PRIVATE
-        ${PROJECT_SOURCE_DIR}/sources
+        ${PROJECT_SOURCE_DIR}/sources/inc
 )
