@@ -60,17 +60,56 @@ float interpolation(float a0, float a1, float weight)
     return (a1 - a0) * (3.0 - weight * 2.0) * weight * weight + a0;
 }
 
-std::vector<std::vector<float>> Perlin::perlin_noise(uint width, uint height, uint grid_size)
+/**
+ * @brief A function that normalizes a vector of vector of float to a range of int between min and max
+ * @param min the minimum int value of the normalized range
+ * @param max the maximum int value of the normalized range
+*/ 
+std::vector<std::vector<int>> normalize_noise(int min, int max, std::vector<std::vector<float>> & pixels){
+
+    std::vector<std::vector<int>> normalized_pixels;
+
+    float min_value = pixels[0][0];
+    float max_value = pixels[0][0];
+
+    for (const vector<float> vec : pixels){
+        for (float val : vec){
+            if (val < min_value){
+                min_value = val;
+            }
+            if (val > max_value){
+                max_value = val;
+            }
+        }
+    }
+
+    float span = max_value - min_value; // The range span of the noise
+    float new_span = max - min;
+    float convertion_factor = new_span / span;
+
+    for (size_t i = 0; i < pixels.size(); i++){
+        vector<int> line;
+        for (size_t j = 0; j < pixels[i].size(); j++){
+            line.push_back((pixels[i][j] - min_value) * convertion_factor);
+        }
+        normalized_pixels.push_back(line);
+    }
+
+    return normalized_pixels;
+}
+
+/**
+ * @brief The generator of perlin noise.
+ * It will generate a vector of vector of int of size width * height
+ * whose values are between min_range and max_range
+ * @param width the width of the resulting noise
+ * @param height the height of the resulting noise
+ * @param min_range the minimum value of the range
+ * @param max_range the maximum value of the range
+*/
+std::vector<std::vector<int>> Perlin::perlin_noise(uint width, uint height, int min_range, int max_range, uint grid_size)
 {
     std::vector<std::vector<float>> pixels;
-
-    // Initiating value table
-    //float **pixels = new float *[height];
-
-    /*for (int y = 0; y < height; y++)
-    {
-        pixels[y] = new float[width];
-    }*/
 
     for (int y = 0; y < height; y++)
     {
@@ -108,31 +147,36 @@ std::vector<std::vector<float>> Perlin::perlin_noise(uint width, uint height, ui
         }
         pixels.push_back(line);
     }
-    return pixels;
+    return normalize_noise(0, 255, pixels);
 }
 
 int main()
 {
     // ---------------------- Test ---------------------------
-    int width = 50;
-    int height = 50;
-    int grid_size = 10;
+    int width = 10;
+    int height = 10;
+    int grid_size = 5;
     // float **noise = Perlin::perlin_noise(width, height, grid_size);
     std::cout.precision(2);
 
-    std::vector<std::vector<float>> pixels = Perlin::perlin_noise(width, height, grid_size);
-    float min = 0;
+    std::vector<std::vector<int>> pixels = Perlin::perlin_noise(width, height, 0, 255, grid_size);
+    int max = 0;
+    int min = 50;
     for (int y = 0; y < width; y++)
     {
         for (int x = 0; x < height; x++)
         {
             std::cout << pixels[y][x] << "\t";
+            if (max < pixels[y][x]){
+                max = pixels[y][x];
+            }
             if (min > pixels[y][x]){
                 min = pixels[y][x];
             }
         }
         std::cout << std::endl;
     }
+    std::cout << "Max is : " << max <<std::endl;
     std::cout << "Min is : " << min <<std::endl;
     return 1;
 }
