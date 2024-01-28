@@ -2,9 +2,9 @@
 // Created by Antonin Jean on 25/01/2024.
 //
 
-#include "inc/api/noise/BitMap.h"
+#include <api/noise/BitMap.h>
 #include <iostream>
-#include "inc/api/Terrain.h"
+#include <api/Terrain.h>
 
 int main(void) {
     Terrain terrain("test", 0);
