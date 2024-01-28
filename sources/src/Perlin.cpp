@@ -18,19 +18,30 @@ vec2 Perlin::generate_random_vect()
 }
 
 // Generate a random gradient vector
-vec2 Perlin::randomGradient(int ix, int iy, int seed = 1)
+vec2 Perlin::randomGradient(int ix, int iy, int seed)
 {
     // No precomputed gradients mean this works for any number of grid coordinates
+    // Init random generators
+    std::default_random_engine generator(seed);
+    std::uniform_int_distribution<int> distrib_x(0, 3284157443);
+    std::uniform_int_distribution<int> distrib_y(0, 1911520717);
+
+    std::uniform_int_distribution<int> distrib_z(0, 2048419325);
+
+
     const unsigned w = 8 * sizeof(unsigned);
     const unsigned s = w / 2;
     unsigned a = ix, b = iy;
-    a *= 3284157443;
+    //a *= 3284157443;
+    a *= distrib_x(generator);
 
     b ^= a << s | a >> w - s;
-    b *= 1911520717;
+    //b *= 1911520717;
+    b *= distrib_y(generator);
 
     a ^= b << s | b >> w - s;
-    a *= 2048419325;
+    //a *= 2048419325;
+    a *= distrib_z(generator);
     float random = a * (3.14159265 / ~(~0u >> 1)); // in [0, 2*Pi]
 
     // Create the vector from the angle
@@ -42,9 +53,9 @@ vec2 Perlin::randomGradient(int ix, int iy, int seed = 1)
 }
 
 // Compute the dot product of the distance and gradient vectors
-float Perlin::dotGridGradient(int grid_x, int grid_y, float x, float y)
+float Perlin::dotGridGradient(int grid_x, int grid_y, float x, float y, int seed)
 {
-    vec2 gradiant = randomGradient(grid_x, grid_y);
+    vec2 gradiant = randomGradient(grid_x, grid_y, seed);
 
     // Compute distance from grid point to our pixel
     float dx = x - (float)grid_x;
@@ -107,7 +118,7 @@ std::vector<std::vector<int>> Perlin::normalize_noise(int min, int max, std::vec
  * @param min_range the minimum value of the range
  * @param max_range the maximum value of the range
 */
-std::vector<std::vector<int>> Perlin::perlin_noise(uint width, uint height, int min_range, int max_range, uint grid_size)
+std::vector<std::vector<int>> Perlin::perlin_noise(uint width, uint height, int min_range, int max_range, uint grid_size, int seed)
 {
     std::vector<std::vector<float>> pixels;
 
@@ -134,13 +145,13 @@ std::vector<std::vector<int>> Perlin::perlin_noise(uint width, uint height, int 
             float sy = py - (float)y0;
 
             // Compute interpolation for top two corners
-            float grad1 = dotGridGradient(x0, y0, px, py);
-            float grad2 = dotGridGradient(x1, y0, px, py);
+            float grad1 = dotGridGradient(x0, y0, px, py, seed);
+            float grad2 = dotGridGradient(x1, y0, px, py, seed);
             float top_interpol_val = interpolation(grad1, grad2, sx);
 
             // Compute interpolation for the bottom two corner
-            grad1 = dotGridGradient(x0, y1, px, py);
-            grad2 = dotGridGradient(x1, y1, px, py);
+            grad1 = dotGridGradient(x0, y1, px, py, seed);
+            grad2 = dotGridGradient(x1, y1, px, py, seed);
             float bot_interpol_val = interpolation(grad1, grad2, sx);
 
             line.push_back(interpolation(top_interpol_val, bot_interpol_val, sy));
@@ -159,7 +170,7 @@ int main()
     // float **noise = Perlin::perlin_noise(width, height, grid_size);
     std::cout.precision(2);
 
-    std::vector<std::vector<int>> pixels = Perlin::perlin_noise(width, height, 0, 255, grid_size);
+    std::vector<std::vector<int>> pixels = Perlin::perlin_noise(width, height, 0, 255, grid_size, 54);
     int max = 0;
     int min = 50;
     for (int y = 0; y < width; y++)

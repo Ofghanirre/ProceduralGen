@@ -20,7 +20,7 @@ public:
      * @param min_range the minimum value of the range
      * @param max_range the maximum value of the range
     */
-    static std::vector<std::vector<int>>  perlin_noise(uint width, uint height, int min_range, int max_range, uint grid_size); 
+    static std::vector<std::vector<int>>  perlin_noise(uint width, uint height, int min_range, int max_range, uint grid_size, int seed); 
 
 private:
 
@@ -28,7 +28,7 @@ private:
 
     static vec2 randomGradient(int ix, int iy, int seed);
 
-    static float dotGridGradient(int grid_x, int grid_y, float x, float y);
+    static float dotGridGradient(int grid_x, int grid_y, float x, float y, int seed);
 
     static float interpolation(float a0, float a1, float weight);
 
