@@ -35,5 +35,8 @@ cmake-build-debug/*
 *.exe
 *.out
 *.app
-/build/
-/docs/
+
+build/
+.idea/
+.vscode/
+cmake-build-debug
