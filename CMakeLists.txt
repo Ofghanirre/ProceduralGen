@@ -12,6 +12,10 @@ if (CMAKE_COMPILER_IS_GNUCXX)
     )
 endif()
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 message("Starting compilation for Project ${CMAKE_PROJECT_NAME}")
 
 # Create a sources variable with a link to all cpp files to compile
