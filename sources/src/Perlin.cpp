@@ -9,7 +9,7 @@
 
 #include "../inc/Perlin.hpp"
 
-vec2 generate_random_vect()
+vec2 Perlin::generate_random_vect()
 {
     vec2 v;
     v.x = sin(rand());
@@ -18,7 +18,7 @@ vec2 generate_random_vect()
 }
 
 // Generate a random gradient vector
-vec2 randomGradient(int ix, int iy, int seed = 0)
+vec2 Perlin::randomGradient(int ix, int iy, int seed = 1)
 {
     // No precomputed gradients mean this works for any number of grid coordinates
     const unsigned w = 8 * sizeof(unsigned);
@@ -42,7 +42,7 @@ vec2 randomGradient(int ix, int iy, int seed = 0)
 }
 
 // Compute the dot product of the distance and gradient vectors
-float dotGridGradient(int grid_x, int grid_y, float x, float y)
+float Perlin::dotGridGradient(int grid_x, int grid_y, float x, float y)
 {
     vec2 gradiant = randomGradient(grid_x, grid_y);
 
@@ -54,7 +54,7 @@ float dotGridGradient(int grid_x, int grid_y, float x, float y)
     return gradiant.x * dx + gradiant.y * dy;
 }
 
-float interpolation(float a0, float a1, float weight)
+float Perlin::interpolation(float a0, float a1, float weight)
 {
     // Cubic interpolation
     return (a1 - a0) * (3.0 - weight * 2.0) * weight * weight + a0;
@@ -65,7 +65,7 @@ float interpolation(float a0, float a1, float weight)
  * @param min the minimum int value of the normalized range
  * @param max the maximum int value of the normalized range
 */ 
-std::vector<std::vector<int>> normalize_noise(int min, int max, std::vector<std::vector<float>> & pixels){
+std::vector<std::vector<int>> Perlin::normalize_noise(int min, int max, std::vector<std::vector<float>> & pixels){
 
     std::vector<std::vector<int>> normalized_pixels;
 

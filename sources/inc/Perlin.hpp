@@ -23,4 +23,19 @@ public:
     static std::vector<std::vector<int>>  perlin_noise(uint width, uint height, int min_range, int max_range, uint grid_size); 
 
 private:
+
+    static vec2 generate_random_vect();
+
+    static vec2 randomGradient(int ix, int iy, int seed);
+
+    static float dotGridGradient(int grid_x, int grid_y, float x, float y);
+
+    static float interpolation(float a0, float a1, float weight);
+
+    /**
+     * @brief A function that normalizes a vector of vector of float to a range of int between min and max
+     * @param min the minimum int value of the normalized range
+     * @param max the maximum int value of the normalized range
+    */ 
+    static std::vector<std::vector<int>> normalize_noise(int min, int max, std::vector<std::vector<float>> & pixels);
 };
