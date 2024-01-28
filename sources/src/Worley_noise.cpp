@@ -30,8 +30,8 @@ BitMap<int> Worley_noise::generate(uint seed, uint width, uint height, uint grid
 
     // Calculate distance
     float max = 0;
-    for (int y = 0; y < width; y++) {
-        for (int x = 0; x < height; x++) {
+    for (int x = 0; x < height; x++) {
+        for (int y = 0; y < width; y++) {
 
             // Find closest point
             float distances[points.size()];
@@ -41,7 +41,7 @@ BitMap<int> Worley_noise::generate(uint seed, uint width, uint height, uint grid
 
             std::sort(distances, distances + points.size());
 
-            pixels[y][x] = distances[0]; // need to normalize
+            pixels[x][y] = distances[0]; // need to normalize
             if (max < distances[0]) {
                 max = distances[0];
             }
@@ -53,10 +53,10 @@ BitMap<int> Worley_noise::generate(uint seed, uint width, uint height, uint grid
     // After calculation in float, create a BitMap Object in int
     BitMap<int> bitmap(width,height, 0);
 
-    for (int y = 0; y < width; y++) {
-        for (int x = 0; x < height; x++) {
+    for (int x = 0; x < height; x++) {
+        for (int y = 0; y < width; y++) {
             // Fill the new BitMap object
-            bitmap[y*width+x]= (int)  (pixels[y][x] * scale);
+            bitmap[x*width+y]= (int)  (pixels[x][y] * scale);
         }
     }
     return bitmap;
@@ -66,9 +66,9 @@ void Worley_noise::test(int width, int height, int seed, int gridSize) {
     std::cout << "Worley noise test" << std::endl;
     BitMap img = Worley_noise::generate(seed, width, height, gridSize);
 
-    for (int y = 0; y < width; y++) {
-        for (int x = 0; x < height; x++) {
-            std::cout << img[y*img.getWidth()+x] << "\t";
+    for (int x = 0; x < height; x++) {
+        for (int y = 0; y < width; y++) {
+            std::cout << img[x*img.getWidth()+y] << "\t";
         }
         std::cout << std::endl;
     }
