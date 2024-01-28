@@ -6,8 +6,7 @@
 
 #include <iostream>
 #include <vector>
-
-using BitMap = std::vector<std::vector<float>>;
+#include "BitMap.h"
 
 class Noise {
 public:
@@ -19,10 +18,10 @@ public:
      * @param height the height of the windowed bitmap created
      * @param frequency the frequency used to create the noise
      */
-    Noise(BitMap bitmap, uint seed, uint width, uint height, uint frequency);
+    Noise(BitMap<int> bitmap, uint seed, uint width, uint height, uint frequency);
 
 
-    [[nodiscard]] const BitMap &getBitmap() const;
+    [[nodiscard]] const BitMap<int> &getBitmap() const;
 
     [[nodiscard]] uint getSeed() const;
 
@@ -32,7 +31,7 @@ public:
 
     [[nodiscard]] uint getFrequency() const;
 private:
-    const BitMap m_bitmap;
+    const BitMap<int> m_bitmap;
     const uint m_seed;
     const uint m_width;
     const uint m_height;
