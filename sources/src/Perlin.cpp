@@ -60,20 +60,21 @@ float interpolation(float a0, float a1, float weight)
     return (a1 - a0) * (3.0 - weight * 2.0) * weight * weight + a0;
 }
 
-float **Perlin::perlin_noise(uint width, uint height, uint grid_size)
+std::vector<std::vector<float>> Perlin::perlin_noise(uint width, uint height, uint grid_size)
 {
-    // std::vector<std::vector<uint>> pixels(height, std::vector<uint>(width));
+    std::vector<std::vector<float>> pixels;
 
     // Initiating value table
-    float **pixels = new float *[height];
+    //float **pixels = new float *[height];
 
-    for (int y = 0; y < height; y++)
+    /*for (int y = 0; y < height; y++)
     {
         pixels[y] = new float[width];
-    }
+    }*/
 
     for (int y = 0; y < height; y++)
     {
+        std::vector<float> line;  // The values of the pixel of line y
         for (int x = 0; x < width; x++)
         {
             // Point coordinate on the grid
@@ -103,8 +104,9 @@ float **Perlin::perlin_noise(uint width, uint height, uint grid_size)
             grad2 = dotGridGradient(x1, y1, px, py);
             float bot_interpol_val = interpolation(grad1, grad2, sx);
 
-            pixels[y][x] = interpolation(top_interpol_val, bot_interpol_val, sy);
+            line.push_back(interpolation(top_interpol_val, bot_interpol_val, sy));
         }
+        pixels.push_back(line);
     }
     return pixels;
 }
@@ -115,15 +117,22 @@ int main()
     int width = 50;
     int height = 50;
     int grid_size = 10;
-    float **noise = Perlin::perlin_noise(width, height, grid_size);
+    // float **noise = Perlin::perlin_noise(width, height, grid_size);
+    std::cout.precision(2);
 
+    std::vector<std::vector<float>> pixels = Perlin::perlin_noise(width, height, grid_size);
+    float min = 0;
     for (int y = 0; y < width; y++)
     {
         for (int x = 0; x < height; x++)
         {
-            std::cout << noise[y][x] << "\t";
+            std::cout << pixels[y][x] << "\t";
+            if (min > pixels[y][x]){
+                min = pixels[y][x];
+            }
         }
         std::cout << std::endl;
     }
+    std::cout << "Min is : " << min <<std::endl;
     return 1;
 }

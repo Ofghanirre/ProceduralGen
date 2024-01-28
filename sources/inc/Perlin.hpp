@@ -10,7 +10,7 @@ using namespace glm;
 class Perlin
 {
 public:
-    static float **perlin_noise(uint width, uint height, uint grid_size);
+    static std::vector<std::vector<float>>  perlin_noise(uint width, uint height, uint grid_size);
 
 private:
 };
