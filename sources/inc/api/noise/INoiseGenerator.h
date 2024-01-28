@@ -5,9 +5,8 @@
 #pragma once
 
 #include <iostream>
+#include "Noise.h"
 
-
-template<typename T>
 class INoiseGenerator{
 public:
     /**
@@ -23,5 +22,5 @@ public:
      * @param frequency the frequency used to create the noise
      * @return
      */
-    virtual T genNoise(uint seed, uint width, uint height, uint frequency) = 0;
+    virtual Noise genNoise(uint seed, uint width, uint height, uint frequency) = 0;
 };
