@@ -32,9 +32,9 @@ public:
 
     [[nodiscard]] uint getFrequency() const;
 private:
-    const BitMap _bitmap;
-    const uint _seed;
-    const uint _width;
-    const uint _height;
-    const uint _frequency;
+    const BitMap m_bitmap;
+    const uint m_seed;
+    const uint m_width;
+    const uint m_height;
+    const uint m_frequency;
 };

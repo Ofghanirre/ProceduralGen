@@ -6,24 +6,24 @@
 #include <utility>
 
 Noise::Noise(BitMap bitmap, const uint seed, const uint width, const uint height, const uint frequency)
-        : _bitmap(std::move(bitmap)), _seed(seed), _width(width), _height(height), _frequency(frequency) {}
+        : m_bitmap(std::move(bitmap)), m_seed(seed), m_width(width), m_height(height), m_frequency(frequency) {}
 
 const BitMap &Noise::getBitmap() const {
-    return _bitmap;
+    return m_bitmap;
 }
 
 uint Noise::getSeed() const {
-    return _seed;
+    return m_seed;
 }
 
 uint Noise::getWidth() const {
-    return _width;
+    return m_width;
 }
 
 uint Noise::getHeight() const {
-    return _height;
+    return m_height;
 }
 
 uint Noise::getFrequency() const {
-    return _frequency;
+    return m_frequency;
 }
