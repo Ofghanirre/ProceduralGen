@@ -18,7 +18,7 @@ public:
      * @param height the height of the windowed bitmap created
      * @param frequency the frequency used to create the noise
      */
-    Noise(BitMap<int> bitmap, uint seed, uint width, uint height, uint frequency);
+    Noise(BitMap<int> bitmap, const uint seed, const uint width, const uint height, const uint frequency);
 
 
     [[nodiscard]] const BitMap<int> &getBitmap() const;

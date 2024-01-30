@@ -2,13 +2,13 @@
 // Created by Antonin Jean on 18/11/2023.
 //
 
-#include "api/noise/Noise.h"
+#include "inc/api/noise/Noise.h"
 #include <utility>
 
-Noise::Noise(BitMap bitmap, const uint seed, const uint width, const uint height, const uint frequency)
+Noise::Noise(BitMap<int> bitmap, const uint seed, const uint width, const uint height, const uint frequency)
         : m_bitmap(std::move(bitmap)), m_seed(seed), m_width(width), m_height(height), m_frequency(frequency) {}
 
-const BitMap &Noise::getBitmap() const {
+const BitMap<int>& Noise::getBitmap() const {
     return m_bitmap;
 }
 
