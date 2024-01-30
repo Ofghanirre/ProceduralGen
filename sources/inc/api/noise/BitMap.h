@@ -4,6 +4,7 @@
 #pragma once
 #include <vector>
 #include <exception>
+#include <stdexcept>
 #include <string>
 
 template<typename T>
@@ -15,6 +16,12 @@ public:
             m_data[i] = std::vector<T>(width, defaultValue);
         }
     }
+
+    BitMap(size_t width, size_t height, std::vector<std::vector<T>> values)
+    : m_width {m_width}
+    , m_height {height}
+    , m_data {values}
+    {}
 
     unsigned int getHeight() {
         return m_height;
