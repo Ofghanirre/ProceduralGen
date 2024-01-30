@@ -9,6 +9,12 @@
 
 class INoiseGenerator{
 public:
+
+    /**
+     * @brief Class destructor
+    */
+    virtual ~INoiseGenerator() = default;
+
     /**
      * @brief Generator for a Noise, those can be statically loaded for usage and contains the all-usable parameters
      * known for generating a noise.
@@ -22,5 +28,5 @@ public:
      * @param frequency the frequency used to create the noise
      * @return
      */
-    virtual Noise genNoise(uint seed, uint width, uint height, uint frequency) = 0;
+    virtual Noise genNoise(uint seed, uint width, uint height, uint frequency) const = 0;
 };
