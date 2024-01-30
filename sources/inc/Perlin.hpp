@@ -2,14 +2,23 @@
 #include <iostream>
 #include <random>
 #include <vector>
+#include <memory>
 #include "glm/vec2.hpp"
+#include "./api/noise/INoiseGenerator.h"
 
 using namespace std;
 using namespace glm;
 
-class Perlin
+class Perlin : public INoiseGenerator
 {
 public:
+
+    ~Perlin() = default;
+
+    /**
+     * @brief Constructor of the class
+    */
+    Perlin(int minRange, int maxRange, uint gridSize);
 
     /**
      * @brief The generator of perlin noise.
@@ -20,7 +29,9 @@ public:
      * @param min_range the minimum value of the range
      * @param max_range the maximum value of the range
     */
-    static std::vector<std::vector<int>>  perlin_noise(uint width, uint height, int min_range, int max_range, uint grid_size, int seed); 
+    std::vector<std::vector<int>> perlin_noise(uint width, uint height, int min_range, int max_range, uint seed) const; 
+
+    Noise genNoise(uint seed, uint width, uint height, uint frequency) const override;
 
 private:
 
@@ -38,4 +49,8 @@ private:
      * @param max the maximum int value of the normalized range
     */ 
     static std::vector<std::vector<int>> normalize_noise(int min, int max, std::vector<std::vector<float>> & pixels);
+
+    int _minRange;  // The minimum value of the range of number generated.
+    int _maxRange;  // The maximum value of the range of number generated.
+    uint _gridSize; // The size of the grid used to generate the Perlin noise.
 };

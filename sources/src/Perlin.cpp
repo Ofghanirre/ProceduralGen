@@ -9,6 +9,12 @@
 
 #include "../inc/Perlin.hpp"
 
+Perlin::Perlin(int minRange, int maxRange, uint gridSize)
+    : _minRange {minRange}
+    , _maxRange {maxRange}
+    , _gridSize {gridSize}
+    {}
+
 vec2 Perlin::generate_random_vect()
 {
     vec2 v;
@@ -118,7 +124,7 @@ std::vector<std::vector<int>> Perlin::normalize_noise(int min, int max, std::vec
  * @param min_range the minimum value of the range
  * @param max_range the maximum value of the range
 */
-std::vector<std::vector<int>> Perlin::perlin_noise(uint width, uint height, int min_range, int max_range, uint grid_size, int seed)
+std::vector<std::vector<int>> Perlin::perlin_noise(uint width, uint height, int min_range, int max_range, uint seed) const
 {
     std::vector<std::vector<float>> pixels;
 
@@ -128,8 +134,8 @@ std::vector<std::vector<int>> Perlin::perlin_noise(uint width, uint height, int 
         for (int x = 0; x < width; x++)
         {
             // Point coordinate on the grid
-            float px = (float)x / (float)grid_size;
-            float py = (float)y / (float)grid_size;
+            float px = (float)x / (float)_gridSize;
+            float py = (float)y / (float)_gridSize;
 
             // Grid cell corner coordinates
             // Coordinates of the first corner (top left)
@@ -158,7 +164,15 @@ std::vector<std::vector<int>> Perlin::perlin_noise(uint width, uint height, int 
         }
         pixels.push_back(line);
     }
-    return normalize_noise(0, 255, pixels);
+    return normalize_noise(_minRange, _maxRange, pixels);
+}
+
+Noise Perlin::genNoise(uint seed, uint width, uint height, uint frequency) const {
+
+    // Creates a BitMap of size width * height filled with the generated values
+    BitMap bitmap = BitMap(width, height, perlin_noise(width, height, _minRange, _maxRange, seed));
+
+    return Noise(bitmap, seed, width, height, frequency);
 }
 
 int main()
@@ -170,12 +184,13 @@ int main()
     // float **noise = Perlin::perlin_noise(width, height, grid_size);
     std::cout.precision(2);
 
-    std::vector<std::vector<int>> pixels = Perlin::perlin_noise(width, height, 0, 255, grid_size, 54);
+    Perlin perlin = Perlin(0, 255, grid_size);
+    std::vector<std::vector<int>> pixels = perlin.perlin_noise(width, height, 0, 255, 54);
     int max = 0;
     int min = 50;
-    for (int y = 0; y < width; y++)
+    for (int y = 0; y < height; y++)
     {
-        for (int x = 0; x < height; x++)
+        for (int x = 0; x < width; x++)
         {
             std::cout << pixels[y][x] << "\t";
             if (max < pixels[y][x]){
@@ -189,5 +204,37 @@ int main()
     }
     std::cout << "Max is : " << max <<std::endl;
     std::cout << "Min is : " << min <<std::endl;
+
+
+    /*--------------------Testing with INoiseGenerator container--------------------*/
+
+    std::vector<std::unique_ptr<INoiseGenerator>> gen;
+    gen.emplace_back(std::make_unique<Perlin>(0, 255, grid_size));
+
+
+    for (const auto& iter_gen: gen) {
+        Noise testNoise = iter_gen->genNoise(54, width, height, 0);
+
+        std::cout << "Height " << testNoise.getHeight() <<std::endl;
+        std::cout << "Width " <<testNoise.getWidth() <<std::endl;
+
+        
+        BitMap<int> testBitmap = testNoise.getBitmap();
+
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < width; x++){
+                std::cout << testBitmap[std::pair(x, y)] << "\t";
+            }
+
+            std::cout << std::endl;
+        }
+        std::cout << "Height " << testBitmap.getHeight() <<std::endl;
+        std::cout << "Width " <<testBitmap.getWidth() <<std::endl;
+        std::cout << "Size " << testBitmap.getSize() <<std::endl;
+    }
+
+
+
     return 1;
 }
