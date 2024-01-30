@@ -18,7 +18,7 @@ public:
     }
 
     BitMap(size_t width, size_t height, std::vector<std::vector<T>> values)
-    : m_width {m_width}
+    : m_width {width}
     , m_height {height}
     , m_data {values}
     {}
