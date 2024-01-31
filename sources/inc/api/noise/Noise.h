@@ -20,16 +20,15 @@ public:
      */
     Noise(BitMap<int> bitmap, const size_t seed, const size_t width, const size_t height, const size_t frequency);
 
+    const BitMap<int> &getBitmap() const;
 
-    [[nodiscard]] const BitMap<int> &getBitmap() const;
+    size_t getSeed() const;
 
-    [[nodiscard]] uint getSeed() const;
+    size_t getWidth() const;
 
-    [[nodiscard]] uint getWidth() const;
+    size_t getHeight() const;
 
-    [[nodiscard]] uint getHeight() const;
-
-    [[nodiscard]] uint getFrequency() const;
+    size_t getFrequency() const;
 private:
     const BitMap<int> m_bitmap;
     const size_t m_seed;

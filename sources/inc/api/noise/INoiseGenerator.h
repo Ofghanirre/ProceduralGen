@@ -28,5 +28,6 @@ public:
      * @param frequency the frequency used to create the noise
      * @return
      */
+  
     virtual Noise genNoise(size_t seed, size_t width, size_t height, size_t frequency) const = 0;
 };

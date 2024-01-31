@@ -51,6 +51,14 @@ public:
     const T& operator[](size_t index) const;
 
     const T& operator[](std::pair<size_t, size_t> indexs) const;
+
+    T get(const size_t col, const size_t line) {
+        return _get(col, line);
+    }
+
+    T put(const size_t& col, const size_t& line, T value) {
+        return _put(col, line, value);
+    }
 private:
     const size_t m_height;
     const size_t m_width;
@@ -67,16 +75,16 @@ private:
 
 template<typename T>
 T& BitMap<T>::_get(const size_t col, const size_t line) {
-        if (col >= this->m_width || line >= this->m_height) {
-            throw std::invalid_argument("Invalid index (" + std::to_string(col) + ", " + std::to_string(line) +
-                                        "), in Bitmap of size (" + std::to_string(m_width) + ", " + std::to_string(m_height) + ").");
-        }
-        return m_data[line][col];
+    if (col >= m_width || line >= m_height) {
+        throw std::invalid_argument("Invalid index (" + std::to_string(col) + ", " + std::to_string(line) +
+                                    "), in Bitmap of size (" + std::to_string(m_width) + ", " + std::to_string(m_height) + ").");
     }
+    return m_data[line][col];
+}
 
 template<typename T>
 T BitMap<T>::_put(const size_t& col, const size_t& line, T value) {
-    if (col >= this->m_width || line >= this->m_height) {
+    if (col >= m_width || line >= m_height) {
         throw std::invalid_argument("Invalid index (" + std::to_string(col) + ", " + std::to_string(line) +
                                     "), in Bitmap of size (" + std::to_string(m_width) + ", " + std::to_string(m_height) + ").");
     }
@@ -104,8 +112,8 @@ T& BitMap<T>::operator[](const std::pair<size_t, size_t> indexs) {
 
 template<typename T>
 T& BitMap<T>::operator[](const size_t index) {
-    size_t col = index % this->m_width;
-    size_t line = index / this->m_width;
+    size_t col = index % m_width;
+    size_t line = index / m_width;
     return _get(col, line);
 }
 
@@ -116,8 +124,8 @@ const T& BitMap<T>::operator[](const std::pair<size_t, size_t> indexs) const {
 
 template<typename T>
 const T& BitMap<T>::operator[](const size_t index) const {
-    size_t col = index % this->m_width;
-    size_t line = index / this->m_width;
+    size_t col = index % m_width;
+    size_t line = index / m_width;
     return _get(col, line);
 }
 
