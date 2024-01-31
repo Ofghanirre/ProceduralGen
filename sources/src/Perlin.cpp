@@ -167,7 +167,7 @@ std::vector<std::vector<int>> Perlin::perlin_noise(uint width, uint height, int 
     return normalize_noise(_minRange, _maxRange, pixels);
 }
 
-Noise Perlin::genNoise(uint seed, uint width, uint height, uint frequency) const {
+Noise Perlin::genNoise(size_t seed, size_t width, size_t height, size_t frequency) const {
 
     // Creates a BitMap of size width * height filled with the generated values
     BitMap bitmap = BitMap(width, height, perlin_noise(width, height, _minRange, _maxRange, seed));

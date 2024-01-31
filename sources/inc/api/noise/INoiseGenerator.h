@@ -28,5 +28,5 @@ public:
      * @param frequency the frequency used to create the noise
      * @return
      */
-    virtual Noise genNoise(uint seed, uint width, uint height, uint frequency) const = 0;
+    virtual Noise genNoise(size_t seed, size_t width, size_t height, size_t frequency) const = 0;
 };

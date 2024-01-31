@@ -31,7 +31,7 @@ public:
     */
     std::vector<std::vector<int>> perlin_noise(uint width, uint height, int min_range, int max_range, uint seed) const; 
 
-    Noise genNoise(uint seed, uint width, uint height, uint frequency) const override;
+    Noise genNoise(size_t seed, size_t width, size_t height, size_t frequency) const override;
 
 private:
 
