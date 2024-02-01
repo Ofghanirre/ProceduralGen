@@ -5,9 +5,12 @@
  *
  */
 
-#include "../inc/Worley_noise.h"
+#include "../inc/api/Worley_noise.h"
 
-BitMap<int> Worley_noise::generate(uint seed, uint width, uint height, uint gridSize) {
+
+Worley_noise::Worley_noise(){};
+
+Noise Worley_noise::genNoise(size_t seed, size_t width, size_t height, size_t gridSize) {
 
     // Init a 2D Vector with zeros
     std::vector<std::vector<float>> pixels(height, std::vector<float>(width, 0));
@@ -59,17 +62,29 @@ BitMap<int> Worley_noise::generate(uint seed, uint width, uint height, uint grid
             bitmap[x*width+y]= (int)  (pixels[x][y] * scale);
         }
     }
-    return bitmap;
+    Noise noise = Noise(bitmap, seed, width, height, gridSize);
+
+    return noise;
 }
 
-void Worley_noise::test(int width, int height, int seed, int gridSize) {
+void Worley_noise::test(size_t width, size_t height, size_t seed, size_t gridSize) {
     std::cout << "Worley noise test" << std::endl;
-    BitMap img = Worley_noise::generate(seed, width, height, gridSize);
+    Worley_noise worleyNoiseGenerator = Worley_noise();
+    Noise worleyNoise = worleyNoiseGenerator.genNoise(seed, width, height, gridSize);
+    BitMap img = worleyNoise.getBitmap();
 
     for (int x = 0; x < height; x++) {
         for (int y = 0; y < width; y++) {
-            std::cout << img[x*img.getWidth()+y] << "\t";
+            std::cout << img[x * img.getWidth() + y] << "\t";
         }
         std::cout << std::endl;
+    }
+    std::vector<std::unique_ptr<INoiseGenerator>> genVector;
+    genVector.emplace_back(std::make_unique<Worley_noise>());
+
+    for (const auto &noise_gen: genVector) {
+        Noise testNoise = noise_gen->genNoise(seed, width, height, gridSize);
+        std::cout << "Height " << testNoise.getHeight() << std::endl;
+        std::cout << "Width " << testNoise.getWidth() << std::endl;
     }
 }
