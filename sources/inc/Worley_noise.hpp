@@ -1,14 +1,14 @@
 #pragma once
 
-#ifndef PROCEDURALGEN_WORLEY_NOISE_H
-#define PROCEDURALGEN_WORLEY_NOISE_H
+#ifndef PROCEDURALGEN_WORLEY_NOISE_HPP
+#define PROCEDURALGEN_WORLEY_NOISE_HPP
 
 #include <iostream>
 #include <random>
 #include <algorithm>
 #include <memory>
-#include "noise/BitMap.h"
-#include "noise/INoiseGenerator.h"
+#include "api/noise/BitMap.h"
+#include "api/noise/INoiseGenerator.h"
 
 
 class Worley_noise : public INoiseGenerator {
@@ -26,4 +26,4 @@ private :
     int _maxRange = 255;
 };
 
-#endif // PROCEDURALGEN_WORLEY_NOISE_H
+#endif // PROCEDURALGEN_WORLEY_NOISE_HPP

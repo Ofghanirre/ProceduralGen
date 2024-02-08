@@ -6,6 +6,7 @@
 #include <iostream>
 #include <api/Terrain.h>
 #include <Perlin.hpp>
+#include <Worley_noise.hpp>
 
 
 int main(void) {
@@ -17,7 +18,8 @@ int main(void) {
     // Noise result = terrain.getTerrain(256, 256, 42);
     // return 0;
 
-
+    Worley_noise::test(10,8,5,7,0,255);
+    /*
     // ---------------------- Test ---------------------------
     int width = 10;
     int height = 10;
@@ -48,7 +50,7 @@ int main(void) {
 
 
     /*--------------------Testing with INoiseGenerator container--------------------*/
-
+    /*
     std::vector<std::unique_ptr<INoiseGenerator>> gen;
     gen.emplace_back(std::make_unique<Perlin>(0, 255, grid_size));
 
@@ -75,7 +77,7 @@ int main(void) {
         std::cout << "Size " << testBitmap.getSize() <<std::endl;
     }
 
-
+    */
 
     return 1;
 }
