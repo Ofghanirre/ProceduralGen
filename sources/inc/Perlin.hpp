@@ -3,7 +3,6 @@
 #include <random>
 #include <vector>
 #include <memory>
-// #include "glm/vec2.hpp"
 #include "./api/noise/INoiseGenerator.h"
 
 using namespace std;
