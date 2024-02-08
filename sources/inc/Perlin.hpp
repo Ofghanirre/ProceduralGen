@@ -23,7 +23,7 @@ public:
     /**
      * @brief Constructor of the class
     */
-    Perlin(int minRange, int maxRange, uint gridSize);
+    Perlin(int minRange, int maxRange, size_t gridSize);
 
     /**
      * @brief The generator of perlin noise.
@@ -34,7 +34,7 @@ public:
      * @param min_range the minimum value of the range
      * @param max_range the maximum value of the range
     */
-    std::vector<std::vector<int>> perlin_noise(uint width, uint height, int min_range, int max_range, uint seed) const; 
+    std::vector<std::vector<int>> perlin_noise(size_t width, size_t height, int min_range, int max_range, size_t seed) const; 
 
     Noise genNoise(size_t seed, size_t width, size_t height, size_t frequency) const override;
 
@@ -57,5 +57,5 @@ private:
 
     int _minRange;  // The minimum value of the range of number generated.
     int _maxRange;  // The maximum value of the range of number generated.
-    uint _gridSize; // The size of the grid used to generate the Perlin noise.
+    size_t _gridSize; // The size of the grid used to generate the Perlin noise.
 };

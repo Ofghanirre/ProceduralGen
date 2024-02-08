@@ -9,7 +9,7 @@
 
 #include "../inc/Perlin.hpp"
 
-Perlin::Perlin(int minRange, int maxRange, uint gridSize)
+Perlin::Perlin(int minRange, int maxRange, size_t gridSize)
     : _minRange {minRange}
     , _maxRange {maxRange}
     , _gridSize {gridSize}
@@ -124,7 +124,7 @@ std::vector<std::vector<int>> Perlin::normalize_noise(int min, int max, std::vec
  * @param min_range the minimum value of the range
  * @param max_range the maximum value of the range
 */
-std::vector<std::vector<int>> Perlin::perlin_noise(uint width, uint height, int min_range, int max_range, uint seed) const
+std::vector<std::vector<int>> Perlin::perlin_noise(size_t width, size_t height, int min_range, int max_range, size_t seed) const
 {
     std::vector<std::vector<float>> pixels;
 
