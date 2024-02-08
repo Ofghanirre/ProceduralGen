@@ -8,7 +8,9 @@
 #include "../inc/api/Worley_noise.h"
 
 
+Worley_noise::Worley_noise(int minRange, int maxRange) : _minRange(minRange), _maxRange(maxRange){};
 Worley_noise::Worley_noise(){};
+
 
 Noise Worley_noise::genNoise(size_t seed, size_t width, size_t height, size_t gridSize) {
 
@@ -51,7 +53,7 @@ Noise Worley_noise::genNoise(size_t seed, size_t width, size_t height, size_t gr
         }
     }
     // Normalization scale
-    float scale = 255 / max;
+    float new_range = _maxRange - _minRange;
 
     // After calculation in float, create a BitMap Object in int
     BitMap<int> bitmap(width,height, 0);
@@ -59,7 +61,7 @@ Noise Worley_noise::genNoise(size_t seed, size_t width, size_t height, size_t gr
     for (int x = 0; x < height; x++) {
         for (int y = 0; y < width; y++) {
             // Fill the new BitMap object
-            bitmap[x*width+y]= (int)  (pixels[x][y] * scale);
+            bitmap[x*width+y]= (int)  (pixels[x][y] / max * new_range + _minRange );
         }
     }
     Noise noise = Noise(bitmap, seed, width, height, gridSize);
@@ -69,7 +71,7 @@ Noise Worley_noise::genNoise(size_t seed, size_t width, size_t height, size_t gr
 
 void Worley_noise::test(size_t width, size_t height, size_t seed, size_t gridSize) {
     std::cout << "Worley noise test" << std::endl;
-    Worley_noise worleyNoiseGenerator = Worley_noise();
+    Worley_noise worleyNoiseGenerator = Worley_noise(5,10);
     Noise worleyNoise = worleyNoiseGenerator.genNoise(seed, width, height, gridSize);
     BitMap img = worleyNoise.getBitmap();
 
@@ -80,7 +82,7 @@ void Worley_noise::test(size_t width, size_t height, size_t seed, size_t gridSiz
         std::cout << std::endl;
     }
     std::vector<std::unique_ptr<INoiseGenerator>> genVector;
-    genVector.emplace_back(std::make_unique<Worley_noise>());
+    genVector.emplace_back(std::make_unique<Worley_noise>(0,255));
 
     for (const auto &noise_gen: genVector) {
         Noise testNoise = noise_gen->genNoise(seed, width, height, gridSize);
