@@ -11,13 +11,16 @@
 
 int main(void) {
     Terrain terrain("test", 0);
-    Perlin p = Perlin(0, 255, 5);
+    Perlin p = Perlin(0, 255, 30);
     terrain.addTerrainNode(p, NoisePunderationFunction::IDENTITY);
-    // // terrain.addTerrainNode(Noise::PerlinNoise(1.5, 0.5, 0.5, 0.5, 0.5, 1.5), NoisePunderationFunction::SQUARE);
-    // // terrain.addTerrainNode(Noise::WorleyNoise(0.5, 0.5, 0.5, 0.5, 0.5, 0.5), NoisePunderationFunction::INVERSE);
-    // // terrain.addTerrainNode(Noise::ValueNoise(0.5, 0.5, 0.5, 0.5, 0.5, 0.5), NoisePunderationFunction::ABS);
     Noise result = terrain.getTerrain(256, 256, 42);
-    result.toPGM("./noise.pgm");
+    result.toPGM("./perlin.pgm");
+
+    Terrain terrain2("test2", 0);
+    Worley_noise w = Worley_noise();
+    terrain2.addTerrainNode(w, NoisePunderationFunction::IDENTITY);
+    Noise result2 = terrain2.getTerrain(256, 256, 42);
+    result2.toPGM("./worley.pgm");
 
     // ---------------------- Test ---------------------------
     int width = 10;
