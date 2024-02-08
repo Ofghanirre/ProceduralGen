@@ -29,6 +29,13 @@ public:
     size_t getHeight() const;
 
     size_t getFrequency() const;
+
+    /**
+     * @brief Generate a PGM file using the values contained in the noise
+     * @param filename A string describing the name of the PGM file
+    */
+    void toPGM(const char* filename) const;
+
 private:
     const BitMap<int> m_bitmap;
     const size_t m_seed;

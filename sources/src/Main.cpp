@@ -9,14 +9,14 @@
 
 
 int main(void) {
-    // Terrain terrain("test", 0);
-    // // terrain.addTerrainNode(Noise::PerlinNoise(0.5, 0.5, 0.5, 0.5, 0.5, 0.5), NoisePunderationFunction::IDENTITY);
+    Terrain terrain("test", 0);
+    Perlin p = Perlin(0, 255, 5);
+    terrain.addTerrainNode(p, NoisePunderationFunction::IDENTITY);
     // // terrain.addTerrainNode(Noise::PerlinNoise(1.5, 0.5, 0.5, 0.5, 0.5, 1.5), NoisePunderationFunction::SQUARE);
     // // terrain.addTerrainNode(Noise::WorleyNoise(0.5, 0.5, 0.5, 0.5, 0.5, 0.5), NoisePunderationFunction::INVERSE);
     // // terrain.addTerrainNode(Noise::ValueNoise(0.5, 0.5, 0.5, 0.5, 0.5, 0.5), NoisePunderationFunction::ABS);
-    // Noise result = terrain.getTerrain(256, 256, 42);
-    // return 0;
-
+    Noise result = terrain.getTerrain(256, 256, 42);
+    result.toPGM("./noise.pgm");
 
     // ---------------------- Test ---------------------------
     int width = 10;
