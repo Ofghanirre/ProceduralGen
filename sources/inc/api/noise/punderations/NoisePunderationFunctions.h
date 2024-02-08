@@ -38,11 +38,11 @@ public:
     }
 };
 
-class SquarePunderationFunction : public IPunderationFunction {
+class PowerPunderationFunction : public IPunderationFunction {
 private:
     double m_factor;
 public:
-    SquarePunderationFunction(double factor) : m_factor(factor) {}
+    PowerPunderationFunction(double factor) : m_factor(factor) {}
 
     int compute(int value) override {
         return (int) pow(value, m_factor);
