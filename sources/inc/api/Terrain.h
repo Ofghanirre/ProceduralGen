@@ -88,7 +88,7 @@ public:
             for (int h = 0; h < height; ++h) {
                 for (int w = 0; w < width; ++w) {
                     int value = noise.getBitmap().get(w, h);
-                    bitmap[{w, h}] += terrainNode.mappingFunction(value);
+                    bitmap.put(w, h, bitmap.get(w,h) + terrainNode.mappingFunction(value));
                 }
             }
         }
