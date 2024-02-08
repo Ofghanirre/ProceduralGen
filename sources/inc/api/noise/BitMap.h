@@ -43,56 +43,28 @@ public:
 
     friend BitMap<T> operator+(BitMap<T> self, BitMap<T> other);
 
-
-    T& operator[](size_t index);
-
-    T& operator[](std::pair<size_t, size_t> indexs);
-
-    const T& operator[](size_t index) const;
-
-    const T& operator[](std::pair<size_t, size_t> indexs) const;
-
-    T get(const size_t col, const size_t line) {
-        return _get(col, line);
+    const T get(const size_t col, const size_t line) const {
+        if (col >= m_width || line >= m_height) {
+            throw std::invalid_argument("Invalid index (" + std::to_string(col) + ", " + std::to_string(line) +
+                "), in Bitmap of size (" + std::to_string(m_width) + ", " + std::to_string(m_height) + ").");
+        }
+        return m_data[line][col];
     }
 
     T put(const size_t& col, const size_t& line, T value) {
-        return _put(col, line, value);
+        if (col >= m_width || line >= m_height) {
+            throw std::invalid_argument("Invalid index (" + std::to_string(col) + ", " + std::to_string(line) +
+                "), in Bitmap of size (" + std::to_string(m_width) + ", " + std::to_string(m_height) + ").");
+        }
+        T oldValue = _get(col, line);
+        m_data[line][col] = value;
+        return oldValue;
     }
 private:
     const size_t m_height;
     const size_t m_width;
     std::vector<std::vector<T> > m_data;
-
-    T& _get(const size_t col, const size_t line);
-
-    T _put(const size_t& col, const size_t& line, T value);
 };
-
-
-
-
-
-template<typename T>
-T& BitMap<T>::_get(const size_t col, const size_t line) {
-    if (col >= m_width || line >= m_height) {
-        throw std::invalid_argument("Invalid index (" + std::to_string(col) + ", " + std::to_string(line) +
-                                    "), in Bitmap of size (" + std::to_string(m_width) + ", " + std::to_string(m_height) + ").");
-    }
-    return m_data[line][col];
-}
-
-template<typename T>
-T BitMap<T>::_put(const size_t& col, const size_t& line, T value) {
-    if (col >= m_width || line >= m_height) {
-        throw std::invalid_argument("Invalid index (" + std::to_string(col) + ", " + std::to_string(line) +
-                                    "), in Bitmap of size (" + std::to_string(m_width) + ", " + std::to_string(m_height) + ").");
-    }
-
-    T oldValue = _get(col, line);
-    m_data[line][col] = value;
-    return oldValue;
-}
 
 template<typename T>
 bool operator!=(const BitMap<T> &self, const BitMap<T> &other) {
@@ -103,32 +75,6 @@ template<typename T>
 bool operator==(const BitMap<T> &self, const BitMap<T> &other) {
     return self.m_data == other.m_data;
 }
-
-
-template<typename T>
-T& BitMap<T>::operator[](const std::pair<size_t, size_t> indexs) {
-    return _get(indexs.first, indexs.second);
-}
-
-template<typename T>
-T& BitMap<T>::operator[](const size_t index) {
-    size_t col = index % m_width;
-    size_t line = index / m_width;
-    return _get(col, line);
-}
-
-template<typename T>
-const T& BitMap<T>::operator[](const std::pair<size_t, size_t> indexs) const {
-    return _get(indexs.first, indexs.second);
-}
-
-template<typename T>
-const T& BitMap<T>::operator[](const size_t index) const {
-    size_t col = index % m_width;
-    size_t line = index / m_width;
-    return _get(col, line);
-}
-
 
 template<typename T>
 BitMap<T> operator+(const BitMap<T> self, const BitMap<T> other) {
