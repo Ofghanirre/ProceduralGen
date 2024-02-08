@@ -7,6 +7,7 @@
 #include <api/noise/BitMap.h>
 #include <api/Terrain.h>
 #include <Perlin.hpp>
+#include <Worley_noise.hpp>
 
 
 int main(void) {
@@ -18,10 +19,12 @@ int main(void) {
     int grid_size = 5;
     std::cout.precision(2);
     Perlin perlin = Perlin(0, 255, grid_size);
+    Worley_noise worley = Worley_noise(0, 255);
+
     auto identityFunction = IdentityPunderationFunction();
     auto sumFunction = SumPunderationFunction(10);
-    terrain.addTerrainNode(perlin,  identityFunction);
-    terrain.addTerrainNode(perlin, sumFunction);
+    terrain.addTerrainNode(perlin, identityFunction);
+    terrain.addTerrainNode(worley, sumFunction);
 
     Noise result = terrain.getTerrain(width, height, 2);
     
