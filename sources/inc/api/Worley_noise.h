@@ -13,11 +13,14 @@
 
 class Worley_noise : public INoiseGenerator {
 public:
-    Worley_noise(int minRnage, int maxRange);
+    Worley_noise(int minRange, int maxRange);
     Worley_noise();
 
-    Noise genNoise(size_t seed, size_t width, size_t height, size_t frequency);
-    static void test(size_t width, size_t height, size_t seed, size_t gridSize);
+    std::vector<std::vector<int>> worley_noise(size_t seed, size_t width, size_t height, size_t gridSize) const;
+
+    Noise genNoise(size_t seed, size_t width, size_t height, size_t frequency) const;
+
+    static void test(size_t width, size_t height, size_t seed, size_t gridSize, size_t minRange, size_t maxRange);
 private :
     int _minRange = 0;
     int _maxRange = 255;
