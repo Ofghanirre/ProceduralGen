@@ -34,14 +34,17 @@ public:
     unsigned int getSize() {
         return m_height * m_width;
     }
+    template<typename U>
+    friend bool operator==(const BitMap<U> &self, const BitMap<U> &other);
 
-    friend bool operator==(const BitMap &self, const BitMap &other);
+    template<typename U>
+    friend bool operator!=(const BitMap<U> &self, const BitMap<U> &other);
 
-    friend bool operator!=(const BitMap &self, const BitMap &other);
+    template<typename U>
+    friend BitMap<T> operator+(const BitMap<U>& self, T scalar);
 
-    friend BitMap<T> operator+(const BitMap& self, T scalar);
-
-    friend BitMap<T> operator+(BitMap<T> self, BitMap<T> other);
+    template<typename U>
+    friend BitMap<T> operator+(BitMap<U> self, BitMap<U> other);
 
     const T get(const size_t col, const size_t line) const {
         if (col >= m_width || line >= m_height) {
