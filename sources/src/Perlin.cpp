@@ -15,16 +15,16 @@ Perlin::Perlin(int minRange, int maxRange, uint gridSize)
     , _gridSize {gridSize}
     {}
 
-vec2 Perlin::generate_random_vect()
+Vector2 Perlin::generate_random_vect()
 {
-    vec2 v;
+    Vector2 v;
     v.x = sin(rand());
     v.y = cos(rand());
     return v;
 }
 
 // Generate a random gradient vector
-vec2 Perlin::randomGradient(int ix, int iy, int seed)
+Vector2 Perlin::randomGradient(int ix, int iy, int seed)
 {
     // No precomputed gradients mean this works for any number of grid coordinates
     // Init random generators
@@ -51,7 +51,7 @@ vec2 Perlin::randomGradient(int ix, int iy, int seed)
     float random = a * (3.14159265 / ~(~0u >> 1)); // in [0, 2*Pi]
 
     // Create the vector from the angle
-    vec2 v;
+    Vector2 v;
     v.x = sin(random);
     v.y = cos(random);
 
@@ -61,7 +61,7 @@ vec2 Perlin::randomGradient(int ix, int iy, int seed)
 // Compute the dot product of the distance and gradient vectors
 float Perlin::dotGridGradient(int grid_x, int grid_y, float x, float y, int seed)
 {
-    vec2 gradiant = randomGradient(grid_x, grid_y, seed);
+    Vector2 gradiant = randomGradient(grid_x, grid_y, seed);
 
     // Compute distance from grid point to our pixel
     float dx = x - (float)grid_x;

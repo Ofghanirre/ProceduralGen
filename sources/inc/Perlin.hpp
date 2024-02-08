@@ -3,11 +3,16 @@
 #include <random>
 #include <vector>
 #include <memory>
-#include "glm/vec2.hpp"
+// #include "glm/vec2.hpp"
 #include "./api/noise/INoiseGenerator.h"
 
 using namespace std;
-using namespace glm;
+// using namespace glm;
+
+struct Vector2 {
+    float x;
+    float y;
+};
 
 class Perlin : public INoiseGenerator
 {
@@ -35,9 +40,9 @@ public:
 
 private:
 
-    static vec2 generate_random_vect();
+    static Vector2 generate_random_vect();
 
-    static vec2 randomGradient(int ix, int iy, int seed);
+    static Vector2 randomGradient(int ix, int iy, int seed);
 
     static float dotGridGradient(int grid_x, int grid_y, float x, float y, int seed);
 
