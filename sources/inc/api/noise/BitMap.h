@@ -56,7 +56,7 @@ public:
             throw std::invalid_argument("Invalid index (" + std::to_string(col) + ", " + std::to_string(line) +
                 "), in Bitmap of size (" + std::to_string(m_width) + ", " + std::to_string(m_height) + ").");
         }
-        T oldValue = _get(col, line);
+        T oldValue = get(col, line);
         m_data[line][col] = value;
         return oldValue;
     }

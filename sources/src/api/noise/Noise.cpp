@@ -2,8 +2,6 @@
 // Created by Antonin Jean on 18/11/2023.
 //
 
-
-#include "inc/api/noise/Noise.h"
 #include <api/noise/Noise.h>
 
 #include <utility>

@@ -175,66 +175,66 @@ Noise Perlin::genNoise(size_t seed, size_t width, size_t height, size_t frequenc
     return Noise(bitmap, seed, width, height, frequency);
 }
 
-int main()
-{
-    // ---------------------- Test ---------------------------
-    int width = 10;
-    int height = 10;
-    int grid_size = 5;
-    // float **noise = Perlin::perlin_noise(width, height, grid_size);
-    std::cout.precision(2);
+// int main()
+// {
+//     // ---------------------- Test ---------------------------
+//     int width = 10;
+//     int height = 10;
+//     int grid_size = 5;
+//     // float **noise = Perlin::perlin_noise(width, height, grid_size);
+//     std::cout.precision(2);
 
-    Perlin perlin = Perlin(0, 255, grid_size);
-    std::vector<std::vector<int>> pixels = perlin.perlin_noise(width, height, 0, 255, 54);
-    int max = 0;
-    int min = 50;
-    for (int y = 0; y < height; y++)
-    {
-        for (int x = 0; x < width; x++)
-        {
-            std::cout << pixels[y][x] << "\t";
-            if (max < pixels[y][x]){
-                max = pixels[y][x];
-            }
-            if (min > pixels[y][x]){
-                min = pixels[y][x];
-            }
-        }
-        std::cout << std::endl;
-    }
-    std::cout << "Max is : " << max <<std::endl;
-    std::cout << "Min is : " << min <<std::endl;
-
-
-    /*--------------------Testing with INoiseGenerator container--------------------*/
-
-    std::vector<std::unique_ptr<INoiseGenerator>> gen;
-    gen.emplace_back(std::make_unique<Perlin>(0, 255, grid_size));
+//     Perlin perlin = Perlin(0, 255, grid_size);
+//     std::vector<std::vector<int>> pixels = perlin.perlin_noise(width, height, 0, 255, 54);
+//     int max = 0;
+//     int min = 50;
+//     for (int y = 0; y < height; y++)
+//     {
+//         for (int x = 0; x < width; x++)
+//         {
+//             std::cout << pixels[y][x] << "\t";
+//             if (max < pixels[y][x]){
+//                 max = pixels[y][x];
+//             }
+//             if (min > pixels[y][x]){
+//                 min = pixels[y][x];
+//             }
+//         }
+//         std::cout << std::endl;
+//     }
+//     std::cout << "Max is : " << max <<std::endl;
+//     std::cout << "Min is : " << min <<std::endl;
 
 
-    for (const auto& iter_gen: gen) {
-        Noise testNoise = iter_gen->genNoise(54, width, height, 0);
+//     /*--------------------Testing with INoiseGenerator container--------------------*/
 
-        std::cout << "Height " << testNoise.getHeight() <<std::endl;
-        std::cout << "Width " <<testNoise.getWidth() <<std::endl;
+//     std::vector<std::unique_ptr<INoiseGenerator>> gen;
+//     gen.emplace_back(std::make_unique<Perlin>(0, 255, grid_size));
+
+
+//     for (const auto& iter_gen: gen) {
+//         Noise testNoise = iter_gen->genNoise(54, width, height, 0);
+
+//         std::cout << "Height " << testNoise.getHeight() <<std::endl;
+//         std::cout << "Width " <<testNoise.getWidth() <<std::endl;
 
         
-        BitMap<int> testBitmap = testNoise.getBitmap();
+//         BitMap<int> testBitmap = testNoise.getBitmap();
 
-        for (int y = 0; y < height; y++)
-        {
-            for (int x = 0; x < width; x++){
-                std::cout << testBitmap[std::pair(x, y)] << "\t";
-            }
+//         for (int y = 0; y < height; y++)
+//         {
+//             for (int x = 0; x < width; x++){
+//                 std::cout << testBitmap.get(x, y) << "\t";
+//             }
 
-            std::cout << std::endl;
-        }
-        std::cout << "Height " << testBitmap.getHeight() <<std::endl;
-        std::cout << "Width " <<testBitmap.getWidth() <<std::endl;
-        std::cout << "Size " << testBitmap.getSize() <<std::endl;
-    }
+//             std::cout << std::endl;
+//         }
+//         std::cout << "Height " << testBitmap.getHeight() <<std::endl;
+//         std::cout << "Width " <<testBitmap.getWidth() <<std::endl;
+//         std::cout << "Size " << testBitmap.getSize() <<std::endl;
+//     }
 
 
 
-    return 1;
-}
+//     return 1;
+// }
