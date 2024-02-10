@@ -12,6 +12,17 @@
 
 int main(void) {
     Terrain terrain("test", 0);
+    Perlin p = Perlin(0, 255, 30);
+    terrain.addTerrainNode(p, NoisePunderationFunction::IDENTITY);
+    Noise result = terrain.getTerrain(256, 256, 42);
+    result.toPGM("./perlin.pgm");
+
+    Terrain terrain2("test2", 0);
+    Worley_noise w = Worley_noise();
+    terrain2.addTerrainNode(w, NoisePunderationFunction::IDENTITY);
+    Noise result2 = terrain2.getTerrain(256, 256, 42);
+    result2.toPGM("./worley.pgm");
+
 
     // ---------------------- Test ---------------------------
     int width = 10;
