@@ -8,6 +8,11 @@
 #include <vector>
 #include "BitMap.h"
 
+enum ENoiseColorFunction {
+    HEATMAP,
+    TERRAIN
+};
+
 class Noise {
 public:
     /**
@@ -35,6 +40,9 @@ public:
      * @param filename A string describing the name of the PGM file
     */
     void toPGM(const char* filename) const;
+    void toPPM(const char* filename, void (*colorFunction)(int, int, int&, int&, int&)) const;
+    void toPPM(const char* filename, ENoiseColorFunction function) const;
+
 
 private:
     const BitMap<int> m_bitmap;
