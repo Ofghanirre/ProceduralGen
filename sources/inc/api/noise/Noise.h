@@ -39,9 +39,9 @@ public:
      * @brief Generate a PGM file using the values contained in the noise
      * @param filename A string describing the name of the PGM file
     */
-    void toPGM(const char* filename) const;
-    void toPPM(const char* filename, void (*colorFunction)(int, int, int&, int&, int&)) const;
-    void toPPM(const char* filename, ENoiseColorFunction function) const;
+    void toPGM(const char* filename, int max = 0) const;
+    void toPPM(const char* filename, void (*colorFunction)(int, int, int&, int&, int&), int max = 0) const;
+    void toPPM(const char* filename, ENoiseColorFunction function, int max = 0 ) const;
 
 
 private:

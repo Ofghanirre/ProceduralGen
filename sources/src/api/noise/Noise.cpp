@@ -34,9 +34,8 @@ size_t Noise::getFrequency() const {
  * @brief Generate a PGM file using the values contained in the noise
  * @param filename A string describing the name of the PGM file
 */
-void Noise::toPGM(const char* filename) const {
+void Noise::toPGM(const char* filename, int max) const {
     // Looking for the maximum value in the noise
-    int max = 0;
     for (size_t x = 0; x < m_width; x++){
         for (size_t y = 0; y < m_height; y++){
             if (max < m_bitmap.get(x, y)){
@@ -195,9 +194,8 @@ void _saveterrainTexture(int value, int max, int& red, int& green, int& blue) {
     }
 }
 
-void Noise::toPPM(const char* filename, void (*colorFunction)(int, int, int&, int&, int&)) const {
+void Noise::toPPM(const char* filename, void (*colorFunction)(int, int, int&, int&, int&), int max ) const {
  // Looking for the maximum value in the noise
-    int max = 0;
     for (size_t x = 0; x < m_width; x++){
         for (size_t y = 0; y < m_height; y++){
             if (max < m_bitmap.get(x, y)){
@@ -225,9 +223,9 @@ void Noise::toPPM(const char* filename, void (*colorFunction)(int, int, int&, in
     fclose(image);
 }
 
-void Noise::toPPM(const char* filename, ENoiseColorFunction function) const {
+void Noise::toPPM(const char* filename, ENoiseColorFunction function, int max) const {
     switch (function) {
-        case HEATMAP: toPPM(filename, &_heatMap); break;
-        case TERRAIN: toPPM(filename, &_terrainTexture); break;
+        case HEATMAP: toPPM(filename, &_heatMap, max); break;
+        case TERRAIN: toPPM(filename, &_terrainTexture, max); break;
     }
 }

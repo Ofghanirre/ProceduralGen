@@ -109,3 +109,33 @@ public:
         return abs(value);
     }
 };
+
+class ThresholdPunderationFunction : public IPunderationFunction {
+private:
+    int m_threshold;
+public:
+    ThresholdPunderationFunction(int threshold, std::shared_ptr<IPunderationFunction> next) : m_threshold(threshold), IPunderationFunction(next) {}
+    ThresholdPunderationFunction(int threshold) : m_threshold(threshold), IPunderationFunction() {}
+
+    int compute(int value) override {
+        if (m_hasNext) {
+            return m_next->compute(value > m_threshold ? 1 : 0);
+        }
+        return value > m_threshold ? 1 : 0;
+    }
+};
+
+class InversePunderationFunction : public IPunderationFunction {
+private:
+    int m_revertValue;
+public:
+    InversePunderationFunction(int revertValue, std::shared_ptr<IPunderationFunction> next) : m_revertValue(revertValue),IPunderationFunction(next) {}
+    InversePunderationFunction(int revertValue) : m_revertValue(revertValue), IPunderationFunction() {}
+
+    int compute(int value) override {
+        if (m_hasNext) {
+            return m_next->compute(std::max(0, m_revertValue - value));
+        }
+        return std::max(0, m_revertValue - value);
+    }
+};
