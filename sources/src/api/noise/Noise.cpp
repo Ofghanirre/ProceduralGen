@@ -126,7 +126,7 @@ void _groupColor(int value, int max, int amountOfGroup, int minR, int minG, int 
     int groupIndex = value / groupSize;
 
     // Interpoler la couleur en fonction du groupe
-    _interpolateColor(groupIndex, amountOfGroup - 1, 0.8, minR, minG, minB, maxR, maxG, maxB, R, G, B);
+    _interpolateColor(groupIndex, amountOfGroup - 1, 0.5, minR, minG, minB, maxR, maxG, maxB, R, G, B);
 }
 
 void oceanColor(int value, int max, int& red, int& green, int& blue) {
@@ -138,11 +138,11 @@ void beachColor(int value, int max, int& red, int& green, int& blue) {
 }
 
 void plainColor(int value, int max, int& red, int& green, int& blue) {
-    _groupColor(value, max, 22, 141, 199, 97, 48, 86, 30, red, green, blue);
+    _groupColor(value, max, 16, 141, 199, 97, 48, 86, 30, red, green, blue);
 }
 
 void mountainColor(int value, int max, int& red, int& green, int& blue) {
-    _interpolateColor(value, max, 0.6, 16, 35, 16, 159, 198, 198, red, green, blue);
+    _interpolateColor(value, max, 0.6, 35, 35, 35, 159, 198, 198, red, green, blue);
 }
 
 void snowColor(int value, int max, int& red, int& green, int& blue) {
