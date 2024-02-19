@@ -1,0 +1,35 @@
+\doxysection{Worley\+\_\+noise.\+hpp}
+\hypertarget{_worley__noise_8hpp_source}{}\label{_worley__noise_8hpp_source}\index{sources/inc/Worley\_noise.hpp@{sources/inc/Worley\_noise.hpp}}
+\mbox{\hyperlink{_worley__noise_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#ifndef\ PROCEDURALGEN\_WORLEY\_NOISE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00004}\mbox{\hyperlink{_worley__noise_8hpp_a752e373e68cd3359b1470dbb6c95444a}{00004}}\ \textcolor{preprocessor}{\#define\ PROCEDURALGEN\_WORLEY\_NOISE\_HPP}}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bit_map_8h}{api/noise/BitMap.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_noise_generator_8h}{api/noise/INoiseGenerator.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00014}\mbox{\hyperlink{class_worley__noise}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_noise_generator}{INoiseGenerator}}\ \{}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00015}00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_worley__noise_a3891d4588b8e0a8912fdf6021efd3a3e}{Worley\_noise}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{minRange}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{maxRange}});}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_worley__noise_a3891d4588b8e0a8912fdf6021efd3a3e}{Worley\_noise}}();}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00019}00019\ \ \ \ \ std::vector<std::vector<int>>\ \mbox{\hyperlink{class_worley__noise_a2cfc06396bc2cdfe36f7eadf550afa5e}{worley\_noise}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{seed}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{width}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{height}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{gridSize}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_worley__noise_ae993962ff97536a2cb4be7f3f6775936}{genNoise}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{seed}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{width}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{height}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{frequency}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_worley__noise_a9358166692a7c6d9b350833f02063c3b}{test}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{width}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{height}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{seed}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{gridSize}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{minRange}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{maxRange}});}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00024}00024\ \mbox{\hyperlink{class_bit_map}{private}}\ :}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{int}\ \_minRange\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \_maxRange\ =\ 255;}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00027}00027\ \};}
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_worley__noise_8hpp_source_l00029}00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PROCEDURALGEN\_WORLEY\_NOISE\_HPP}}
+
+\end{DoxyCode}

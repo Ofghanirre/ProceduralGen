@@ -1,0 +1,102 @@
+\doxysection{Terrain.\+h}
+\hypertarget{_terrain_8h_source}{}\label{_terrain_8h_source}\index{sources/inc/api/Terrain.h@{sources/inc/api/Terrain.h}}
+\mbox{\hyperlink{_terrain_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Antonin\ Jean\ on\ 28/01/2024.}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00005}00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_noise_generator_8h}{noise/INoiseGenerator.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_noise_8h}{noise/Noise.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_noise_punderation_functions_8h}{noise/punderations/NoisePunderationFunctions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00016}\mbox{\hyperlink{struct_terrain_node}{00016}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_terrain_node}{TerrainNode}}\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00017}\mbox{\hyperlink{struct_terrain_node_a5dfc0ee61d02394566608821a1a6ddf2}{00017}}\ \ \ \ \ \mbox{\hyperlink{struct_terrain_node_a5dfc0ee61d02394566608821a1a6ddf2}{TerrainNode}}(\mbox{\hyperlink{class_i_noise_generator}{INoiseGenerator}}\&\ \mbox{\hyperlink{class_bit_map}{\_noiseGenerator}},\ \mbox{\hyperlink{class_i_punderation_function}{IPunderationFunction}}\&\ \mbox{\hyperlink{class_bit_map}{\_mappingFunction}},\ \textcolor{keywordtype}{bool}\ (*\mbox{\hyperlink{class_bit_map}{\_predicate}})(\textcolor{keywordtype}{int})):\ \mbox{\hyperlink{struct_terrain_node_a3acf4804faedab8efa3fbb6c4710aead}{noiseGenerator}}(\mbox{\hyperlink{class_bit_map}{\_noiseGenerator}}),\ \mbox{\hyperlink{struct_terrain_node_a8bb72a13a074e0ee97e36d46434e7d67}{mappingFunction}}(\mbox{\hyperlink{class_bit_map}{\_mappingFunction}}),\ \mbox{\hyperlink{struct_terrain_node_a4c9f265edaf9687300f4dd097aef29dd}{predicate}}(\mbox{\hyperlink{class_bit_map}{\_predicate}})\ \{\};}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00019}\mbox{\hyperlink{struct_terrain_node_a3acf4804faedab8efa3fbb6c4710aead}{00019}}\ \ \ \ \ \mbox{\hyperlink{class_i_noise_generator}{INoiseGenerator}}\&\ \mbox{\hyperlink{struct_terrain_node_a3acf4804faedab8efa3fbb6c4710aead}{noiseGenerator}};}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00020}\mbox{\hyperlink{struct_terrain_node_a8bb72a13a074e0ee97e36d46434e7d67}{00020}}\ \ \ \ \ \mbox{\hyperlink{class_i_punderation_function}{IPunderationFunction}}\&\ \mbox{\hyperlink{struct_terrain_node_a8bb72a13a074e0ee97e36d46434e7d67}{mappingFunction}};}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00021}\mbox{\hyperlink{struct_terrain_node_a4c9f265edaf9687300f4dd097aef29dd}{00021}}\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{bool}}\ (*\mbox{\hyperlink{struct_terrain_node_a4c9f265edaf9687300f4dd097aef29dd}{predicate}})(\mbox{\hyperlink{class_bit_map}{int}});}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00022}00022\ \};}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00024}\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4f}{00024}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4f}{NoisePunderationFunction}}\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00025}\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{00025}}\ \ \ \ \ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{IDENTITY}},}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00026}\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fab1fefaf679ae9b0e48fea10cb3615c74}{00026}}\ \ \ \ \ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fab1fefaf679ae9b0e48fea10cb3615c74}{INVERSE}},}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00027}\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fa4233fbf0cafb86abcee94b38d769fc59}{00027}}\ \ \ \ \ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fa4233fbf0cafb86abcee94b38d769fc59}{SQUARE}},}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00028}\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fad9ff273a12ff18b3e1b900080aadd1ea}{00028}}\ \ \ \ \ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fad9ff273a12ff18b3e1b900080aadd1ea}{CUBE}},}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00029}\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fa2ac32438be701fe1659f3e231ee9deef}{00029}}\ \ \ \ \ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fa2ac32438be701fe1659f3e231ee9deef}{SQUARE\_ROOT}},}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00030}\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fa62f7ef0a404defa34640e94940792147}{00030}}\ \ \ \ \ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fa62f7ef0a404defa34640e94940792147}{ABS}},}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00031}00031\ \};}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00033}00033\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ NoisePunderation\_Identity\ =\ \mbox{\hyperlink{class_identity_punderation_function}{IdentityPunderationFunction}}();}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00034}00034\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ NoisePunderation\_Inverse\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<int>}}(-\/1);}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00035}00035\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ NoisePunderation\_Square\ =\ \mbox{\hyperlink{class_power_punderation_function}{PowerPunderationFunction}}(2);}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00036}00036\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ NoisePunderation\_Cube\ =\ \mbox{\hyperlink{class_power_punderation_function}{PowerPunderationFunction}}(3);}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00037}00037\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ NoisePunderation\_SquareRoot\ =\ \mbox{\hyperlink{class_power_punderation_function}{PowerPunderationFunction}}(0.5);}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00038}00038\ \textcolor{keyword}{static}\ \textcolor{keyword}{auto}\ NoisePunderation\_Abs\ =\ \mbox{\hyperlink{class_abs_punderation_function}{AbsPunderationFunction}}();}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00044}\mbox{\hyperlink{class_terrain}{00044}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_terrain}{Terrain}}\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00045}00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00046}\mbox{\hyperlink{class_terrain_a575cff24e5aeb59c6d092528381a3638}{00046}}\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_terrain_a575cff24e5aeb59c6d092528381a3638}{Terrain}}(std::string\ \mbox{\hyperlink{class_bit_map}{name}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{seed}}):\ m\_name(\mbox{\hyperlink{class_bit_map}{name}}),\ m\_seed(\mbox{\hyperlink{class_bit_map}{seed}})\ \{\};}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00053}\mbox{\hyperlink{class_terrain_a8d6bba9308a429affec377c67deedc58}{00053}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_a8d6bba9308a429affec377c67deedc58}{addTerrainNode}}(\mbox{\hyperlink{class_i_noise_generator}{INoiseGenerator}}\&\ noiseGenerator,\ \mbox{\hyperlink{class_i_punderation_function}{IPunderationFunction}}\&\ mappingFunction,\ \textcolor{keywordtype}{bool}\ (*predicate)(\textcolor{keywordtype}{int})\ =\ [](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\})\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ m\_terrainNodes.push\_back(\{noiseGenerator,\ mappingFunction,\ predicate\});}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00057}\mbox{\hyperlink{class_terrain_a1105053058601ff115d1e4195d0766e4}{00057}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_a1105053058601ff115d1e4195d0766e4}{addTerrainNode}}(\mbox{\hyperlink{class_i_noise_generator}{INoiseGenerator}}\&\ noiseGenerator,\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4f}{NoisePunderationFunction}}\ \mbox{\hyperlink{class_bit_map}{eFunction}}\ =\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{IDENTITY}},\ \textcolor{keywordtype}{bool}\ (*predicate)(\textcolor{keywordtype}{int})\ =\ [](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\})\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(\mbox{\hyperlink{class_bit_map}{eFunction}})\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{IDENTITY}}):\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_terrain_a8d6bba9308a429affec377c67deedc58}{addTerrainNode}}(noiseGenerator,\ NoisePunderation\_Identity,\ predicate);}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fab1fefaf679ae9b0e48fea10cb3615c74}{INVERSE}}):\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_terrain_a8d6bba9308a429affec377c67deedc58}{addTerrainNode}}(noiseGenerator,\ NoisePunderation\_Inverse,\ predicate);}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fa4233fbf0cafb86abcee94b38d769fc59}{SQUARE}}):\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_terrain_a8d6bba9308a429affec377c67deedc58}{addTerrainNode}}(noiseGenerator,\ NoisePunderation\_Square,\ predicate);}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fad9ff273a12ff18b3e1b900080aadd1ea}{CUBE}}):\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_terrain_a8d6bba9308a429affec377c67deedc58}{addTerrainNode}}(noiseGenerator,\ NoisePunderation\_Cube,\ predicate);}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fa2ac32438be701fe1659f3e231ee9deef}{SQUARE\_ROOT}}):\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_terrain_a8d6bba9308a429affec377c67deedc58}{addTerrainNode}}(noiseGenerator,\ NoisePunderation\_SquareRoot,\ predicate);}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fa62f7ef0a404defa34640e94940792147}{ABS}}):\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_terrain_a8d6bba9308a429affec377c67deedc58}{addTerrainNode}}(noiseGenerator,\ NoisePunderation\_Abs,\ predicate);}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Unknown\ NoisePunderationFunction"{}});}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00082}\mbox{\hyperlink{class_terrain_a847e4f903ec5ee325c0ff4fde12860c6}{00082}}\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_terrain_a847e4f903ec5ee325c0ff4fde12860c6}{getName}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_name;}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00086}\mbox{\hyperlink{class_terrain_afabde0ced51880ac96beec19a4df39c5}{00086}}\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<TerrainNode>\ \&\mbox{\hyperlink{class_terrain_afabde0ced51880ac96beec19a4df39c5}{getTerrainNodes}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_terrainNodes;}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00097}\mbox{\hyperlink{class_terrain_a003c8166e2422bd8be4ad988376acc99}{00097}}\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_terrain_a003c8166e2422bd8be4ad988376acc99}{getTerrain}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{width}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{height}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{frequency}})\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{BitMap<int>}}\ \mbox{\hyperlink{class_bit_map}{bitmap}}(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 0);}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_terrain_node}{TerrainNode}}\ \&\mbox{\hyperlink{class_bit_map}{terrainNode}}\ :\ m\_terrainNodes)\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{noise}}\ =\ \mbox{\hyperlink{class_bit_map}{terrainNode}}.noiseGenerator.genNoise(m\_seed,\ \mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{frequency}});}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{h}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{h}}\ <\ \mbox{\hyperlink{class_bit_map}{height}};\ ++\mbox{\hyperlink{class_bit_map}{h}})\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{w}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{w}}\ <\ \mbox{\hyperlink{class_bit_map}{width}};\ ++\mbox{\hyperlink{class_bit_map}{w}})\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{v}}\ =\ \mbox{\hyperlink{class_bit_map}{bitmap}}.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(\mbox{\hyperlink{class_bit_map}{w}},\mbox{\hyperlink{class_bit_map}{h}});}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{terrainNode}}.predicate(\mbox{\hyperlink{class_bit_map}{v}})\ ==\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}}\ =\ \mbox{\hyperlink{class_bit_map}{noise}}.getBitmap().\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(\mbox{\hyperlink{class_bit_map}{w}},\ \mbox{\hyperlink{class_bit_map}{h}});}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{bitmap}}.\mbox{\hyperlink{class_bit_map_a7e25e51b212b4fd377df799df9369869}{put}}(\mbox{\hyperlink{class_bit_map}{w}},\ \mbox{\hyperlink{class_bit_map}{h}},\ \mbox{\hyperlink{class_bit_map}{bitmap}}.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(\mbox{\hyperlink{class_bit_map}{w}},\mbox{\hyperlink{class_bit_map}{h}})\ +\ \mbox{\hyperlink{class_bit_map}{terrainNode}}.mappingFunction.compute(\mbox{\hyperlink{class_bit_map}{value}}));}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_noise}{Noise}}(\mbox{\hyperlink{class_bit_map}{bitmap}},\ m\_seed,\ \mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{frequency}});}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00113}00113\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00115}00115\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00116}00116\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m\_seed;}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00117}00117\ \ \ \ \ std::string\ m\_name;}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00118}00118\ \ \ \ \ std::vector<TerrainNode>\ m\_terrainNodes;}
+\DoxyCodeLine{\Hypertarget{_terrain_8h_source_l00119}00119\ \};}
+
+\end{DoxyCode}

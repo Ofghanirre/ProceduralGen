@@ -1,0 +1,172 @@
+\doxysection{IPunderation\+Function Class Reference}
+\hypertarget{class_i_punderation_function}{}\label{class_i_punderation_function}\index{IPunderationFunction@{IPunderationFunction}}
+
+
+{\ttfamily \#include $<$Noise\+Punderation\+Functions.\+h$>$}
+
+Inheritance diagram for IPunderation\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{d4/db2/class_i_punderation_function}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_map}{virtual}} \mbox{\hyperlink{class_i_punderation_function_a5ed00bd32398157e1c22fa1e25db35d3}{\texorpdfstring{$\sim$}{\string~}\+IPunderation\+Function}} ()=\mbox{\hyperlink{class_bit_map}{default}}
+\item 
+\mbox{\hyperlink{class_i_punderation_function_a3281cdece75e28d85a76458101a08a0f}{IPunderation\+Function}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}} $>$ \mbox{\hyperlink{class_bit_map}{next}})
+\item 
+\mbox{\hyperlink{class_i_punderation_function_a9c5a8b21d7c937932125ec660c8b4822}{IPunderation\+Function}} ()
+\item 
+\mbox{\hyperlink{class_bit_map}{virtual}} \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_i_punderation_function_ad2fb7c82ed1122b6a39350198a74d177}{compute}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}})=0
+\item 
+\mbox{\hyperlink{class_bit_map}{bool}} \mbox{\hyperlink{class_i_punderation_function_a14bf9696157e7dcd9a53912bd935b255}{has\+Next}} () \mbox{\hyperlink{class_bit_map}{const}}
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{class_i_punderation_function_a14bd5d47a0554814c04978202651c449}{set\+Next}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}} $>$ \mbox{\hyperlink{class_bit_map}{next}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}} $>$ \mbox{\hyperlink{class_i_punderation_function_abbf21a17124faeec2abe531ec667a139}{m\+\_\+next}}
+\item 
+\mbox{\hyperlink{class_bit_map}{bool}} \mbox{\hyperlink{class_i_punderation_function_af0f26a1b4cb54ee8e2fb572414f809bc}{m\+\_\+has\+Next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00005}{5}} of file \mbox{\hyperlink{_noise_punderation_functions_8h_source}{Noise\+Punderation\+Functions.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_punderation_function_a5ed00bd32398157e1c22fa1e25db35d3}\label{class_i_punderation_function_a5ed00bd32398157e1c22fa1e25db35d3} 
+\index{IPunderationFunction@{IPunderationFunction}!````~IPunderationFunction@{\texorpdfstring{$\sim$}{\string~}IPunderationFunction}}
+\index{````~IPunderationFunction@{\texorpdfstring{$\sim$}{\string~}IPunderationFunction}!IPunderationFunction@{IPunderationFunction}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IPunderationFunction()}{\string~IPunderationFunction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{virtual}} IPunderation\+Function\+::\texorpdfstring{$\sim$}{\string~}\+IPunderation\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\Hypertarget{class_i_punderation_function_a3281cdece75e28d85a76458101a08a0f}\label{class_i_punderation_function_a3281cdece75e28d85a76458101a08a0f} 
+\index{IPunderationFunction@{IPunderationFunction}!IPunderationFunction@{IPunderationFunction}}
+\index{IPunderationFunction@{IPunderationFunction}!IPunderationFunction@{IPunderationFunction}}
+\doxysubsubsection{\texorpdfstring{IPunderationFunction()}{IPunderationFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily IPunderation\+Function\+::\+IPunderation\+Function (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}} $>$}]{next }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00008}{8}} of file \mbox{\hyperlink{_noise_punderation_functions_8h_source}{Noise\+Punderation\+Functions.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ :\ \mbox{\hyperlink{class_i_punderation_function_abbf21a17124faeec2abe531ec667a139}{m\_next}}(\mbox{\hyperlink{class_bit_map}{next}}),\ \mbox{\hyperlink{class_i_punderation_function_af0f26a1b4cb54ee8e2fb572414f809bc}{m\_hasNext}}(\textcolor{keyword}{true})\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{class_i_punderation_function_a9c5a8b21d7c937932125ec660c8b4822}\label{class_i_punderation_function_a9c5a8b21d7c937932125ec660c8b4822} 
+\index{IPunderationFunction@{IPunderationFunction}!IPunderationFunction@{IPunderationFunction}}
+\index{IPunderationFunction@{IPunderationFunction}!IPunderationFunction@{IPunderationFunction}}
+\doxysubsubsection{\texorpdfstring{IPunderationFunction()}{IPunderationFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily IPunderation\+Function\+::\+IPunderation\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00009}{9}} of file \mbox{\hyperlink{_noise_punderation_functions_8h_source}{Noise\+Punderation\+Functions.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ :\ \mbox{\hyperlink{class_i_punderation_function_abbf21a17124faeec2abe531ec667a139}{m\_next}}(\textcolor{keyword}{nullptr}),\ \mbox{\hyperlink{class_i_punderation_function_af0f26a1b4cb54ee8e2fb572414f809bc}{m\_hasNext}}(\textcolor{keyword}{false})\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_punderation_function_ad2fb7c82ed1122b6a39350198a74d177}\label{class_i_punderation_function_ad2fb7c82ed1122b6a39350198a74d177} 
+\index{IPunderationFunction@{IPunderationFunction}!compute@{compute}}
+\index{compute@{compute}!IPunderationFunction@{IPunderationFunction}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{virtual}} \mbox{\hyperlink{class_bit_map}{int}} IPunderation\+Function\+::compute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_filter_punderation_function_a9df7845ed51727890a3364103054c6d9}{Filter\+Punderation\+Function}}, \mbox{\hyperlink{class_product_punderation_function_a8d136822a3bf73a463875b254d856c65}{Product\+Punderation\+Function$<$ T $>$}}, \mbox{\hyperlink{class_sum_punderation_function_aa405e1dc54e728da00e224709437bac1}{Sum\+Punderation\+Function}}, \mbox{\hyperlink{class_identity_punderation_function_a0fdc1b91e7d519a25408fd6b2b11dcd6}{Identity\+Punderation\+Function}}, \mbox{\hyperlink{class_power_punderation_function_adb0f50d69080a6ab4776c44b44b029e2}{Power\+Punderation\+Function}}, \mbox{\hyperlink{class_abs_punderation_function_add9c282ee9d0a6b3715b43cffdcdc2ed}{Abs\+Punderation\+Function}}, \mbox{\hyperlink{class_threshold_punderation_function_ad430adcbc0eb84c4b5d97a5e03fd6290}{Threshold\+Punderation\+Function}}, and \mbox{\hyperlink{class_inverse_punderation_function_a3c28a659dacfc80a4964e373e101f469}{Inverse\+Punderation\+Function}}.
+
+\Hypertarget{class_i_punderation_function_a14bf9696157e7dcd9a53912bd935b255}\label{class_i_punderation_function_a14bf9696157e7dcd9a53912bd935b255} 
+\index{IPunderationFunction@{IPunderationFunction}!hasNext@{hasNext}}
+\index{hasNext@{hasNext}!IPunderationFunction@{IPunderationFunction}}
+\doxysubsubsection{\texorpdfstring{hasNext()}{hasNext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{bool}} IPunderation\+Function\+::has\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00012}{12}} of file \mbox{\hyperlink{_noise_punderation_functions_8h_source}{Noise\+Punderation\+Functions.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_i_punderation_function_af0f26a1b4cb54ee8e2fb572414f809bc}{m\_hasNext}};}
+\DoxyCodeLine{00014\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00023}{m\+\_\+has\+Next}}.
+
+\Hypertarget{class_i_punderation_function_a14bd5d47a0554814c04978202651c449}\label{class_i_punderation_function_a14bd5d47a0554814c04978202651c449} 
+\index{IPunderationFunction@{IPunderationFunction}!setNext@{setNext}}
+\index{setNext@{setNext}!IPunderationFunction@{IPunderationFunction}}
+\doxysubsubsection{\texorpdfstring{setNext()}{setNext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} IPunderation\+Function\+::set\+Next (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}} $>$}]{next }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00016}{16}} of file \mbox{\hyperlink{_noise_punderation_functions_8h_source}{Noise\+Punderation\+Functions.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_punderation_function_abbf21a17124faeec2abe531ec667a139}{m\_next}}\ =\ \mbox{\hyperlink{class_bit_map}{next}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_punderation_function_af0f26a1b4cb54ee8e2fb572414f809bc}{m\_hasNext}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00023}{m\+\_\+has\+Next}}, and \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00022}{m\+\_\+next}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_i_punderation_function_af0f26a1b4cb54ee8e2fb572414f809bc}\label{class_i_punderation_function_af0f26a1b4cb54ee8e2fb572414f809bc} 
+\index{IPunderationFunction@{IPunderationFunction}!m\_hasNext@{m\_hasNext}}
+\index{m\_hasNext@{m\_hasNext}!IPunderationFunction@{IPunderationFunction}}
+\doxysubsubsection{\texorpdfstring{m\_hasNext}{m\_hasNext}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{bool}} IPunderation\+Function\+::m\+\_\+has\+Next\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00023}{23}} of file \mbox{\hyperlink{_noise_punderation_functions_8h_source}{Noise\+Punderation\+Functions.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00031}{Filter\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00049}{Product\+Punderation\+Function$<$ T $>$\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00064}{Sum\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00077}{Identity\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00092}{Power\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00105}{Abs\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00120}{Threshold\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00135}{Inverse\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00012}{has\+Next()}}, and \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00016}{set\+Next()}}.
+
+\Hypertarget{class_i_punderation_function_abbf21a17124faeec2abe531ec667a139}\label{class_i_punderation_function_abbf21a17124faeec2abe531ec667a139} 
+\index{IPunderationFunction@{IPunderationFunction}!m\_next@{m\_next}}
+\index{m\_next@{m\_next}!IPunderationFunction@{IPunderationFunction}}
+\doxysubsubsection{\texorpdfstring{m\_next}{m\_next}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}}$>$ IPunderation\+Function\+::m\+\_\+next\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00022}{22}} of file \mbox{\hyperlink{_noise_punderation_functions_8h_source}{Noise\+Punderation\+Functions.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00031}{Filter\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00049}{Product\+Punderation\+Function$<$ T $>$\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00064}{Sum\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00077}{Identity\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00092}{Power\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00105}{Abs\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00120}{Threshold\+Punderation\+Function\+::compute()}}, \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00135}{Inverse\+Punderation\+Function\+::compute()}}, and \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00016}{set\+Next()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sources/inc/api/noise/punderations/\mbox{\hyperlink{_noise_punderation_functions_8h}{Noise\+Punderation\+Functions.\+h}}\end{DoxyCompactItemize}

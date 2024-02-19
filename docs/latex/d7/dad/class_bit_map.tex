@@ -1,0 +1,249 @@
+\doxysection{Bit\+Map\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_bit_map}{}\label{class_bit_map}\index{BitMap$<$ T $>$@{BitMap$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Bit\+Map.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_map_a9bd57103fb2333ede36546fc437b6239}{Bit\+Map}} (\mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{width}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{height}}, \mbox{\hyperlink{class_bit_map}{T}} \mbox{\hyperlink{class_bit_map}{default\+Value}})
+\item 
+\mbox{\hyperlink{class_bit_map_a59e304848637566b41b5965f0042f4c5}{Bit\+Map}} (\mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{width}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{height}}, std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$ $>$ \mbox{\hyperlink{class_bit_map}{values}})
+\item 
+\mbox{\hyperlink{class_bit_map}{unsigned}} \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map_a7542560e6862a34f6a4d2753f7d44a83}{get\+Height}} ()
+\item 
+\mbox{\hyperlink{class_bit_map}{unsigned}} \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map_acc975554e4c0b9cc37e27b6b4c3ab072}{get\+Width}} ()
+\item 
+\mbox{\hyperlink{class_bit_map}{unsigned}} \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map_a227f9cad963d83340d95a6f12ec69c06}{get\+Size}} ()
+\item 
+\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{T}} \mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}} (\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{col}}, \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{line}}) \mbox{\hyperlink{class_bit_map}{const}}
+\item 
+\mbox{\hyperlink{class_bit_map}{T}} \mbox{\hyperlink{class_bit_map_a7e25e51b212b4fd377df799df9369869}{put}} (\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \&\mbox{\hyperlink{class_bit_map}{col}}, \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \&\mbox{\hyperlink{class_bit_map}{line}}, \mbox{\hyperlink{class_bit_map}{T}} \mbox{\hyperlink{class_bit_map}{value}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{U}} $>$ }\\\mbox{\hyperlink{class_bit_map}{bool}} \mbox{\hyperlink{class_bit_map_a0b5afe05f32b63998df2622f0a88e394}{operator==}} (\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$ \&\mbox{\hyperlink{class_bit_map}{self}}, \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$ \&\mbox{\hyperlink{class_bit_map}{other}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{U}} $>$ }\\\mbox{\hyperlink{class_bit_map}{bool}} \mbox{\hyperlink{class_bit_map_a683bf72961856109404f944c26828b50}{operator!=}} (\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$ \&\mbox{\hyperlink{class_bit_map}{self}}, \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$ \&\mbox{\hyperlink{class_bit_map}{other}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{U}} $>$ }\\\mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$ \mbox{\hyperlink{class_bit_map_ac9f41e8835ed3810f2463f0855ffa656}{operator+}} (\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$ \&\mbox{\hyperlink{class_bit_map}{self}}, \mbox{\hyperlink{class_bit_map}{T}} \mbox{\hyperlink{class_bit_map}{scalar}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{U}} $>$ }\\\mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$ \mbox{\hyperlink{class_bit_map_ad52069823f66f42aa8a4f320f3880414}{operator+}} (\mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$ \mbox{\hyperlink{class_bit_map}{self}}, \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$ \mbox{\hyperlink{class_bit_map}{other}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Bit\+Map$<$ T $>$}
+
+
+Definition at line \mbox{\hyperlink{_bit_map_8h_source_l00013}{13}} of file \mbox{\hyperlink{_bit_map_8h_source}{Bit\+Map.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_bit_map_a9bd57103fb2333ede36546fc437b6239}\label{class_bit_map_a9bd57103fb2333ede36546fc437b6239} 
+\index{BitMap$<$ T $>$@{BitMap$<$ T $>$}!BitMap@{BitMap}}
+\index{BitMap@{BitMap}!BitMap$<$ T $>$@{BitMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BitMap()}{BitMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}} $>$ \\
+\mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$\mbox{\hyperlink{class_bit_map}{\+::\+Bit\+Map}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{width,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{height,  }\item[{\mbox{\hyperlink{class_bit_map}{T}}}]{default\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bit_map_8h_source_l00015}{15}} of file \mbox{\hyperlink{_bit_map_8h_source}{Bit\+Map.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ m\_width(\mbox{\hyperlink{class_bit_map}{width}}),\ m\_height(\mbox{\hyperlink{class_bit_map}{height}}),\ m\_data(std::vector<std::vector<T>\ >(\mbox{\hyperlink{class_bit_map}{height}}))}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{i}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{i}}\ <\ m\_height;\ \mbox{\hyperlink{class_bit_map}{i}}++)\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ m\_data[\mbox{\hyperlink{class_bit_map}{i}}]\ =\ std::vector<T>(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{defaultValue}});}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_bit_map_a59e304848637566b41b5965f0042f4c5}\label{class_bit_map_a59e304848637566b41b5965f0042f4c5} 
+\index{BitMap$<$ T $>$@{BitMap$<$ T $>$}!BitMap@{BitMap}}
+\index{BitMap@{BitMap}!BitMap$<$ T $>$@{BitMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BitMap()}{BitMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}} $>$ \\
+\mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$\mbox{\hyperlink{class_bit_map}{\+::\+Bit\+Map}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{width,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{height,  }\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$ $>$}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bit_map_8h_source_l00022}{22}} of file \mbox{\hyperlink{_bit_map_8h_source}{Bit\+Map.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ :\ m\_width\ \{\mbox{\hyperlink{class_bit_map}{width}}\}}
+\DoxyCodeLine{00024\ \ \ \ \ ,\ m\_height\ \{\mbox{\hyperlink{class_bit_map}{height}}\}}
+\DoxyCodeLine{00025\ \ \ \ \ ,\ m\_data\ \{\mbox{\hyperlink{class_bit_map}{values}}\}}
+\DoxyCodeLine{00026\ \ \ \ \ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}\label{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc} 
+\index{BitMap$<$ T $>$@{BitMap$<$ T $>$}!get@{get}}
+\index{get@{get}!BitMap$<$ T $>$@{BitMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}} $>$ \\
+\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{T}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{col,  }\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{line }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bit_map_8h_source_l00051}{51}} of file \mbox{\hyperlink{_bit_map_8h_source}{Bit\+Map.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{col}}\ >=\ m\_width\ ||\ \mbox{\hyperlink{class_bit_map}{line}}\ >=\ m\_height)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ index\ ("{}}\ +\ std::to\_string(\mbox{\hyperlink{class_bit_map}{col}})\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ std::to\_string(\mbox{\hyperlink{class_bit_map}{line}})\ +}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}),\ in\ Bitmap\ of\ size\ ("{}}\ +\ std::to\_string(m\_width)\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ std::to\_string(m\_height)\ +\ \textcolor{stringliteral}{"{})."{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data[\mbox{\hyperlink{class_bit_map}{line}}][\mbox{\hyperlink{class_bit_map}{col}}];}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_terrain_8h_source_l00097}{Terrain\+::get\+Terrain()}}, \mbox{\hyperlink{_bit_map_8h_source_l00059}{Bit\+Map$<$ T $>$\+::put()}}, \mbox{\hyperlink{_worley__noise_8cpp_source_l00079}{Worley\+\_\+noise\+::test()}}, \mbox{\hyperlink{_noise_8cpp_source_l00037}{Noise\+::to\+PGM()}}, and \mbox{\hyperlink{_noise_8cpp_source_l00197}{Noise\+::to\+PPM()}}.
+
+\Hypertarget{class_bit_map_a7542560e6862a34f6a4d2753f7d44a83}\label{class_bit_map_a7542560e6862a34f6a4d2753f7d44a83} 
+\index{BitMap$<$ T $>$@{BitMap$<$ T $>$}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!BitMap$<$ T $>$@{BitMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}} $>$ \\
+\mbox{\hyperlink{class_bit_map}{unsigned}} \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bit_map_8h_source_l00028}{28}} of file \mbox{\hyperlink{_bit_map_8h_source}{Bit\+Map.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_height;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_worley__noise_8cpp_source_l00079}{Worley\+\_\+noise\+::test()}}.
+
+\Hypertarget{class_bit_map_a227f9cad963d83340d95a6f12ec69c06}\label{class_bit_map_a227f9cad963d83340d95a6f12ec69c06} 
+\index{BitMap$<$ T $>$@{BitMap$<$ T $>$}!getSize@{getSize}}
+\index{getSize@{getSize}!BitMap$<$ T $>$@{BitMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}} $>$ \\
+\mbox{\hyperlink{class_bit_map}{unsigned}} \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bit_map_8h_source_l00036}{36}} of file \mbox{\hyperlink{_bit_map_8h_source}{Bit\+Map.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_height\ *\ m\_width;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_bit_map_acc975554e4c0b9cc37e27b6b4c3ab072}\label{class_bit_map_acc975554e4c0b9cc37e27b6b4c3ab072} 
+\index{BitMap$<$ T $>$@{BitMap$<$ T $>$}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!BitMap$<$ T $>$@{BitMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}} $>$ \\
+\mbox{\hyperlink{class_bit_map}{unsigned}} \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bit_map_8h_source_l00032}{32}} of file \mbox{\hyperlink{_bit_map_8h_source}{Bit\+Map.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_width;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_worley__noise_8cpp_source_l00079}{Worley\+\_\+noise\+::test()}}.
+
+\Hypertarget{class_bit_map_a7e25e51b212b4fd377df799df9369869}\label{class_bit_map_a7e25e51b212b4fd377df799df9369869} 
+\index{BitMap$<$ T $>$@{BitMap$<$ T $>$}!put@{put}}
+\index{put@{put}!BitMap$<$ T $>$@{BitMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}} $>$ \\
+\mbox{\hyperlink{class_bit_map}{T}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$\+::put (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \&}]{col,  }\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \&}]{line,  }\item[{\mbox{\hyperlink{class_bit_map}{T}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bit_map_8h_source_l00059}{59}} of file \mbox{\hyperlink{_bit_map_8h_source}{Bit\+Map.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{col}}\ >=\ m\_width\ ||\ \mbox{\hyperlink{class_bit_map}{line}}\ >=\ m\_height)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ index\ ("{}}\ +\ std::to\_string(\mbox{\hyperlink{class_bit_map}{col}})\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ std::to\_string(\mbox{\hyperlink{class_bit_map}{line}})\ +}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}),\ in\ Bitmap\ of\ size\ ("{}}\ +\ std::to\_string(m\_width)\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ std::to\_string(m\_height)\ +\ \textcolor{stringliteral}{"{})."{}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{T}}\ \mbox{\hyperlink{class_bit_map}{oldValue}}\ =\ \mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(\mbox{\hyperlink{class_bit_map}{col}},\ \mbox{\hyperlink{class_bit_map}{line}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ m\_data[\mbox{\hyperlink{class_bit_map}{line}}][\mbox{\hyperlink{class_bit_map}{col}}]\ =\ \mbox{\hyperlink{class_bit_map}{value}};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{oldValue}};}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_bit_map_8h_source_l00051}{Bit\+Map$<$ T $>$\+::get()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_terrain_8h_source_l00097}{Terrain\+::get\+Terrain()}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_bit_map_a683bf72961856109404f944c26828b50}\label{class_bit_map_a683bf72961856109404f944c26828b50} 
+\index{BitMap$<$ T $>$@{BitMap$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!BitMap$<$ T $>$@{BitMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=}{operator!=}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}} $>$ \\
+template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{U}} $>$ \\
+\mbox{\hyperlink{class_bit_map}{bool}} \mbox{\hyperlink{class_bit_map}{operator!}}= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$ \&}]{self,  }\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{class_bit_map_ad52069823f66f42aa8a4f320f3880414}\label{class_bit_map_ad52069823f66f42aa8a4f320f3880414} 
+\index{BitMap$<$ T $>$@{BitMap$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!BitMap$<$ T $>$@{BitMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}} $>$ \\
+template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{U}} $>$ \\
+\mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$ \mbox{\hyperlink{class_bit_map}{operator}}+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$}]{self,  }\item[{\mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{class_bit_map_ac9f41e8835ed3810f2463f0855ffa656}\label{class_bit_map_ac9f41e8835ed3810f2463f0855ffa656} 
+\index{BitMap$<$ T $>$@{BitMap$<$ T $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!BitMap$<$ T $>$@{BitMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}} $>$ \\
+template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{U}} $>$ \\
+\mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{T}} $>$ \mbox{\hyperlink{class_bit_map}{operator}}+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$ \&}]{self,  }\item[{\mbox{\hyperlink{class_bit_map}{T}}}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{class_bit_map_a0b5afe05f32b63998df2622f0a88e394}\label{class_bit_map_a0b5afe05f32b63998df2622f0a88e394} 
+\index{BitMap$<$ T $>$@{BitMap$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!BitMap$<$ T $>$@{BitMap$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}} $>$ \\
+template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{U}} $>$ \\
+\mbox{\hyperlink{class_bit_map}{bool}} \mbox{\hyperlink{class_bit_map}{operator}}== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$ \&}]{self,  }\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{Bit\+Map}}$<$ \mbox{\hyperlink{class_bit_map}{U}} $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sources/inc/api/noise/\mbox{\hyperlink{_bit_map_8h}{Bit\+Map.\+h}}\end{DoxyCompactItemize}
