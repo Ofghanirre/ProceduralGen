@@ -8,24 +8,29 @@
 #include <api/Terrain.h>
 #include <Perlin.hpp>
 #include <Worley_noise.hpp>
+#include <chrono>
 
 
 int main(void) {
-    Terrain terrain("test", 0);
+    /*Terrain terrain("test", 0);
     Perlin p = Perlin(0, 255, 30);
     terrain.addTerrainNode(p, NoisePunderationFunction::IDENTITY);
     Noise result = terrain.getTerrain(256, 256, 42);
-    result.toPGM("./perlin.pgm");
+    result.toPGM("./perlin.pgm");*/
 
+    auto start = std::chrono::high_resolution_clock::now();
     Terrain terrain2("test2", 0);
     Worley_noise w = Worley_noise();
     terrain2.addTerrainNode(w, NoisePunderationFunction::IDENTITY);
-    Noise result2 = terrain2.getTerrain(256, 256, 42);
-    result2.toPGM("./worley.pgm");
+    Noise result2 = terrain2.getTerrain(4096, 4096, 1000);
 
+    result2.toPGM("./worley.pgm");
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = end - start;
+    std::cout << duration.count() << std::endl;
 
     // ---------------------- Test ---------------------------
-    int width = 10;
+    /*int width = 10;
     int height = 10;
     int grid_size = 5;
     std::cout.precision(2);
@@ -47,6 +52,6 @@ int main(void) {
         }
 
         std::cout << std::endl;
-    }
+    }*/
     return 0;
 }
