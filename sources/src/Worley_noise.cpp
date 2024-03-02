@@ -15,6 +15,13 @@ Worley_noise::Worley_noise(){};
 
 std::vector<std::vector<int>> Worley_noise::worley_noise(size_t seed, size_t width, size_t height, size_t gridSize) const{
 
+    /*
+     * 1 : Naive
+     * 2 : BFS approach (flawed)
+     * 3 : Check 2x the gridSize
+     * 4 : Check only the 9 nearest points (best)
+     */
+    int algo_choice = 4;
 
     // Init a 2D Vector with zeros
     int height_padding = (height%gridSize);
@@ -42,160 +49,172 @@ std::vector<std::vector<int>> Worley_noise::worley_noise(size_t seed, size_t wid
         }
     }
     float max = 0;
-    // Calculate DIstance  2/ freq2
 
-
-    /*int newX, newY;
+    int newX, newY;
     float dist;
-
-    float minDist = distance(points[0], {static_cast<float>(0), static_cast<float>(0)});;
-    for (int i = 0; i < points.size(); i++) {
+    float minDist = distance(points[0], {static_cast<float>(0), static_cast<float>(0)});
 
 
-
-        for (int x = -gridSize; x <= gridSize; x++) {
-            //std::cout << "ok"<< std::endl;
-            for (int y = (int)-gridSize; y <= gridSize; y++) {
-                newX = x + points[i].x;
-                newY = y + points[i].y;
-                //std::cout << x << "  ---  " << y<< std::endl;
-
-                if (0 <= newX && newX < height && 0 <= newY && newY < width) {
-                    dist = distance(points[i], {static_cast<float>(newX), static_cast<float>(newY)});
-                    if (dist < pixels[newX][newY]) {
-                        minDist = dist;
-                        pixels[newX][newY] = minDist;
-                    }
-                }
-            }
-        }
-        if (max < minDist) {
-            max = minDist;
-        }
-    }
-     // -----------------
-     */
-    // Calculate DIstance  3/ 9 nearest points
-    float dist;
-    int nbPointsWidth = (width + width_padding) / gridSize;
-    int nbPointsHeight = (height+ height_padding) / gridSize;
-    int pointIndex = 0;
-
-    float minDist;
-    int gridX, gridY;
-    for (int x = 0; x < height; x++) {
-        for (int y = 0; y < width; y++) {
-
-            gridX = x / gridSize;
-            gridY = y / gridSize;
-
-            minDist = gridSize*2;
-
-            // Search the minDist through the 9 nearest points
-            for (int xOffset = -1; xOffset < 2; xOffset++) {
-                for (int yOffset = -1; yOffset < 2; yOffset++) {
-
-                    pointIndex = (gridX+xOffset) * nbPointsHeight + (gridY+yOffset);
-                    if (0 <= gridX && gridX < nbPointsHeight &&0 <= gridY && gridY < nbPointsWidth ) {
-                        dist =  distance(points[pointIndex], {static_cast<float>(x), static_cast<float>(y)});
-                        minDist = dist < minDist ? dist : minDist;
-                    }
-                }
-            }
-            pixels[x][y] = minDist;
-
-            if (max < minDist) {
-                max = minDist;
-            }
-
-        }
-    }
-    // -----------------
-
-    // NAIVE
-    /*
-    for (int x = 0; x < height; x++) {
-        for (int y = 0; y < width; y++) {
-            // Find closest point
-            float dist;
-            float minDist = distance(points[0], {static_cast<float>(x), static_cast<float>(y)});;
-            for (int i = 1; i < points.size(); i++) {
-                dist = distance(points[i], {static_cast<float>(x), static_cast<float>(y)});
-                minDist = dist < minDist ? dist : minDist;
-            }
-
-            pixels[x][y] = minDist;
-            if (max < minDist) {
-                max = minDist;
-            }
-        }
-    }
-     // -----------------
-    */
-    // Calculate distance BFS, not working
-    /*int newX, newY;
-    std::vector<vec2<int>> directions_x = {{-1,0},{1,0}};
-    std::vector<vec2<int>> directions_y = {{0,1},{0,-1}};
-    std::vector<vec2<int>> directions_xy = {{-1,-1},{1,-1},{-1,1},{1,1}};
-
-    double distance = 0;
+    // For BFS
     int x_offset = 1, y_offset = 1;
     int next_iter_countdown = points.size();
     int nb_visited_this_iter = 0;
+    std::vector<vec2<int>> directions_x = {{-1, 0},
+                                           {1,  0}};
+    std::vector<vec2<int>> directions_y = {{0, 1},
+                                           {0, -1}};
+    std::vector<vec2<int>> directions_xy = {{-1, -1},
+                                            {1,  -1},
+                                            {-1, 1},
+                                            {1,  1}};
 
-    while (!toVisitQueue.empty()){
-        int currentIndex= toVisitQueue.front();
-        int currentPoint_x = currentIndex /height;
-        int currentPoint_y = currentIndex % height;
-        //std::cout << "sike "<<  currentPoint_x << "----" << currentPoint_y<< std::endl;
-        toVisitQueue.pop();
+    switch (algo_choice) {
+        case 1 :
+            // NAIVE
+            for (int x = 0; x < height; x++) {
+                for (int y = 0; y < width; y++) {
+                    // Find closest point
+                    float dist;
+                    float minDist = distance(points[0], {static_cast<float>(x), static_cast<float>(y)});;
+                    for (int i = 1; i < points.size(); i++) {
+                        dist = distance(points[i], {static_cast<float>(x), static_cast<float>(y)});
+                        minDist = dist < minDist ? dist : minDist;
+                    }
 
-        distance =  sqrt(x_offset*x_offset+y_offset*y_offset);
-        //std::cout << distance << std::endl;
-
-        pixels[currentPoint_x][currentPoint_y] = distance;
-        //visited.emplace(currentPoint_x*height+currentPoint_y);
-
-        for ( const vec2<int> &offset : directions_x){
-            newX = currentPoint_x + offset.x;
-            if (0 <= newX && newX < height && (!visited[newX][currentPoint_y])) {
-                toVisitQueue.emplace(newX*height+currentPoint_y);
-                nb_visited_this_iter++;
-                visited[newX][currentPoint_y] = true;
+                    pixels[x][y] = minDist;
+                    if (max < minDist) {
+                        max = minDist;
+                    }
+                }
             }
-        }
+            break;
+        case 2 :
+            // Calculate distance BFS, not working
 
 
-        for ( const vec2<int> &offset : directions_y){
-            newY = currentPoint_y + offset.y;
-            if (0 <= newY && newY < width && (!visited[currentPoint_x][newY])) {
-                toVisitQueue.emplace(currentPoint_x*height+newY);
-                nb_visited_this_iter++;
-                visited[currentPoint_x][newY] = true;
+            while (!toVisitQueue.empty()) {
+                int currentIndex = toVisitQueue.front();
+                int currentPoint_x = currentIndex / height;
+                int currentPoint_y = currentIndex % height;
+                //std::cout << "sike "<<  currentPoint_x << "----" << currentPoint_y<< std::endl;
+                toVisitQueue.pop();
+
+                dist = sqrt(x_offset * x_offset + y_offset * y_offset);
+                //std::cout << distance << std::endl;
+
+                pixels[currentPoint_x][currentPoint_y] = dist;
+                //visited.emplace(currentPoint_x*height+currentPoint_y);
+
+                for (const vec2<int> &offset: directions_x) {
+                    newX = currentPoint_x + offset.x;
+                    if (0 <= newX && newX < height && (!visited[newX][currentPoint_y])) {
+                        toVisitQueue.emplace(newX * height + currentPoint_y);
+                        nb_visited_this_iter++;
+                        visited[newX][currentPoint_y] = true;
+                    }
+                }
+
+
+                for (const vec2<int> &offset: directions_y) {
+                    newY = currentPoint_y + offset.y;
+                    if (0 <= newY && newY < width && (!visited[currentPoint_x][newY])) {
+                        toVisitQueue.emplace(currentPoint_x * height + newY);
+                        nb_visited_this_iter++;
+                        visited[currentPoint_x][newY] = true;
+                    }
+                }
+
+                for (const vec2<int> &offset: directions_xy) {
+                    newX = currentPoint_x + offset.x;
+                    newY = currentPoint_y + offset.y;
+                    if (0 <= newX && newX < height && 0 <= newY && newY < width && (!visited[newX][newY])) {
+                        toVisitQueue.emplace(newX * height + newY);
+                        nb_visited_this_iter++;
+                        visited[newX][newY] = true;
+                    }
+                }
+                next_iter_countdown--;
+                if (next_iter_countdown == 0) {
+                    next_iter_countdown = nb_visited_this_iter;
+                    nb_visited_this_iter = 0;
+                    x_offset += 1;
+                    y_offset += 1;
+                }
+                //std::cout << toVisitQueue.size() << "----" << visited.size()<< std::endl;
             }
-        }
+            max = dist;
+            break;
 
-        for ( const vec2<int> &offset : directions_xy){
-            newX = currentPoint_x + offset.x;
-            newY = currentPoint_y + offset.y;
-            if (0 <= newX && newX < height && 0 <= newY && newY < width && (!visited[newX][newY])) {
-                toVisitQueue.emplace(newX*height+newY);
-                nb_visited_this_iter++;
-                visited[newX][newY] = true;
+        case 3 :
+            // Calculate DIstance  2/ freq2
+
+            for (int i = 0; i < points.size(); i++) {
+                for (int x = -gridSize; x <= gridSize; x++) {
+                    for (int y = (int) -gridSize; y <= gridSize; y++) {
+                        newX = x + points[i].x;
+                        newY = y + points[i].y;
+                        if (0 <= newX && newX < height && 0 <= newY && newY < width) {
+                            dist = distance(points[i], {static_cast<float>(newX), static_cast<float>(newY)});
+                            if (dist < pixels[newX][newY]) {
+                                minDist = dist;
+                                pixels[newX][newY] = minDist;
+                            }
+                        }
+                    }
+                }
+                if (max < minDist) {
+                    max = minDist;
+                }
             }
-        }
-        next_iter_countdown--;
-        if (next_iter_countdown == 0) {
-            next_iter_countdown = nb_visited_this_iter;
-            nb_visited_this_iter = 0;
-            x_offset+=1;
-            y_offset+=1;
-        }
-        //std::cout << toVisitQueue.size() << "----" << visited.size()<< std::endl;
+            break;
+
+        case 4 :
+            // Calculate DIstance  3/ 9 nearest points
+            int nbPointsWidth = (width + width_padding) / gridSize;
+            int nbPointsHeight = (height + height_padding) / gridSize;
+            int pointIndex = 0;
+
+            int gridX, gridY;
+            for (int x = 0; x < height; x++) {
+                for (int y = 0; y < width; y++) {
+
+                    gridX = x / gridSize;
+                    gridY = y / gridSize;
+
+                    minDist = gridSize * 2;
+
+                    //std::cout << x << "----" << y <<std::endl;
+
+                    //std::cout << gridX << "<---->" << gridY <<std::endl;
+                    // Search the minDist through the 9 nearest points
+                    for (int xOffset = -1; xOffset < 2; xOffset++) {
+                        for (int yOffset = -1; yOffset < 2; yOffset++) {
+
+                            pointIndex = (gridX + xOffset) * nbPointsHeight + (gridY + yOffset);
+
+                            if (0 <= gridX && gridX <= nbPointsHeight && 0 <= gridY && gridY <= nbPointsWidth) {
+                                //std::cout << pointIndex <<std::endl;
+                                dist = distance(points[pointIndex], {static_cast<float>(x), static_cast<float>(y)});
+                                minDist = dist < minDist ? dist : minDist;
+                            }
+                        }
+                    }
+                    pixels[x][y] = minDist;
+                    if (max < minDist) {
+                        max = minDist;
+                    }
+
+                }
+            }
+            // -----------------
+            break;
     }
-    max = distance;
-     // -----------------
-    */
+
+
+
+
+
+
 
 
 

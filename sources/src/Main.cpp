@@ -22,7 +22,7 @@ int main(void) {
     Terrain terrain2("test2", 0);
     Worley_noise w = Worley_noise();
     terrain2.addTerrainNode(w, NoisePunderationFunction::IDENTITY);
-    Noise result2 = terrain2.getTerrain(4096, 4096, 1000);
+    Noise result2 = terrain2.getTerrain(4096, 4096, 350);
 
     result2.toPGM("./worley.pgm");
     auto end = std::chrono::high_resolution_clock::now();
