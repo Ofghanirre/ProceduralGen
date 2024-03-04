@@ -1,0 +1,118 @@
+\doxysection{Threshold\+Punderation\+Function Class Reference}
+\hypertarget{class_threshold_punderation_function}{}\label{class_threshold_punderation_function}\index{ThresholdPunderationFunction@{ThresholdPunderationFunction}}
+
+
+{\ttfamily \#include $<$Noise\+Punderation\+Functions.\+h$>$}
+
+Inheritance diagram for Threshold\+Punderation\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d6/dae/class_threshold_punderation_function}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_threshold_punderation_function_a296662d7684e06d148922695023b9160}{Threshold\+Punderation\+Function}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{threshold}}, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}} $>$ \mbox{\hyperlink{class_bit_map}{next}})
+\item 
+\mbox{\hyperlink{class_threshold_punderation_function_ae7c3c1290cad6b4c123905f92ca47f28}{Threshold\+Punderation\+Function}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{threshold}})
+\item 
+\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_threshold_punderation_function_ad430adcbc0eb84c4b5d97a5e03fd6290}{compute}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}) \mbox{\hyperlink{class_bit_map}{override}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_map}{virtual}} \mbox{\hyperlink{class_i_punderation_function_a5ed00bd32398157e1c22fa1e25db35d3}{\texorpdfstring{$\sim$}{\string~}\+IPunderation\+Function}} ()=\mbox{\hyperlink{class_bit_map}{default}}
+\item 
+\mbox{\hyperlink{class_i_punderation_function_a3281cdece75e28d85a76458101a08a0f}{IPunderation\+Function}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}} $>$ \mbox{\hyperlink{class_bit_map}{next}})
+\item 
+\mbox{\hyperlink{class_i_punderation_function_a9c5a8b21d7c937932125ec660c8b4822}{IPunderation\+Function}} ()
+\item 
+\mbox{\hyperlink{class_bit_map}{bool}} \mbox{\hyperlink{class_i_punderation_function_a14bf9696157e7dcd9a53912bd935b255}{has\+Next}} () \mbox{\hyperlink{class_bit_map}{const}}
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{class_i_punderation_function_a14bd5d47a0554814c04978202651c449}{set\+Next}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}} $>$ \mbox{\hyperlink{class_bit_map}{next}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}} $>$ \mbox{\hyperlink{class_i_punderation_function_abbf21a17124faeec2abe531ec667a139}{m\+\_\+next}}
+\item 
+\mbox{\hyperlink{class_bit_map}{bool}} \mbox{\hyperlink{class_i_punderation_function_af0f26a1b4cb54ee8e2fb572414f809bc}{m\+\_\+has\+Next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00113}{113}} of file \mbox{\hyperlink{_noise_punderation_functions_8h_source}{Noise\+Punderation\+Functions.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_threshold_punderation_function_a296662d7684e06d148922695023b9160}\label{class_threshold_punderation_function_a296662d7684e06d148922695023b9160} 
+\index{ThresholdPunderationFunction@{ThresholdPunderationFunction}!ThresholdPunderationFunction@{ThresholdPunderationFunction}}
+\index{ThresholdPunderationFunction@{ThresholdPunderationFunction}!ThresholdPunderationFunction@{ThresholdPunderationFunction}}
+\doxysubsubsection{\texorpdfstring{ThresholdPunderationFunction()}{ThresholdPunderationFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Threshold\+Punderation\+Function\+::\+Threshold\+Punderation\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{threshold,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}} $>$}]{next }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00117}{117}} of file \mbox{\hyperlink{_noise_punderation_functions_8h_source}{Noise\+Punderation\+Functions.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117\ :\ m\_threshold(\mbox{\hyperlink{class_bit_map}{threshold}}),\ \mbox{\hyperlink{class_i_punderation_function_a9c5a8b21d7c937932125ec660c8b4822}{IPunderationFunction}}(\mbox{\hyperlink{class_bit_map}{next}})\ \{\}}
+
+\end{DoxyCode}
+\Hypertarget{class_threshold_punderation_function_ae7c3c1290cad6b4c123905f92ca47f28}\label{class_threshold_punderation_function_ae7c3c1290cad6b4c123905f92ca47f28} 
+\index{ThresholdPunderationFunction@{ThresholdPunderationFunction}!ThresholdPunderationFunction@{ThresholdPunderationFunction}}
+\index{ThresholdPunderationFunction@{ThresholdPunderationFunction}!ThresholdPunderationFunction@{ThresholdPunderationFunction}}
+\doxysubsubsection{\texorpdfstring{ThresholdPunderationFunction()}{ThresholdPunderationFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Threshold\+Punderation\+Function\+::\+Threshold\+Punderation\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{threshold }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00118}{118}} of file \mbox{\hyperlink{_noise_punderation_functions_8h_source}{Noise\+Punderation\+Functions.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ :\ m\_threshold(\mbox{\hyperlink{class_bit_map}{threshold}}),\ \mbox{\hyperlink{class_i_punderation_function_a9c5a8b21d7c937932125ec660c8b4822}{IPunderationFunction}}()\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_threshold_punderation_function_ad430adcbc0eb84c4b5d97a5e03fd6290}\label{class_threshold_punderation_function_ad430adcbc0eb84c4b5d97a5e03fd6290} 
+\index{ThresholdPunderationFunction@{ThresholdPunderationFunction}!compute@{compute}}
+\index{compute@{compute}!ThresholdPunderationFunction@{ThresholdPunderationFunction}}
+\doxysubsubsection{\texorpdfstring{compute()}{compute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{int}} Threshold\+Punderation\+Function\+::compute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_punderation_function_ad2fb7c82ed1122b6a39350198a74d177}{IPunderation\+Function}}.
+
+
+
+Definition at line \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00120}{120}} of file \mbox{\hyperlink{_noise_punderation_functions_8h_source}{Noise\+Punderation\+Functions.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_i_punderation_function_af0f26a1b4cb54ee8e2fb572414f809bc}{m\_hasNext}})\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_i_punderation_function_abbf21a17124faeec2abe531ec667a139}{m\_next}}-\/>compute(\mbox{\hyperlink{class_bit_map}{value}}\ >\ m\_threshold\ ?\ 1\ :\ 0);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ m\_threshold\ ?\ 1\ :\ 0;}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00023}{IPunderation\+Function\+::m\+\_\+has\+Next}}, and \mbox{\hyperlink{_noise_punderation_functions_8h_source_l00022}{IPunderation\+Function\+::m\+\_\+next}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sources/inc/api/noise/punderations/\mbox{\hyperlink{_noise_punderation_functions_8h}{Noise\+Punderation\+Functions.\+h}}\end{DoxyCompactItemize}

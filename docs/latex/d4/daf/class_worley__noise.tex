@@ -1,0 +1,247 @@
+\doxysection{Worley\+\_\+noise Class Reference}
+\hypertarget{class_worley__noise}{}\label{class_worley__noise}\index{Worley\_noise@{Worley\_noise}}
+
+
+{\ttfamily \#include $<$Worley\+\_\+noise.\+hpp$>$}
+
+Inheritance diagram for Worley\+\_\+noise\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d4/daf/class_worley__noise}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_worley__noise_a2558af46920e9a8bd95744d89a033717}{Worley\+\_\+noise}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{min\+Range}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max\+Range}})
+\item 
+\mbox{\hyperlink{class_worley__noise_a3891d4588b8e0a8912fdf6021efd3a3e}{Worley\+\_\+noise}} ()
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_bit_map}{int}} $>$ $>$ \mbox{\hyperlink{class_worley__noise_a2cfc06396bc2cdfe36f7eadf550afa5e}{worley\+\_\+noise}} (\mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{seed}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{width}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{height}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{grid\+Size}}) \mbox{\hyperlink{class_bit_map}{const}}
+\item 
+\mbox{\hyperlink{class_noise}{Noise}} \mbox{\hyperlink{class_worley__noise_ae993962ff97536a2cb4be7f3f6775936}{gen\+Noise}} (\mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{seed}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{width}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{height}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{frequency}}) \mbox{\hyperlink{class_bit_map}{const}}
+\begin{DoxyCompactList}\small\item\em Generator for a \doxylink{class_noise}{Noise}, those can be statically loaded for usage and contains the all-\/usable parameters known for generating a noise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_noise_generator}{INoise\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_map}{virtual}} \mbox{\hyperlink{class_i_noise_generator_ae53d173d558ba5763ed10d08a0f82fd8}{\texorpdfstring{$\sim$}{\string~}\+INoise\+Generator}} ()=\mbox{\hyperlink{class_bit_map}{default}}
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_map}{static}} \mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{class_worley__noise_a9358166692a7c6d9b350833f02063c3b}{test}} (\mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{width}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{height}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{seed}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{grid\+Size}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{min\+Range}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{max\+Range}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_worley__noise_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{_worley__noise_8hpp_source}{Worley\+\_\+noise.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_worley__noise_a2558af46920e9a8bd95744d89a033717}\label{class_worley__noise_a2558af46920e9a8bd95744d89a033717} 
+\index{Worley\_noise@{Worley\_noise}!Worley\_noise@{Worley\_noise}}
+\index{Worley\_noise@{Worley\_noise}!Worley\_noise@{Worley\_noise}}
+\doxysubsubsection{\texorpdfstring{Worley\_noise()}{Worley\_noise()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Worley\+\_\+noise\+::\+Worley\+\_\+noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{min\+Range,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max\+Range }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_worley__noise_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_worley__noise_8cpp_source}{Worley\+\_\+noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ :\ \_minRange(\mbox{\hyperlink{class_bit_map}{minRange}}),\ \_maxRange(\mbox{\hyperlink{class_bit_map}{maxRange}})\{\};}
+
+\end{DoxyCode}
+\Hypertarget{class_worley__noise_a3891d4588b8e0a8912fdf6021efd3a3e}\label{class_worley__noise_a3891d4588b8e0a8912fdf6021efd3a3e} 
+\index{Worley\_noise@{Worley\_noise}!Worley\_noise@{Worley\_noise}}
+\index{Worley\_noise@{Worley\_noise}!Worley\_noise@{Worley\_noise}}
+\doxysubsubsection{\texorpdfstring{Worley\_noise()}{Worley\_noise()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Worley\+\_\+noise\+::\+Worley\+\_\+noise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_worley__noise_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_worley__noise_8cpp_source}{Worley\+\_\+noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\};}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_worley__noise_8cpp_source_l00079}{test()}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_worley__noise_ae993962ff97536a2cb4be7f3f6775936}\label{class_worley__noise_ae993962ff97536a2cb4be7f3f6775936} 
+\index{Worley\_noise@{Worley\_noise}!genNoise@{genNoise}}
+\index{genNoise@{genNoise}!Worley\_noise@{Worley\_noise}}
+\doxysubsubsection{\texorpdfstring{genNoise()}{genNoise()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_noise}{Noise}} Worley\+\_\+noise\+::gen\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{seed,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{width,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{height,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{frequency }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Generator for a \doxylink{class_noise}{Noise}, those can be statically loaded for usage and contains the all-\/usable parameters known for generating a noise. 
+
+This factory shall be implemented by each and every noise there is, but the required common parameters are stored here
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & the seed used to generate the noise \\
+\hline
+{\em width} & the width of the windowed bitmap created \\
+\hline
+{\em height} & the height of the windowed bitmap created \\
+\hline
+{\em frequency} & the frequency used to create the noise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_noise_generator_a5c12baafa6cd5226dc6c78dec008cb37}{INoise\+Generator}}.
+
+
+
+Definition at line \mbox{\hyperlink{_worley__noise_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{_worley__noise_8cpp_source}{Worley\+\_\+noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{BitMap<int>}}\ \mbox{\hyperlink{class_bit_map}{bitmap}}(\mbox{\hyperlink{class_bit_map}{width}},\mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_worley__noise_a2cfc06396bc2cdfe36f7eadf550afa5e}{worley\_noise}}(\mbox{\hyperlink{class_bit_map}{seed}},\ \mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{gridSize}}));}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_noise}{Noise}}(\mbox{\hyperlink{class_bit_map}{bitmap}},\ \mbox{\hyperlink{class_bit_map}{seed}},\ \mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{gridSize}});}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_worley__noise_8cpp_source_l00016}{worley\+\_\+noise()}}.
+
+\Hypertarget{class_worley__noise_a9358166692a7c6d9b350833f02063c3b}\label{class_worley__noise_a9358166692a7c6d9b350833f02063c3b} 
+\index{Worley\_noise@{Worley\_noise}!test@{test}}
+\index{test@{test}!Worley\_noise@{Worley\_noise}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} Worley\+\_\+noise\+::test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{width,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{height,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{seed,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{grid\+Size,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{min\+Range,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{max\+Range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_worley__noise_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{_worley__noise_8cpp_source}{Worley\+\_\+noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{comment}{//Worley\_noise::test(24,8,5,7,5,10);}}
+\DoxyCodeLine{00081\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Worley\ noise\ test"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{worleyNoiseGenerator}}\ =\ \mbox{\hyperlink{class_worley__noise_a3891d4588b8e0a8912fdf6021efd3a3e}{Worley\_noise}}(\mbox{\hyperlink{class_bit_map}{minRange}},\mbox{\hyperlink{class_bit_map}{maxRange}});}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{worleyNoise}}\ =\ \mbox{\hyperlink{class_bit_map}{worleyNoiseGenerator}}.genNoise(\mbox{\hyperlink{class_bit_map}{seed}},\ \mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{gridSize}});}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{BitMap}}\ \mbox{\hyperlink{class_bit_map}{img}}\ =\ \mbox{\hyperlink{class_bit_map}{worleyNoise}}.getBitmap();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ \mbox{\hyperlink{class_bit_map}{height}};\ x++)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ \mbox{\hyperlink{class_bit_map}{width}};\ y++)\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{class_bit_map}{img}}.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(y,x)<<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ std::vector<std::unique\_ptr<INoiseGenerator>>\ \mbox{\hyperlink{class_bit_map}{genVector}};}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{genVector}}.emplace\_back(std::make\_unique<Worley\_noise>(\mbox{\hyperlink{class_bit_map}{minRange}},\mbox{\hyperlink{class_bit_map}{maxRange}}));}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&\mbox{\hyperlink{class_bit_map}{noise\_gen}}:\ \mbox{\hyperlink{class_bit_map}{genVector}})\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{testNoise}}\ =\ \mbox{\hyperlink{class_bit_map}{noise\_gen}}-\/>genNoise(\mbox{\hyperlink{class_bit_map}{seed}},\ \mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{gridSize}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Height\ "{}}\ <<\ \mbox{\hyperlink{class_bit_map}{testNoise}}.\mbox{\hyperlink{class_bit_map_a7542560e6862a34f6a4d2753f7d44a83}{getHeight}}()\ <<\ std::endl;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Width\ "{}}\ <<\ \mbox{\hyperlink{class_bit_map}{testNoise}}.\mbox{\hyperlink{class_bit_map_acc975554e4c0b9cc37e27b6b4c3ab072}{getWidth}}()\ <<\ std::endl;}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_bit_map_8h_source_l00051}{Bit\+Map$<$ T $>$\+::get()}}, \mbox{\hyperlink{_bit_map_8h_source_l00028}{Bit\+Map$<$ T $>$\+::get\+Height()}}, \mbox{\hyperlink{_bit_map_8h_source_l00032}{Bit\+Map$<$ T $>$\+::get\+Width()}}, and \mbox{\hyperlink{_worley__noise_8cpp_source_l00012}{Worley\+\_\+noise()}}.
+
+\Hypertarget{class_worley__noise_a2cfc06396bc2cdfe36f7eadf550afa5e}\label{class_worley__noise_a2cfc06396bc2cdfe36f7eadf550afa5e} 
+\index{Worley\_noise@{Worley\_noise}!worley\_noise@{worley\_noise}}
+\index{worley\_noise@{worley\_noise}!Worley\_noise@{Worley\_noise}}
+\doxysubsubsection{\texorpdfstring{worley\_noise()}{worley\_noise()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_bit_map}{int}} $>$ $>$ Worley\+\_\+noise\+::worley\+\_\+noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{seed,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{width,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{height,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{grid\+Size }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{_worley__noise_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{_worley__noise_8cpp_source}{Worley\+\_\+noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ Init\ a\ 2D\ Vector\ with\ zeros}}
+\DoxyCodeLine{00019\ \ \ \ \ std::vector<std::vector<float>>\ \mbox{\hyperlink{class_bit_map}{pixels}}(\mbox{\hyperlink{class_bit_map}{height}},\ std::vector<float>(\mbox{\hyperlink{class_bit_map}{width}},\ 0));}
+\DoxyCodeLine{00020\ \ \ \ \ std::vector<std::vector<int>>\ \mbox{\hyperlink{class_bit_map}{pixels\_int}}(\mbox{\hyperlink{class_bit_map}{height}},\ std::vector<int>(\mbox{\hyperlink{class_bit_map}{width}},\ 0));}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//\ Init\ random\ generators}}
+\DoxyCodeLine{00023\ \ \ \ \ std::default\_random\_engine\ \mbox{\hyperlink{class_bit_map}{generator}}(\mbox{\hyperlink{class_bit_map}{seed}});}
+\DoxyCodeLine{00024\ \ \ \ \ std::uniform\_int\_distribution<int>\ \mbox{\hyperlink{class_bit_map}{distrib\_width}}(0,\ \mbox{\hyperlink{class_bit_map}{gridSize}});}
+\DoxyCodeLine{00025\ \ \ \ \ std::uniform\_int\_distribution<int>\ \mbox{\hyperlink{class_bit_map}{distrib\_height}}(0,\ \mbox{\hyperlink{class_bit_map}{gridSize}});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ Generate\ random\ points\ in\ grid}}
+\DoxyCodeLine{00028\ \ \ \ \ std::vector<vec2<float>>\ \mbox{\hyperlink{class_bit_map}{points}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{gridY}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{gridY}}\ <\ \mbox{\hyperlink{class_bit_map}{width}}\ -\/\ \mbox{\hyperlink{class_bit_map}{gridSize}}+1;\ \mbox{\hyperlink{class_bit_map}{gridY}}+=\ \mbox{\hyperlink{class_bit_map}{gridSize}})\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{gridX}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{gridX}}\ <\ \mbox{\hyperlink{class_bit_map}{height}}\ -\/\ \mbox{\hyperlink{class_bit_map}{gridSize}}+1;\ \mbox{\hyperlink{class_bit_map}{gridX}}+=\ \mbox{\hyperlink{class_bit_map}{gridSize}})\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x\ =\ \mbox{\hyperlink{class_bit_map}{distrib\_width}}(\mbox{\hyperlink{class_bit_map}{generator}});}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ y\ =\ \mbox{\hyperlink{class_bit_map}{distrib\_height}}(\mbox{\hyperlink{class_bit_map}{generator}});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{points}}.emplace\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(x+\mbox{\hyperlink{class_bit_map}{gridX}}),\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(y+\mbox{\hyperlink{class_bit_map}{gridY}}));}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Calculate\ distance}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{max}}\ =\ 0;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ \mbox{\hyperlink{class_bit_map}{height}};\ x++)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ \mbox{\hyperlink{class_bit_map}{width}};\ y++)\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ closest\ point}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{distances}}[\mbox{\hyperlink{class_bit_map}{points}}.size()];}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{i}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{i}}\ <\ \mbox{\hyperlink{class_bit_map}{points}}.size();\ \mbox{\hyperlink{class_bit_map}{i}}++)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{distances}}[\mbox{\hyperlink{class_bit_map}{i}}]\ =\ distance(\mbox{\hyperlink{class_bit_map}{points}}[\mbox{\hyperlink{class_bit_map}{i}}],\ \{\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(x),\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(y)\});}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ std::sort(\mbox{\hyperlink{class_bit_map}{distances}},\ \mbox{\hyperlink{class_bit_map}{distances}}\ +\ \mbox{\hyperlink{class_bit_map}{points}}.size());}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{pixels}}[x][y]\ =\ \mbox{\hyperlink{class_bit_map}{distances}}[0];\ \textcolor{comment}{//\ need\ to\ normalize}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{max}}\ <\ \mbox{\hyperlink{class_bit_map}{distances}}[0])\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{max}}\ =\ \mbox{\hyperlink{class_bit_map}{distances}}[0];}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ Normalization\ scale}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{new\_range}}\ =\ \_maxRange\ -\/\ \_minRange;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ \mbox{\hyperlink{class_bit_map}{height}};\ x++)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ \mbox{\hyperlink{class_bit_map}{width}};\ y++)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fill\ the\ new\ BitMap\ object}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//bitmap[x*width+y]}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{pixels\_int}}[x][y]\ =\ (\mbox{\hyperlink{class_bit_map}{pixels}}[x][y]\ /\ \mbox{\hyperlink{class_bit_map}{max}}\ *\ \mbox{\hyperlink{class_bit_map}{new\_range}}\ +\ \_minRange\ );}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{pixels\_int}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_worley__noise_8cpp_source_l00073}{gen\+Noise()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+sources/inc/\mbox{\hyperlink{_worley__noise_8hpp}{Worley\+\_\+noise.\+hpp}}\item 
+sources/src/\mbox{\hyperlink{_worley__noise_8cpp}{Worley\+\_\+noise.\+cpp}}\end{DoxyCompactItemize}

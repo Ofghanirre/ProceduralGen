@@ -6,14 +6,97 @@
 \DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Antonin\ Jean\ on\ 25/01/2024.}}
 \DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
 \DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}inc/api/noise/BitMap.h"{}}}
-\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00008}\mbox{\hyperlink{_main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{00008}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00009}00009\ \ \ \ \ BitMap<int>\ bitmap(16,16,\ 0);}
-\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00010}00010\ \ \ \ \ bitmap[(int)\ 0]\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00011}00011\ \ \ \ \ std::cout\ <<\ bitmap[0]\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_bit_map_8h}{api/noise/BitMap.h}}>}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_terrain_8h}{api/Terrain.h}}>}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_perlin_8hpp}{Perlin.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_worley__noise_8hpp}{Worley\_noise.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00014}\mbox{\hyperlink{_main_8cpp_ad9a50131afa825b378a648e5ed28551a}{00014}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_main_8cpp_ad9a50131afa825b378a648e5ed28551a}{testPerlin}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain1}}(\textcolor{stringliteral}{"{}test"{}},\ 0);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{p}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ 30);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain1}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result1}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain1}}.getTerrain(256,\ 256,\ 42);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result1}}.toPGM(\textcolor{stringliteral}{"{}./perlin.pgm"{}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00022}\mbox{\hyperlink{_main_8cpp_ae8a630556041b685858fe63fa54a0e8c}{00022}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_main_8cpp_ae8a630556041b685858fe63fa54a0e8c}{testWorley}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain2}}(\textcolor{stringliteral}{"{}test2"{}},\ 0);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00024}00024\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{w}}\ =\ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}();}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain2}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{w}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result2}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain2}}.getTerrain(1024,\ 1024,\ 42);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result2}}.toPGM(\textcolor{stringliteral}{"{}./worley.pgm"{}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00030}\mbox{\hyperlink{_main_8cpp_a5814432993a14705b55f396e84b7d665}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_main_8cpp_a5814432993a14705b55f396e84b7d665}{testTerrain1}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{size}})\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00031}00031\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Initialising\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain}}(\textcolor{stringliteral}{"{}Test\ Terrain\ 1"{}},\ \mbox{\hyperlink{class_bit_map}{time}}(\mbox{\hyperlink{class_bit_map}{NULL}}));}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{width}}\ =\ \mbox{\hyperlink{class_bit_map}{size}};}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{height}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00035}00035\ \ \ \ \ std::cout.precision(2);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{scale}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{globalShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{canyonShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/2);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{detailShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/20);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{microShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/200);\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}}\ =\ \mbox{\hyperlink{class_filter_punderation_function}{FilterPunderationFunction}}([](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \},\ std::make\_shared<ProductPunderationFunction<double>>(0.7));}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{detailPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.15);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{microPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.05);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{globalShape}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{canyonShape}},\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}},\ [](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{detailShape}},\ \mbox{\hyperlink{class_bit_map}{detailPunderation}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{microShape}},\ \mbox{\hyperlink{class_bit_map}{microPunderation}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00049}00049\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Generating\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00051}00051\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Exporting..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ result.toPGM("{}./values1.pgm"{},\ 255);}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//\ result.toPPM("{}./heatmap1.ppm"{},\ HEATMAP);}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPPM(\textcolor{stringliteral}{"{}./terrain1.ppm"{}},\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a58c2bc22908015ec088d6cb81dd3112f}{TERRAIN}},\ 255);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00055}00055\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Done."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00058}\mbox{\hyperlink{_main_8cpp_ac15ca94b2001b9a8547963aeea58c506}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_main_8cpp_ac15ca94b2001b9a8547963aeea58c506}{testTerrain2}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{size}})\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00059}00059\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Initialising\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain}}(\textcolor{stringliteral}{"{}Test\ Terrain\ 2"{}},\ \mbox{\hyperlink{class_bit_map}{time}}(\mbox{\hyperlink{class_bit_map}{NULL}}));}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{width}}\ =\ \mbox{\hyperlink{class_bit_map}{size}};}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{height}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00063}00063\ \ \ \ \ std::cout.precision(2);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{scale}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{globalShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{canyonShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/2);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00067}00067\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{detailShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/10);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{microShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/34);\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}}\ =\ \mbox{\hyperlink{class_filter_punderation_function}{FilterPunderationFunction}}([](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \},\ std::make\_shared<ProductPunderationFunction<double>>(0.7));}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{detailPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.15);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{microPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.05);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{globalFunction}}\ =\ \mbox{\hyperlink{class_inverse_punderation_function}{InversePunderationFunction}}(255);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{globalShape}},\ \mbox{\hyperlink{class_bit_map}{globalFunction}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{canyonShape}},\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}},\ [](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{detailShape}},\ \mbox{\hyperlink{class_bit_map}{detailPunderation}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{microShape}},\ \mbox{\hyperlink{class_bit_map}{microPunderation}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00078}00078\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Generating\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00079}00079\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00080}00080\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Exporting..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{comment}{//\ result.toPGM("{}./values2.pgm"{},\ 255);}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{comment}{//\ result.toPPM("{}./heatmap2.ppm"{},\ HEATMAP);}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPPM(\textcolor{stringliteral}{"{}./terrain2.ppm"{}},\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a58c2bc22908015ec088d6cb81dd3112f}{TERRAIN}},\ 255);}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00084}00084\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Done."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00085}00085\ \}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00086}\mbox{\hyperlink{_main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{00086}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Test\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{size}}\ =\ 512;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00089}00089\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/\ Terrain\ 1\ -\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{_main_8cpp_a5814432993a14705b55f396e84b7d665}{testTerrain1}}(\mbox{\hyperlink{class_bit_map}{size}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00091}00091\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/\ Terrain\ 2\ -\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{_main_8cpp_ac15ca94b2001b9a8547963aeea58c506}{testTerrain2}}(\mbox{\hyperlink{class_bit_map}{size}});}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_main_8cpp_source_l00096}00096\ }
 
 \end{DoxyCode}
