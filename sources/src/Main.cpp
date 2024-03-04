@@ -8,6 +8,7 @@
 #include <api/Terrain.h>
 #include <Perlin.hpp>
 #include <Worley_noise.hpp>
+#include <ValueNoise.hpp>
 
 
 int main(void) {
@@ -23,6 +24,12 @@ int main(void) {
     Noise result2 = terrain2.getTerrain(256, 256, 42);
     result2.toPGM("./worley.pgm");
 
+    Terrain terrain3("test3", 0);
+    ValueNoise v = ValueNoise();
+    terrain3.addTerrainNode(v, NoisePunderationFunction::IDENTITY);
+    Noise result3 = terrain3.getTerrain(256, 256, 42);
+    result3.toPGM("./value.pgm");
+
 
     // ---------------------- Test ---------------------------
     int width = 10;
@@ -37,9 +44,9 @@ int main(void) {
     terrain.addTerrainNode(perlin, identityFunction);
     terrain.addTerrainNode(worley, sumFunction);
 
-    Noise result = terrain.getTerrain(width, height, 2);
+    Noise resultb = terrain.getTerrain(width, height, 2);
     
-    BitMap<int> bitmap = result.getBitmap();
+    BitMap<int> bitmap = result3.getBitmap();
     for (int y = 0; y < height; y++)
     {
         for (int x = 0; x < width; x++){
