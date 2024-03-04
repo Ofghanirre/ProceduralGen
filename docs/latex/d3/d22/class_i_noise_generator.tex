@@ -1,0 +1,77 @@
+\doxysection{INoise\+Generator Class Reference}
+\hypertarget{class_i_noise_generator}{}\label{class_i_noise_generator}\index{INoiseGenerator@{INoiseGenerator}}
+
+
+{\ttfamily \#include $<$INoise\+Generator.\+h$>$}
+
+Inheritance diagram for INoise\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d3/d22/class_i_noise_generator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_map}{virtual}} \mbox{\hyperlink{class_i_noise_generator_ae53d173d558ba5763ed10d08a0f82fd8}{\texorpdfstring{$\sim$}{\string~}\+INoise\+Generator}} ()=\mbox{\hyperlink{class_bit_map}{default}}
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bit_map}{virtual}} \mbox{\hyperlink{class_noise}{Noise}} \mbox{\hyperlink{class_i_noise_generator_a5c12baafa6cd5226dc6c78dec008cb37}{gen\+Noise}} (\mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{seed}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{width}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{height}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{frequency}}) \mbox{\hyperlink{class_bit_map}{const}} =0
+\begin{DoxyCompactList}\small\item\em Generator for a \doxylink{class_noise}{Noise}, those can be statically loaded for usage and contains the all-\/usable parameters known for generating a noise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_i_noise_generator_8h_source_l00010}{10}} of file \mbox{\hyperlink{_i_noise_generator_8h_source}{INoise\+Generator.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_noise_generator_ae53d173d558ba5763ed10d08a0f82fd8}\label{class_i_noise_generator_ae53d173d558ba5763ed10d08a0f82fd8} 
+\index{INoiseGenerator@{INoiseGenerator}!````~INoiseGenerator@{\texorpdfstring{$\sim$}{\string~}INoiseGenerator}}
+\index{````~INoiseGenerator@{\texorpdfstring{$\sim$}{\string~}INoiseGenerator}!INoiseGenerator@{INoiseGenerator}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}INoiseGenerator()}{\string~INoiseGenerator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{virtual}} INoise\+Generator\+::\texorpdfstring{$\sim$}{\string~}\+INoise\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Class destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_noise_generator_a5c12baafa6cd5226dc6c78dec008cb37}\label{class_i_noise_generator_a5c12baafa6cd5226dc6c78dec008cb37} 
+\index{INoiseGenerator@{INoiseGenerator}!genNoise@{genNoise}}
+\index{genNoise@{genNoise}!INoiseGenerator@{INoiseGenerator}}
+\doxysubsubsection{\texorpdfstring{genNoise()}{genNoise()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{virtual}} \mbox{\hyperlink{class_noise}{Noise}} INoise\+Generator\+::gen\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{seed,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{width,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{height,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{frequency }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Generator for a \doxylink{class_noise}{Noise}, those can be statically loaded for usage and contains the all-\/usable parameters known for generating a noise. 
+
+This factory shall be implemented by each and every noise there is, but the required common parameters are stored here
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & the seed used to generate the noise \\
+\hline
+{\em width} & the width of the windowed bitmap created \\
+\hline
+{\em height} & the height of the windowed bitmap created \\
+\hline
+{\em frequency} & the frequency used to create the noise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_worley__noise_ae993962ff97536a2cb4be7f3f6775936}{Worley\+\_\+noise}}, and \mbox{\hyperlink{class_perlin_afa2d7c38f0d62287f706ab62ea62f2cd}{Perlin}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sources/inc/api/noise/\mbox{\hyperlink{_i_noise_generator_8h}{INoise\+Generator.\+h}}\end{DoxyCompactItemize}

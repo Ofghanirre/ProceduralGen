@@ -1,0 +1,198 @@
+\doxysection{Perlin Class Reference}
+\hypertarget{class_perlin}{}\label{class_perlin}\index{Perlin@{Perlin}}
+
+
+{\ttfamily \#include $<$Perlin.\+hpp$>$}
+
+Inheritance diagram for Perlin\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d4/dd5/class_perlin}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_perlin_af7f99e8b8b98a47b20480f0ba4f6db16}{\texorpdfstring{$\sim$}{\string~}\+Perlin}} ()=\mbox{\hyperlink{class_bit_map}{default}}
+\item 
+\mbox{\hyperlink{class_perlin_a81846cf3bb717c5eb4427238ba0cbfeb}{Perlin}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{min\+Range}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max\+Range}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{grid\+Size}})
+\begin{DoxyCompactList}\small\item\em Constructor of the class. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_bit_map}{int}} $>$ $>$ \mbox{\hyperlink{class_perlin_affcd767c51a8d6bad1141e8e98c9171f}{perlin\+\_\+noise}} (\mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{width}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{height}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{min\+\_\+range}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max\+\_\+range}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{seed}}) \mbox{\hyperlink{class_bit_map}{const}}
+\begin{DoxyCompactList}\small\item\em The generator of perlin noise. It will generate a vector of vector of int of size width \texorpdfstring{$\ast$}{*} height whose values are between min\+\_\+range and max\+\_\+range. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_noise}{Noise}} \mbox{\hyperlink{class_perlin_afa2d7c38f0d62287f706ab62ea62f2cd}{gen\+Noise}} (\mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{seed}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{width}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{height}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{frequency}}) \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{override}}
+\begin{DoxyCompactList}\small\item\em Generator for a \doxylink{class_noise}{Noise}, those can be statically loaded for usage and contains the all-\/usable parameters known for generating a noise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_noise_generator}{INoise\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_map}{virtual}} \mbox{\hyperlink{class_i_noise_generator_ae53d173d558ba5763ed10d08a0f82fd8}{\texorpdfstring{$\sim$}{\string~}\+INoise\+Generator}} ()=\mbox{\hyperlink{class_bit_map}{default}}
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_perlin_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{_perlin_8hpp_source}{Perlin.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_perlin_af7f99e8b8b98a47b20480f0ba4f6db16}\label{class_perlin_af7f99e8b8b98a47b20480f0ba4f6db16} 
+\index{Perlin@{Perlin}!````~Perlin@{\texorpdfstring{$\sim$}{\string~}Perlin}}
+\index{````~Perlin@{\texorpdfstring{$\sim$}{\string~}Perlin}!Perlin@{Perlin}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Perlin()}{\string~Perlin()}}
+{\footnotesize\ttfamily Perlin\+::\texorpdfstring{$\sim$}{\string~}\+Perlin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_perlin_a81846cf3bb717c5eb4427238ba0cbfeb}\label{class_perlin_a81846cf3bb717c5eb4427238ba0cbfeb} 
+\index{Perlin@{Perlin}!Perlin@{Perlin}}
+\index{Perlin@{Perlin}!Perlin@{Perlin}}
+\doxysubsubsection{\texorpdfstring{Perlin()}{Perlin()}}
+{\footnotesize\ttfamily Perlin\+::\+Perlin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{min\+Range,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max\+Range,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{grid\+Size }\end{DoxyParamCaption})}
+
+
+
+Constructor of the class. 
+
+
+
+Definition at line \mbox{\hyperlink{_perlin_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_perlin_8cpp_source}{Perlin.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ :\ \_minRange\ \{\mbox{\hyperlink{class_bit_map}{minRange}}\}}
+\DoxyCodeLine{00014\ \ \ \ \ ,\ \_maxRange\ \{\mbox{\hyperlink{class_bit_map}{maxRange}}\}}
+\DoxyCodeLine{00015\ \ \ \ \ ,\ \_gridSize\ \{\mbox{\hyperlink{class_bit_map}{gridSize}}\}}
+\DoxyCodeLine{00016\ \ \ \ \ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_perlin_afa2d7c38f0d62287f706ab62ea62f2cd}\label{class_perlin_afa2d7c38f0d62287f706ab62ea62f2cd} 
+\index{Perlin@{Perlin}!genNoise@{genNoise}}
+\index{genNoise@{genNoise}!Perlin@{Perlin}}
+\doxysubsubsection{\texorpdfstring{genNoise()}{genNoise()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_noise}{Noise}} Perlin\+::gen\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{seed,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{width,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{height,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{frequency }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generator for a \doxylink{class_noise}{Noise}, those can be statically loaded for usage and contains the all-\/usable parameters known for generating a noise. 
+
+This factory shall be implemented by each and every noise there is, but the required common parameters are stored here
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & the seed used to generate the noise \\
+\hline
+{\em width} & the width of the windowed bitmap created \\
+\hline
+{\em height} & the height of the windowed bitmap created \\
+\hline
+{\em frequency} & the frequency used to create the noise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_noise_generator_a5c12baafa6cd5226dc6c78dec008cb37}{INoise\+Generator}}.
+
+
+
+Definition at line \mbox{\hyperlink{_perlin_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{_perlin_8cpp_source}{Perlin.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{comment}{//\ Creates\ a\ BitMap\ of\ size\ width\ *\ height\ filled\ with\ the\ generated\ values}}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{BitMap}}\ \mbox{\hyperlink{class_bit_map}{bitmap}}\ =\ \mbox{\hyperlink{class_bit_map}{BitMap}}(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_perlin_affcd767c51a8d6bad1141e8e98c9171f}{perlin\_noise}}(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \_minRange,\ \_maxRange,\ \mbox{\hyperlink{class_bit_map}{seed}}));}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_noise}{Noise}}(\mbox{\hyperlink{class_bit_map}{bitmap}},\ \mbox{\hyperlink{class_bit_map}{seed}},\ \mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{frequency}});}
+\DoxyCodeLine{00176\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_perlin_8cpp_source_l00127}{perlin\+\_\+noise()}}.
+
+\Hypertarget{class_perlin_affcd767c51a8d6bad1141e8e98c9171f}\label{class_perlin_affcd767c51a8d6bad1141e8e98c9171f} 
+\index{Perlin@{Perlin}!perlin\_noise@{perlin\_noise}}
+\index{perlin\_noise@{perlin\_noise}!Perlin@{Perlin}}
+\doxysubsubsection{\texorpdfstring{perlin\_noise()}{perlin\_noise()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_bit_map}{int}} $>$ $>$ Perlin\+::perlin\+\_\+noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{width,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{height,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{min\+\_\+range,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max\+\_\+range,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{seed }\end{DoxyParamCaption}) const}
+
+
+
+The generator of perlin noise. It will generate a vector of vector of int of size width \texorpdfstring{$\ast$}{*} height whose values are between min\+\_\+range and max\+\_\+range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the width of the resulting noise \\
+\hline
+{\em height} & the height of the resulting noise \\
+\hline
+{\em min\+\_\+range} & the minimum value of the range \\
+\hline
+{\em max\+\_\+range} & the maximum value of the range \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_perlin_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{_perlin_8cpp_source}{Perlin.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ std::vector<std::vector<float>>\ \mbox{\hyperlink{class_bit_map}{pixels}};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ \mbox{\hyperlink{class_bit_map}{height}};\ y++)}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ std::vector<float>\ \mbox{\hyperlink{class_bit_map}{line}};\ \ \textcolor{comment}{//\ The\ values\ of\ the\ pixel\ of\ line\ y}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ \mbox{\hyperlink{class_bit_map}{width}};\ x++)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Point\ coordinate\ on\ the\ grid}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{px}}\ =\ (\mbox{\hyperlink{class_bit_map}{float}})x\ /\ (\textcolor{keywordtype}{float})\_gridSize;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{py}}\ =\ (\mbox{\hyperlink{class_bit_map}{float}})y\ /\ (\textcolor{keywordtype}{float})\_gridSize;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Grid\ cell\ corner\ coordinates}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Coordinates\ of\ the\ first\ corner\ (top\ left)}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{x0}}\ =\ (\mbox{\hyperlink{class_bit_map}{int}})\mbox{\hyperlink{class_bit_map}{px}};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{y0}}\ =\ (\mbox{\hyperlink{class_bit_map}{int}})\mbox{\hyperlink{class_bit_map}{py}};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Coordinates\ of\ the\ last\ corner\ (bottom\ right)}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{x1}}\ =\ \mbox{\hyperlink{class_bit_map}{x0}}\ +\ 1;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{y1}}\ =\ \mbox{\hyperlink{class_bit_map}{y0}}\ +\ 1;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Interpolation\ Weight}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{sx}}\ =\ \mbox{\hyperlink{class_bit_map}{px}}\ -\/\ (\mbox{\hyperlink{class_bit_map}{float}})\mbox{\hyperlink{class_bit_map}{x0}};}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{sy}}\ =\ \mbox{\hyperlink{class_bit_map}{py}}\ -\/\ (\mbox{\hyperlink{class_bit_map}{float}})\mbox{\hyperlink{class_bit_map}{y0}};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ interpolation\ for\ top\ two\ corners}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{grad1}}\ =\ dotGridGradient(\mbox{\hyperlink{class_bit_map}{x0}},\ \mbox{\hyperlink{class_bit_map}{y0}},\ \mbox{\hyperlink{class_bit_map}{px}},\ \mbox{\hyperlink{class_bit_map}{py}},\ \mbox{\hyperlink{class_bit_map}{seed}});}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{grad2}}\ =\ dotGridGradient(\mbox{\hyperlink{class_bit_map}{x1}},\ \mbox{\hyperlink{class_bit_map}{y0}},\ \mbox{\hyperlink{class_bit_map}{px}},\ \mbox{\hyperlink{class_bit_map}{py}},\ \mbox{\hyperlink{class_bit_map}{seed}});}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{top\_interpol\_val}}\ =\ interpolation(\mbox{\hyperlink{class_bit_map}{grad1}},\ \mbox{\hyperlink{class_bit_map}{grad2}},\ \mbox{\hyperlink{class_bit_map}{sx}});}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Compute\ interpolation\ for\ the\ bottom\ two\ corner}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{grad1}}\ =\ dotGridGradient(\mbox{\hyperlink{class_bit_map}{x0}},\ \mbox{\hyperlink{class_bit_map}{y1}},\ \mbox{\hyperlink{class_bit_map}{px}},\ \mbox{\hyperlink{class_bit_map}{py}},\ \mbox{\hyperlink{class_bit_map}{seed}});}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{grad2}}\ =\ dotGridGradient(\mbox{\hyperlink{class_bit_map}{x1}},\ \mbox{\hyperlink{class_bit_map}{y1}},\ \mbox{\hyperlink{class_bit_map}{px}},\ \mbox{\hyperlink{class_bit_map}{py}},\ \mbox{\hyperlink{class_bit_map}{seed}});}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{bot\_interpol\_val}}\ =\ interpolation(\mbox{\hyperlink{class_bit_map}{grad1}},\ \mbox{\hyperlink{class_bit_map}{grad2}},\ \mbox{\hyperlink{class_bit_map}{sx}});}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{line}}.push\_back(interpolation(\mbox{\hyperlink{class_bit_map}{top\_interpol\_val}},\ \mbox{\hyperlink{class_bit_map}{bot\_interpol\_val}},\ \mbox{\hyperlink{class_bit_map}{sy}}));}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{pixels}}.push\_back(\mbox{\hyperlink{class_bit_map}{line}});}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{return}\ normalize\_noise(\_minRange,\ \_maxRange,\ \mbox{\hyperlink{class_bit_map}{pixels}});}
+\DoxyCodeLine{00168\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_perlin_8cpp_source_l00170}{gen\+Noise()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+sources/inc/\mbox{\hyperlink{_perlin_8hpp}{Perlin.\+hpp}}\item 
+sources/src/\mbox{\hyperlink{_perlin_8cpp}{Perlin.\+cpp}}\end{DoxyCompactItemize}

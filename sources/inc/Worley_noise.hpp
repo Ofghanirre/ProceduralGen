@@ -6,10 +6,13 @@
 #include <iostream>
 #include <random>
 #include <algorithm>
+#include <queue>
 #include <memory>
+#include <set>
+#include <map>
 #include "api/noise/BitMap.h"
 #include "api/noise/INoiseGenerator.h"
-
+#include <limits>
 
 class Worley_noise : public INoiseGenerator {
 public:

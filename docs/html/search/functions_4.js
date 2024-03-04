@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setx_0',['setX',['../d1/d9b/class_test.html#aaf1021222ff5dc70222fd73e43a4cec4',1,'Test']]],
-  ['sety_1',['setY',['../d1/d9b/class_test.html#ab409cd90ed81a0c98e8157ff4b45066e',1,'Test']]]
+  ['filterpunderationfunction_0',['filterpunderationfunction',['../d4/d44/class_filter_punderation_function.html#aede6c04477cd90586035cf0187e14dd1',1,'FilterPunderationFunction::FilterPunderationFunction(bool(*predicate)(int), std::shared_ptr&lt; IPunderationFunction &gt; next)'],['../d4/d44/class_filter_punderation_function.html#ae3b46718a588c4f9d2126527c2deb1c2',1,'FilterPunderationFunction::FilterPunderationFunction(bool(*predicate)(int))']]]
 ];
