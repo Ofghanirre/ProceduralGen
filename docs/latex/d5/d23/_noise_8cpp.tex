@@ -1,0 +1,323 @@
+\doxysection{sources/src/api/noise/\+Noise.cpp File Reference}
+\hypertarget{_noise_8cpp}{}\label{_noise_8cpp}\index{sources/src/api/noise/Noise.cpp@{sources/src/api/noise/Noise.cpp}}
+{\ttfamily \#include $<$api/noise/\+Noise.\+h$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_noise_8cpp_ae8d33472bdf8dd48f37246abece3e51c}{\+\_\+heat\+Map}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{red}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{green}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{blue}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_noise_8cpp_a0d095f3d3ebe1b4722e0b7b5dd941a1a}{\+\_\+interpolate\+Color}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max}}, \mbox{\hyperlink{class_bit_map}{float}} \mbox{\hyperlink{class_bit_map}{mid\+Threshold}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{minR}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{minG}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{minB}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{maxR}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{maxG}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{maxB}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{R}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{G}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{B}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_noise_8cpp_a7f887bbda3188b3632410630ae3b7b68}{\+\_\+group\+Color}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{amount\+Of\+Group}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{minR}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{minG}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{minB}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{maxR}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{maxG}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{maxB}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{R}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{G}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{B}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_noise_8cpp_a64dc090c99e96df965cec4e8700981aa}{ocean\+Color}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{red}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{green}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{blue}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_noise_8cpp_a632f623fb36419186f524627236fd304}{beach\+Color}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{red}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{green}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{blue}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_noise_8cpp_a570d0551ed076acfa70bf22b925fcf3b}{plain\+Color}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{red}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{green}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{blue}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_noise_8cpp_acead57055c53320e20c2ffd99d1a63b1}{mountain\+Color}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{red}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{green}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{blue}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_noise_8cpp_afe9d4d131f789081930790b37d127bf0}{snow\+Color}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{red}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{green}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{blue}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_noise_8cpp_a66d59dc6b6694a8f1a4a22c284a7eb1a}{\+\_\+terrain\+Texture}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{red}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{green}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{blue}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_noise_8cpp_a9172ad74c77bf36fb8994dcb520ab147}{\+\_\+saveterrain\+Texture}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{red}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{green}}, \mbox{\hyperlink{class_bit_map}{int}} \&\mbox{\hyperlink{class_bit_map}{blue}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_noise_8cpp_a7f887bbda3188b3632410630ae3b7b68}\label{_noise_8cpp_a7f887bbda3188b3632410630ae3b7b68} 
+\index{Noise.cpp@{Noise.cpp}!\_groupColor@{\_groupColor}}
+\index{\_groupColor@{\_groupColor}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{\_groupColor()}{\_groupColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} \+\_\+group\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{value,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{amount\+Of\+Group,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{minR,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{minG,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{minB,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{maxR,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{maxG,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{maxB,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{R,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{G,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{B }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//\ Calculer\ la\ taille\ de\ chaque\ groupe}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{groupSize}}\ =\ \mbox{\hyperlink{class_bit_map}{max}}\ /\ \mbox{\hyperlink{class_bit_map}{amountOfGroup}};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//\ Déterminer\ le\ groupe\ auquel\ appartient\ la\ valeur}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{groupIndex}}\ =\ \mbox{\hyperlink{class_bit_map}{value}}\ /\ \mbox{\hyperlink{class_bit_map}{groupSize}};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ Interpoler\ la\ couleur\ en\ fonction\ du\ groupe}}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{_noise_8cpp_a0d095f3d3ebe1b4722e0b7b5dd941a1a}{\_interpolateColor}}(\mbox{\hyperlink{class_bit_map}{groupIndex}},\ \mbox{\hyperlink{class_bit_map}{amountOfGroup}}\ -\/\ 1,\ 0.5,\ \mbox{\hyperlink{class_bit_map}{minR}},\ \mbox{\hyperlink{class_bit_map}{minG}},\ \mbox{\hyperlink{class_bit_map}{minB}},\ \mbox{\hyperlink{class_bit_map}{maxR}},\ \mbox{\hyperlink{class_bit_map}{maxG}},\ \mbox{\hyperlink{class_bit_map}{maxB}},\ \mbox{\hyperlink{class_bit_map}{R}},\ \mbox{\hyperlink{class_bit_map}{G}},\ \mbox{\hyperlink{class_bit_map}{B}});}
+\DoxyCodeLine{00129\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_8cpp_source_l00106}{\+\_\+interpolate\+Color()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_noise_8cpp_source_l00139}{plain\+Color()}}.
+
+\Hypertarget{_noise_8cpp_ae8d33472bdf8dd48f37246abece3e51c}\label{_noise_8cpp_ae8d33472bdf8dd48f37246abece3e51c} 
+\index{Noise.cpp@{Noise.cpp}!\_heatMap@{\_heatMap}}
+\index{\_heatMap@{\_heatMap}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{\_heatMap()}{\_heatMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} \+\_\+heat\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{value,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{red,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{green,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{blue }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{max\_2}}\ =\ \mbox{\hyperlink{class_bit_map}{max}}\ /\ 3;}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{max\_3}}\ =\ \mbox{\hyperlink{class_bit_map}{max\_2}}\ *\ 2;}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{red}}\ =\ std::min(\mbox{\hyperlink{class_bit_map}{max}},\ \mbox{\hyperlink{class_bit_map}{value}}\ *\ 3);}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{green}}\ =\ std::min(\mbox{\hyperlink{class_bit_map}{max}},\ std::max(0,\ (\mbox{\hyperlink{class_bit_map}{value}}\ -\/\ \mbox{\hyperlink{class_bit_map}{max\_2}})\ *\ 3));}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{blue}}\ =\ std::min(\mbox{\hyperlink{class_bit_map}{max}},\ std::max(0,\ (\mbox{\hyperlink{class_bit_map}{value}}\ -\/\ \mbox{\hyperlink{class_bit_map}{max\_3}})\ *\ 3));}
+\DoxyCodeLine{00104\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_noise_8cpp_source_l00226}{Noise\+::to\+PPM()}}.
+
+\Hypertarget{_noise_8cpp_a0d095f3d3ebe1b4722e0b7b5dd941a1a}\label{_noise_8cpp_a0d095f3d3ebe1b4722e0b7b5dd941a1a} 
+\index{Noise.cpp@{Noise.cpp}!\_interpolateColor@{\_interpolateColor}}
+\index{\_interpolateColor@{\_interpolateColor}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{\_interpolateColor()}{\_interpolateColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} \+\_\+interpolate\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{value,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max,  }\item[{\mbox{\hyperlink{class_bit_map}{float}}}]{mid\+Threshold,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{minR,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{minG,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{minB,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{maxR,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{maxG,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{maxB,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{R,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{G,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{B }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{comment}{//\ Calculer\ le\ facteur\ d'interpolation}}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_bit_map}{factor}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(\mbox{\hyperlink{class_bit_map}{value}})\ /\ \mbox{\hyperlink{class_bit_map}{max}};}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{factor}}\ <\ \mbox{\hyperlink{class_bit_map}{midThreshold}})\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{factor}}\ =\ \mbox{\hyperlink{class_bit_map}{factor}}\ *\ (1.\ -\/\ \mbox{\hyperlink{class_bit_map}{midThreshold}});}
+\DoxyCodeLine{00111\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{factor}}\ =\ (\mbox{\hyperlink{class_bit_map}{factor}}\ -\/\ \mbox{\hyperlink{class_bit_map}{midThreshold}})\ /\ (1.\ -\/\ \mbox{\hyperlink{class_bit_map}{midThreshold}});}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{//\ Interpoler\ chaque\ composante\ de\ couleur}}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{R}}\ =\ \mbox{\hyperlink{class_bit_map}{minR}}\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_bit_map}{factor}}\ *\ (\mbox{\hyperlink{class_bit_map}{maxR}}\ -\/\ \mbox{\hyperlink{class_bit_map}{minR}}));}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{G}}\ =\ \mbox{\hyperlink{class_bit_map}{minG}}\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_bit_map}{factor}}\ *\ (\mbox{\hyperlink{class_bit_map}{maxG}}\ -\/\ \mbox{\hyperlink{class_bit_map}{minG}}));}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{B}}\ =\ \mbox{\hyperlink{class_bit_map}{minB}}\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_bit_map}{factor}}\ *\ (\mbox{\hyperlink{class_bit_map}{maxB}}\ -\/\ \mbox{\hyperlink{class_bit_map}{minB}}));}
+\DoxyCodeLine{00118\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_noise_8cpp_source_l00120}{\+\_\+group\+Color()}}, \mbox{\hyperlink{_noise_8cpp_source_l00135}{beach\+Color()}}, \mbox{\hyperlink{_noise_8cpp_source_l00143}{mountain\+Color()}}, \mbox{\hyperlink{_noise_8cpp_source_l00131}{ocean\+Color()}}, and \mbox{\hyperlink{_noise_8cpp_source_l00147}{snow\+Color()}}.
+
+\Hypertarget{_noise_8cpp_a9172ad74c77bf36fb8994dcb520ab147}\label{_noise_8cpp_a9172ad74c77bf36fb8994dcb520ab147} 
+\index{Noise.cpp@{Noise.cpp}!\_saveterrainTexture@{\_saveterrainTexture}}
+\index{\_saveterrainTexture@{\_saveterrainTexture}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{\_saveterrainTexture()}{\_saveterrainTexture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} \+\_\+saveterrain\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{value,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{red,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{green,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{blue }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00171}{171}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{step}}\ =\ \mbox{\hyperlink{class_bit_map}{max}}\ /\ 16;}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{sea\_level}}\ =\ \mbox{\hyperlink{class_bit_map}{step}}*4;}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{beach\_level}}\ =\ \mbox{\hyperlink{class_bit_map}{step}}\ *\ 6;}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{plain\_level}}\ =\ \mbox{\hyperlink{class_bit_map}{step}}\ *\ 12;}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{mountain\_level}}\ =\ \mbox{\hyperlink{class_bit_map}{max}}\ *\ 15;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{value}}\ <\ \mbox{\hyperlink{class_bit_map}{sea\_level}})\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{blue}}\ =\ 255;}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{green}}\ =\ std::min(\mbox{\hyperlink{class_bit_map}{max}},\ \mbox{\hyperlink{class_bit_map}{value}}\ *\ 5\ /\ \mbox{\hyperlink{class_bit_map}{sea\_level}});}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{red}}\ \ =\ 0;}
+\DoxyCodeLine{00182\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{value}}\ <\ \mbox{\hyperlink{class_bit_map}{beach\_level}})\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{blue}}\ =\ 0;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{green}}\ =\ std::min(\mbox{\hyperlink{class_bit_map}{max}},\ (\mbox{\hyperlink{class_bit_map}{value}}\ -\/\ \mbox{\hyperlink{class_bit_map}{sea\_level}})\ *\ 10\ /\ (\ \mbox{\hyperlink{class_bit_map}{beach\_level}}\ -\/\ \mbox{\hyperlink{class_bit_map}{sea\_level}}));}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{red}}\ =\ std::min(\mbox{\hyperlink{class_bit_map}{max}},\ (\mbox{\hyperlink{class_bit_map}{value}}\ -\/\ \mbox{\hyperlink{class_bit_map}{sea\_level}})\ *\ 10\ /\ (\ \mbox{\hyperlink{class_bit_map}{beach\_level}}\ -\/\ \mbox{\hyperlink{class_bit_map}{sea\_level}}));}
+\DoxyCodeLine{00186\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{value}}\ <\ \mbox{\hyperlink{class_bit_map}{plain\_level}})\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{blue}}\ =\ 0;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{green}}\ =\ std::min(\mbox{\hyperlink{class_bit_map}{max}},\ (\mbox{\hyperlink{class_bit_map}{value}}\ -\/\ \mbox{\hyperlink{class_bit_map}{beach\_level}})\ *\ 3\ /\ (\ \mbox{\hyperlink{class_bit_map}{plain\_level}}\ -\/\ \mbox{\hyperlink{class_bit_map}{beach\_level}}));}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{red}}\ =\ 0;}
+\DoxyCodeLine{00190\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{value}}\ <\ \mbox{\hyperlink{class_bit_map}{mountain\_level}})\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{blue}}\ =\ \mbox{\hyperlink{class_bit_map}{green}}\ =\ \mbox{\hyperlink{class_bit_map}{red}}\ =\ std::min(\mbox{\hyperlink{class_bit_map}{max}},\ (\mbox{\hyperlink{class_bit_map}{value}}\ -\/\ \mbox{\hyperlink{class_bit_map}{plain\_level}})\ *\ 3\ /\ (\ \mbox{\hyperlink{class_bit_map}{plain\_level}}\ -\/\ \mbox{\hyperlink{class_bit_map}{mountain\_level}}));}
+\DoxyCodeLine{00192\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{blue}}\ =\ \mbox{\hyperlink{class_bit_map}{red}}\ =\ \mbox{\hyperlink{class_bit_map}{green}}\ =\ \mbox{\hyperlink{class_bit_map}{max}};}
+\DoxyCodeLine{00194\ \ \ \ \ \}}
+\DoxyCodeLine{00195\ \}}
+
+\end{DoxyCode}
+\Hypertarget{_noise_8cpp_a66d59dc6b6694a8f1a4a22c284a7eb1a}\label{_noise_8cpp_a66d59dc6b6694a8f1a4a22c284a7eb1a} 
+\index{Noise.cpp@{Noise.cpp}!\_terrainTexture@{\_terrainTexture}}
+\index{\_terrainTexture@{\_terrainTexture}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{\_terrainTexture()}{\_terrainTexture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} \+\_\+terrain\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{value,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{red,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{green,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{blue }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{step}}\ =\ \mbox{\hyperlink{class_bit_map}{max}}\ /\ 32;}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{quota}}\ =\ \mbox{\hyperlink{class_bit_map}{value}}\ /\ \mbox{\hyperlink{class_bit_map}{step}};}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{quota}}\ <\ 4)\ \{\ \textcolor{comment}{//\ DEEP\ OCEAN\ LEVEL}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{red}}\ =\ 8;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{green}}\ =\ 23;}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{blue}}\ =\ 116;}
+\DoxyCodeLine{00157\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{quota}}\ <\ 9)\ \{\ \ \textcolor{comment}{//\ SHORES\ LEVEL}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_noise_8cpp_a64dc090c99e96df965cec4e8700981aa}{oceanColor}}(\mbox{\hyperlink{class_bit_map}{value}},\ \mbox{\hyperlink{class_bit_map}{step}}\ *\ 9,\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
+\DoxyCodeLine{00159\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{quota}}\ <\ 11)\ \{\ \textcolor{comment}{//\ BEACH\ LEVEL}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_noise_8cpp_a632f623fb36419186f524627236fd304}{beachColor}}(\mbox{\hyperlink{class_bit_map}{value}},\ \mbox{\hyperlink{class_bit_map}{step}}\ *\ 11,\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
+\DoxyCodeLine{00161\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{quota}}\ <\ 28)\ \{\ \textcolor{comment}{//\ PLAIN\ LEVEL}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_noise_8cpp_a570d0551ed076acfa70bf22b925fcf3b}{plainColor}}(\mbox{\hyperlink{class_bit_map}{value}},\ \mbox{\hyperlink{class_bit_map}{step}}\ *\ 28,\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
+\DoxyCodeLine{00163\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{quota}}\ <\ 32)\ \{\ \textcolor{comment}{//\ MOUNTAIN\ LEVEL}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_noise_8cpp_acead57055c53320e20c2ffd99d1a63b1}{mountainColor}}(\mbox{\hyperlink{class_bit_map}{value}},\ \mbox{\hyperlink{class_bit_map}{step}}\ *\ 32,\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
+\DoxyCodeLine{00165\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ SNOW\ LEVEL}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_noise_8cpp_afe9d4d131f789081930790b37d127bf0}{snowColor}}(\mbox{\hyperlink{class_bit_map}{value}},\ \mbox{\hyperlink{class_bit_map}{step}}\ *\ 32,\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_8cpp_source_l00135}{beach\+Color()}}, \mbox{\hyperlink{_noise_8cpp_source_l00143}{mountain\+Color()}}, \mbox{\hyperlink{_noise_8cpp_source_l00131}{ocean\+Color()}}, \mbox{\hyperlink{_noise_8cpp_source_l00139}{plain\+Color()}}, and \mbox{\hyperlink{_noise_8cpp_source_l00147}{snow\+Color()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_noise_8cpp_source_l00226}{Noise\+::to\+PPM()}}.
+
+\Hypertarget{_noise_8cpp_a632f623fb36419186f524627236fd304}\label{_noise_8cpp_a632f623fb36419186f524627236fd304} 
+\index{Noise.cpp@{Noise.cpp}!beachColor@{beachColor}}
+\index{beachColor@{beachColor}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{beachColor()}{beachColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} beach\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{value,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{red,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{green,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{blue }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{_noise_8cpp_a0d095f3d3ebe1b4722e0b7b5dd941a1a}{\_interpolateColor}}(\mbox{\hyperlink{class_bit_map}{value}},\ \mbox{\hyperlink{class_bit_map}{max}},\ 0.8,\ 99,\ 94,\ 72,\ 224,\ 214,\ 169,\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
+\DoxyCodeLine{00137\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_8cpp_source_l00106}{\+\_\+interpolate\+Color()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_noise_8cpp_source_l00150}{\+\_\+terrain\+Texture()}}.
+
+\Hypertarget{_noise_8cpp_acead57055c53320e20c2ffd99d1a63b1}\label{_noise_8cpp_acead57055c53320e20c2ffd99d1a63b1} 
+\index{Noise.cpp@{Noise.cpp}!mountainColor@{mountainColor}}
+\index{mountainColor@{mountainColor}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{mountainColor()}{mountainColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} mountain\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{value,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{red,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{green,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{blue }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00143}{143}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{_noise_8cpp_a0d095f3d3ebe1b4722e0b7b5dd941a1a}{\_interpolateColor}}(\mbox{\hyperlink{class_bit_map}{value}},\ \mbox{\hyperlink{class_bit_map}{max}},\ 0.6,\ 35,\ 35,\ 35,\ 159,\ 198,\ 198,\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
+\DoxyCodeLine{00145\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_8cpp_source_l00106}{\+\_\+interpolate\+Color()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_noise_8cpp_source_l00150}{\+\_\+terrain\+Texture()}}.
+
+\Hypertarget{_noise_8cpp_a64dc090c99e96df965cec4e8700981aa}\label{_noise_8cpp_a64dc090c99e96df965cec4e8700981aa} 
+\index{Noise.cpp@{Noise.cpp}!oceanColor@{oceanColor}}
+\index{oceanColor@{oceanColor}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{oceanColor()}{oceanColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} ocean\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{value,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{red,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{green,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{blue }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{_noise_8cpp_a0d095f3d3ebe1b4722e0b7b5dd941a1a}{\_interpolateColor}}(\mbox{\hyperlink{class_bit_map}{value}},\ \mbox{\hyperlink{class_bit_map}{max}},\ 0.8,\ 8,\ 23,\ 116,\ 119,\ 167,\ 179,\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
+\DoxyCodeLine{00133\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_8cpp_source_l00106}{\+\_\+interpolate\+Color()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_noise_8cpp_source_l00150}{\+\_\+terrain\+Texture()}}.
+
+\Hypertarget{_noise_8cpp_a570d0551ed076acfa70bf22b925fcf3b}\label{_noise_8cpp_a570d0551ed076acfa70bf22b925fcf3b} 
+\index{Noise.cpp@{Noise.cpp}!plainColor@{plainColor}}
+\index{plainColor@{plainColor}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{plainColor()}{plainColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} plain\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{value,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{red,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{green,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{blue }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{_noise_8cpp_a7f887bbda3188b3632410630ae3b7b68}{\_groupColor}}(\mbox{\hyperlink{class_bit_map}{value}},\ \mbox{\hyperlink{class_bit_map}{max}},\ 16,\ 141,\ 199,\ 97,\ 48,\ 86,\ 30,\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
+\DoxyCodeLine{00141\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_8cpp_source_l00120}{\+\_\+group\+Color()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_noise_8cpp_source_l00150}{\+\_\+terrain\+Texture()}}.
+
+\Hypertarget{_noise_8cpp_afe9d4d131f789081930790b37d127bf0}\label{_noise_8cpp_afe9d4d131f789081930790b37d127bf0} 
+\index{Noise.cpp@{Noise.cpp}!snowColor@{snowColor}}
+\index{snowColor@{snowColor}!Noise.cpp@{Noise.cpp}}
+\doxysubsubsection{\texorpdfstring{snowColor()}{snowColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} snow\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{value,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{red,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{green,  }\item[{\mbox{\hyperlink{class_bit_map}{int}} \&}]{blue }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00147}{147}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{_noise_8cpp_a0d095f3d3ebe1b4722e0b7b5dd941a1a}{\_interpolateColor}}(\mbox{\hyperlink{class_bit_map}{value}},\ \mbox{\hyperlink{class_bit_map}{max}},\ 0.8,\ 159,\ 198,\ 198,\ 255,\ 255,\ 255,\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
+\DoxyCodeLine{00149\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_8cpp_source_l00106}{\+\_\+interpolate\+Color()}}.
+
+
+
+Referenced by \mbox{\hyperlink{_noise_8cpp_source_l00150}{\+\_\+terrain\+Texture()}}.
+

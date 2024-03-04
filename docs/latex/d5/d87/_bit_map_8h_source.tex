@@ -1,0 +1,108 @@
+\doxysection{Bit\+Map.\+h}
+\hypertarget{_bit_map_8h_source}{}\label{_bit_map_8h_source}\index{sources/inc/api/noise/BitMap.h@{sources/inc/api/noise/BitMap.h}}
+\mbox{\hyperlink{_bit_map_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Antonin\ Jean\ on\ 19/11/2023.}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00004}00004\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}../Utils.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00012}00012\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00013}\mbox{\hyperlink{class_bit_map}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bit_map}{BitMap}}\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00014}00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00015}\mbox{\hyperlink{class_bit_map_a9bd57103fb2333ede36546fc437b6239}{00015}}\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_bit_map_a9bd57103fb2333ede36546fc437b6239}{BitMap}}(\textcolor{keywordtype}{size\_t}\ width,\ \textcolor{keywordtype}{size\_t}\ height,\ T\ defaultValue)\ :\ m\_width(width),\ m\_height(height),\ m\_data(std::vector<std::vector<T>\ >(height))}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ m\_height;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ m\_data[i]\ =\ std::vector<T>(width,\ defaultValue);}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00022}\mbox{\hyperlink{class_bit_map_a59e304848637566b41b5965f0042f4c5}{00022}}\ \ \ \ \ \mbox{\hyperlink{class_bit_map_a59e304848637566b41b5965f0042f4c5}{BitMap}}(\textcolor{keywordtype}{size\_t}\ width,\ \textcolor{keywordtype}{size\_t}\ height,\ std::vector<std::vector<T>>\ values)}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00023}00023\ \ \ \ \ :\ m\_width\ \{width\}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00024}00024\ \ \ \ \ ,\ m\_height\ \{height\}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00025}00025\ \ \ \ \ ,\ m\_data\ \{values\}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00026}00026\ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00028}\mbox{\hyperlink{class_bit_map_a7542560e6862a34f6a4d2753f7d44a83}{00028}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map_a7542560e6862a34f6a4d2753f7d44a83}{getHeight}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_height;}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00032}\mbox{\hyperlink{class_bit_map_acc975554e4c0b9cc37e27b6b4c3ab072}{00032}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map_acc975554e4c0b9cc37e27b6b4c3ab072}{getWidth}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_width;}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00036}\mbox{\hyperlink{class_bit_map_a227f9cad963d83340d95a6f12ec69c06}{00036}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map_a227f9cad963d83340d95a6f12ec69c06}{getSize}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_height\ *\ m\_width;}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00040}\mbox{\hyperlink{class_bit_map_a0b5afe05f32b63998df2622f0a88e394}{00040}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bit_map_a0b5afe05f32b63998df2622f0a88e394}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{BitMap<U>}}\ \&self,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{BitMap<U>}}\ \&other);}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00043}\mbox{\hyperlink{class_bit_map_a683bf72961856109404f944c26828b50}{00043}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bit_map_a683bf72961856109404f944c26828b50}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{BitMap<U>}}\ \&self,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{BitMap<U>}}\ \&other);}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00046}\mbox{\hyperlink{class_bit_map_ac9f41e8835ed3810f2463f0855ffa656}{00046}}\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ \mbox{\hyperlink{class_bit_map_ac9f41e8835ed3810f2463f0855ffa656}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{BitMap<U>}}\&\ self,\ T\ scalar);}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00049}\mbox{\hyperlink{class_bit_map_ad52069823f66f42aa8a4f320f3880414}{00049}}\ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ \mbox{\hyperlink{class_bit_map_ad52069823f66f42aa8a4f320f3880414}{operator+}}(\mbox{\hyperlink{class_bit_map}{BitMap<U>}}\ self,\ \mbox{\hyperlink{class_bit_map}{BitMap<U>}}\ other);}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00051}\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{00051}}\ \ \ \ \ \textcolor{keyword}{const}\ T\ \mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ col,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ line)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (col\ >=\ m\_width\ ||\ line\ >=\ m\_height)\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ index\ ("{}}\ +\ std::to\_string(col)\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ std::to\_string(line)\ +}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}),\ in\ Bitmap\ of\ size\ ("{}}\ +\ std::to\_string(m\_width)\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ std::to\_string(m\_height)\ +\ \textcolor{stringliteral}{"{})."{}});}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_data[line][col];}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00059}\mbox{\hyperlink{class_bit_map_a7e25e51b212b4fd377df799df9369869}{00059}}\ \ \ \ \ T\ \mbox{\hyperlink{class_bit_map_a7e25e51b212b4fd377df799df9369869}{put}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ col,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ line,\ T\ value)\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (col\ >=\ m\_width\ ||\ line\ >=\ m\_height)\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ index\ ("{}}\ +\ std::to\_string(col)\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ std::to\_string(line)\ +}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}),\ in\ Bitmap\ of\ size\ ("{}}\ +\ std::to\_string(m\_width)\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ std::to\_string(m\_height)\ +\ \textcolor{stringliteral}{"{})."{}});}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ T\ oldValue\ =\ \mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(col,\ line);}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ m\_data[line][col]\ =\ value;}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ oldValue;}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00068}00068\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m\_height;}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ m\_width;}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00071}00071\ \ \ \ \ std::vector<std::vector<T>\ >\ m\_data;}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00072}00072\ \};}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00074}00074\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00075}\mbox{\hyperlink{_bit_map_8h_a143f195d345f177c500c7e5ae5a0b19e}{00075}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_bit_map_8h_a143f195d345f177c500c7e5ae5a0b19e}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ \&self,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ \&other)\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{return}\ other.m\_data\ !=\ self.m\_data;}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00079}00079\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00080}\mbox{\hyperlink{_bit_map_8h_adc8f1ac342ea93bfc58c6bc647d9bc2b}{00080}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_bit_map_8h_adc8f1ac342ea93bfc58c6bc647d9bc2b}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ \&self,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ \&other)\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{return}\ self.m\_data\ ==\ other.m\_data;}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00082}00082\ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00084}00084\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00085}\mbox{\hyperlink{_bit_map_8h_af4a0f16e37e41d0124dab54558d1dc70}{00085}}\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ \mbox{\hyperlink{_bit_map_8h_af4a0f16e37e41d0124dab54558d1dc70}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ self,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ result\ =\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}(\mbox{\hyperlink{class_bit_map}{self}}-\/>m\_data);}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{self}}.m\_height\ !=\ \mbox{\hyperlink{class_bit_map}{other}}.m\_height\ ||\ \mbox{\hyperlink{class_bit_map}{self}}.m\_width\ !=\ \mbox{\hyperlink{class_bit_map}{other}}.m\_width)\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Invalid\ operations,\ the\ bitmaps\ must\ have\ identical\ sizes"{}});}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{result}};}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00093}00093\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00094}\mbox{\hyperlink{_bit_map_8h_aeffd3c002383ed76137dd115dc89115c}{00094}}\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ \mbox{\hyperlink{_bit_map_8h_af4a0f16e37e41d0124dab54558d1dc70}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ \&\mbox{\hyperlink{class_bit_map}{self}},\ \mbox{\hyperlink{class_bit_map}{T}}\ \mbox{\hyperlink{class_bit_map}{scalar}})\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}\ \mbox{\hyperlink{class_bit_map}{result}}\ =\ \mbox{\hyperlink{class_bit_map}{BitMap<T>}}(\mbox{\hyperlink{class_bit_map}{self}}-\/>m\_data);}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ std::vector<T>\ \&\mbox{\hyperlink{class_bit_map}{subList}}:\ \mbox{\hyperlink{class_bit_map}{result}}.m\_data)\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{T}}\ \&\mbox{\hyperlink{class_bit_map}{item}}:\ \mbox{\hyperlink{class_bit_map}{subList}})\ \{}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{item}}\ +=\ \mbox{\hyperlink{class_bit_map}{scalar}};}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{result}};}
+\DoxyCodeLine{\Hypertarget{_bit_map_8h_source_l00102}00102\ \}}
+
+\end{DoxyCode}
