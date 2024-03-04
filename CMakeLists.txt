@@ -26,7 +26,9 @@ file(GLOB_RECURSE SOURCES
 )
 
 # Add an executable with the above sources
-add_executable(procGen ${SOURCES} )
+add_executable(procGen ${SOURCES}
+        sources/inc/ValueNoise.Hpp
+        sources/src/ValueNoise.cpp)
 
 # Set the directories that should be included in the build command for this target
 # when running g++ these will be included as -I/directory/path/
