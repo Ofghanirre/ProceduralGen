@@ -5,7 +5,7 @@
  *
  */
 
-#include "../inc/Worley_noise.hpp"
+#include <api/noise/generators/Worley_noise.hpp>
 
 
 Worley_noise::Worley_noise(int minRange, int maxRange) : _minRange(minRange), _maxRange(maxRange){};

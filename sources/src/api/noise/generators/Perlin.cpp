@@ -7,7 +7,7 @@
 
 // Some of those functions have been taken from https://pastebin.com/gXEYsmw8
 
-#include "../inc/Perlin.hpp"
+#include <api/noise/generators/Perlin.hpp>
 
 Perlin::Perlin(int minRange, int maxRange, size_t gridSize)
     : _minRange {minRange}
