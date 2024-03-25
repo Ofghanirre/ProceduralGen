@@ -5,9 +5,9 @@
 #include <iostream>
 #include <memory>
 #include <api/noise/BitMap.h>
-#include <api/Terrain.h>
-#include <Perlin.hpp>
-#include <Worley_noise.hpp>
+#include <api/Terrain/Terrain.h>
+#include <api/noise/generators/Perlin.hpp>
+#include <api/noise/generators/Worley_noise.hpp>
 #include <time.h>
 #include <chrono>
 

@@ -9,8 +9,8 @@
 #include <random>
 #include <algorithm>
 #include <memory>
-#include "api/noise/BitMap.h"
-#include "api/noise/INoiseGenerator.h"
+#include <api/noise/BitMap.h>
+#include <api/noise/INoiseGenerator.h>
 
 
 class ValueNoise : public INoiseGenerator {
