@@ -1,0 +1,123 @@
+\doxysection{Value\+Noise Class Reference}
+\hypertarget{class_value_noise}{}\label{class_value_noise}\index{ValueNoise@{ValueNoise}}
+
+
+{\ttfamily \#include $<$Value\+Noise.\+hpp$>$}
+
+Inheritance diagram for Value\+Noise\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{da/d14/class_value_noise}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_value_noise_aea004a259de1843a48f953735c83d6c0}{Value\+Noise}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{min\+Range}}, \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{max\+Range}})
+\item 
+\mbox{\hyperlink{class_value_noise_acb885d3a2b3f51407b0c08e95689187f}{Value\+Noise}} ()
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_bit_map}{int}} $>$ $>$ \mbox{\hyperlink{class_value_noise_a84bf5a9f277cdd9bceede02e2743164a}{value\+Noise}} (\mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{seed}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{width}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{height}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{grid\+Size}}) \mbox{\hyperlink{class_bit_map}{const}}
+\item 
+\mbox{\hyperlink{class_noise}{Noise}} \mbox{\hyperlink{class_value_noise_abd5153ea69cf1aafad58ba4e33fd2a01}{gen\+Noise}} (\mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{seed}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{width}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{height}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{frequency}}) \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{override}}
+\begin{DoxyCompactList}\small\item\em Generator for a \doxylink{class_noise}{Noise}, those can be statically loaded for usage and contains the all-\/usable parameters known for generating a noise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_noise_generator}{INoise\+Generator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_map}{virtual}} \mbox{\hyperlink{class_i_noise_generator_ae53d173d558ba5763ed10d08a0f82fd8}{\texorpdfstring{$\sim$}{\string~}\+INoise\+Generator}} ()=\mbox{\hyperlink{class_bit_map}{default}}
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_value_noise_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{_value_noise_8hpp_source}{Value\+Noise.\+hpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_value_noise_aea004a259de1843a48f953735c83d6c0}\label{class_value_noise_aea004a259de1843a48f953735c83d6c0} 
+\index{ValueNoise@{ValueNoise}!ValueNoise@{ValueNoise}}
+\index{ValueNoise@{ValueNoise}!ValueNoise@{ValueNoise}}
+\doxysubsubsection{\texorpdfstring{ValueNoise()}{ValueNoise()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Value\+Noise\+::\+Value\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{min\+Range,  }\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{max\+Range }\end{DoxyParamCaption})}
+
+\Hypertarget{class_value_noise_acb885d3a2b3f51407b0c08e95689187f}\label{class_value_noise_acb885d3a2b3f51407b0c08e95689187f} 
+\index{ValueNoise@{ValueNoise}!ValueNoise@{ValueNoise}}
+\index{ValueNoise@{ValueNoise}!ValueNoise@{ValueNoise}}
+\doxysubsubsection{\texorpdfstring{ValueNoise()}{ValueNoise()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Value\+Noise\+::\+Value\+Noise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_value_noise_abd5153ea69cf1aafad58ba4e33fd2a01}\label{class_value_noise_abd5153ea69cf1aafad58ba4e33fd2a01} 
+\index{ValueNoise@{ValueNoise}!genNoise@{genNoise}}
+\index{genNoise@{genNoise}!ValueNoise@{ValueNoise}}
+\doxysubsubsection{\texorpdfstring{genNoise()}{genNoise()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_noise}{Noise}} Value\+Noise\+::gen\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{seed,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{width,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{height,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{frequency }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Generator for a \doxylink{class_noise}{Noise}, those can be statically loaded for usage and contains the all-\/usable parameters known for generating a noise. 
+
+This factory shall be implemented by each and every noise there is, but the required common parameters are stored here
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & the seed used to generate the noise \\
+\hline
+{\em width} & the width of the windowed bitmap created \\
+\hline
+{\em height} & the height of the windowed bitmap created \\
+\hline
+{\em frequency} & the frequency used to create the noise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_noise_generator_a5c12baafa6cd5226dc6c78dec008cb37}{INoise\+Generator}}.
+
+
+
+Definition at line \mbox{\hyperlink{_value_noise_8cpp_source_l00108}{108}} of file \mbox{\hyperlink{_value_noise_8cpp_source}{Value\+Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{comment}{//\ generate\ value\ noise}}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{BitMap<int>}}\ \mbox{\hyperlink{class_bit_map}{noiseMap}}\ =\ \mbox{\hyperlink{class_bit_map}{BitMap<int>}}(\mbox{\hyperlink{class_bit_map}{width}},\mbox{\hyperlink{class_bit_map}{height}},0);}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{class_value___noise}{Value\_Noise}}\ \mbox{\hyperlink{class_bit_map}{noise}}(\mbox{\hyperlink{class_bit_map}{seed}});}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{freq}}\ =\ 0.05f;}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{class_bit_map}{j}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{j}}\ <\ \mbox{\hyperlink{class_bit_map}{height}};\ ++\mbox{\hyperlink{class_bit_map}{j}})\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{class_bit_map}{i}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{i}}\ <\ \mbox{\hyperlink{class_bit_map}{width}};\ ++\mbox{\hyperlink{class_bit_map}{i}})\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ generate\ a\ float\ in\ the\ range\ [0:1]}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_bit_map}{Vec2f}}\ \mbox{\hyperlink{class_bit_map}{v2f}}\ =\ \mbox{\hyperlink{_value_noise_8cpp_a5bba51046f8678fc315d18709ac24dab}{Vec2f}}(\mbox{\hyperlink{class_bit_map}{i}},\ \mbox{\hyperlink{class_bit_map}{j}});}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{g}}\ =\ \mbox{\hyperlink{class_bit_map}{noise}}.eval(\mbox{\hyperlink{class_bit_map}{v2f}}\ *\ \mbox{\hyperlink{class_bit_map}{freq}})*255;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{noiseMap}}.\mbox{\hyperlink{class_bit_map_a7e25e51b212b4fd377df799df9369869}{put}}(\mbox{\hyperlink{class_bit_map}{j}},\mbox{\hyperlink{class_bit_map}{i}},\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_bit_map}{g}}));}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_noise}{Noise}}(\mbox{\hyperlink{class_bit_map}{noiseMap}},\mbox{\hyperlink{class_bit_map}{seed}},\mbox{\hyperlink{class_bit_map}{width}},\mbox{\hyperlink{class_bit_map}{height}},\mbox{\hyperlink{class_bit_map}{frequency}});}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_bit_map_8h_source_l00059}{Bit\+Map$<$ T $>$\+::put()}}.
+
+\Hypertarget{class_value_noise_a84bf5a9f277cdd9bceede02e2743164a}\label{class_value_noise_a84bf5a9f277cdd9bceede02e2743164a} 
+\index{ValueNoise@{ValueNoise}!valueNoise@{valueNoise}}
+\index{valueNoise@{valueNoise}!ValueNoise@{ValueNoise}}
+\doxysubsubsection{\texorpdfstring{valueNoise()}{valueNoise()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_bit_map}{int}} $>$ $>$ Value\+Noise\+::value\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{seed,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{width,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{height,  }\item[{\mbox{\hyperlink{class_bit_map}{size\+\_\+t}}}]{grid\+Size }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+sources/inc/api/noise/generators/\mbox{\hyperlink{_value_noise_8hpp}{Value\+Noise.\+hpp}}\item 
+sources/src/api/noise/generators/\mbox{\hyperlink{_value_noise_8cpp}{Value\+Noise.\+cpp}}\end{DoxyCompactItemize}

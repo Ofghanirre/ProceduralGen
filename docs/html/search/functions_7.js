@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['identitypunderationfunction_0',['identitypunderationfunction',['../d4/d02/class_identity_punderation_function.html#adfa92ae341ad3e145654c14794d7de83',1,'IdentityPunderationFunction::IdentityPunderationFunction(std::shared_ptr&lt; IPunderationFunction &gt; next)'],['../d4/d02/class_identity_punderation_function.html#ab5d8ac3ed960adeebaef38d36fdb188f',1,'IdentityPunderationFunction::IdentityPunderationFunction()']]],
-  ['inversepunderationfunction_1',['inversepunderationfunction',['../d4/de5/class_inverse_punderation_function.html#af666eec1a5420851f08cf157fd2188b4',1,'InversePunderationFunction::InversePunderationFunction(int revertValue, std::shared_ptr&lt; IPunderationFunction &gt; next)'],['../d4/de5/class_inverse_punderation_function.html#a558b07481d0f123976a086ce60a1c0cd',1,'InversePunderationFunction::InversePunderationFunction(int revertValue)']]],
-  ['ipunderationfunction_2',['ipunderationfunction',['../d4/db2/class_i_punderation_function.html#a3281cdece75e28d85a76458101a08a0f',1,'IPunderationFunction::IPunderationFunction(std::shared_ptr&lt; IPunderationFunction &gt; next)'],['../d4/db2/class_i_punderation_function.html#a9c5a8b21d7c937932125ec660c8b4822',1,'IPunderationFunction::IPunderationFunction()']]]
+  ['hasnext_0',['hasNext',['../d4/db2/class_i_punderation_function.html#a14bf9696157e7dcd9a53912bd935b255',1,'IPunderationFunction']]]
 ];

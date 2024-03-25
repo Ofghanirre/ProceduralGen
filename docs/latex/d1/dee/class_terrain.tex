@@ -12,13 +12,15 @@ A \doxylink{class_terrain}{Terrain} is a structure representing a compilation of
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_terrain_a575cff24e5aeb59c6d092528381a3638}{Terrain}} (std\+::string \mbox{\hyperlink{class_bit_map}{name}}, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{seed}})
+\mbox{\hyperlink{class_terrain_a575cff24e5aeb59c6d092528381a3638}{Terrain}} (std\+::string name, \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_bit_map}{seed}})
 \item 
 \mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{class_terrain_a8d6bba9308a429affec377c67deedc58}{add\+Terrain\+Node}} (\mbox{\hyperlink{class_i_noise_generator}{INoise\+Generator}} \&noise\+Generator, \mbox{\hyperlink{class_i_punderation_function}{IPunderation\+Function}} \&mapping\+Function, \mbox{\hyperlink{class_bit_map}{bool}}(\texorpdfstring{$\ast$}{*}predicate)(\mbox{\hyperlink{class_bit_map}{int}})=\mbox{[}$\,$\mbox{]}(\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}) \{\mbox{\hyperlink{class_bit_map}{return}} \mbox{\hyperlink{class_bit_map}{true}};\})
 \begin{DoxyCompactList}\small\item\em Adds a Noise\+Generator to the \doxylink{class_terrain}{Terrain}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{class_terrain_a1105053058601ff115d1e4195d0766e4}{add\+Terrain\+Node}} (\mbox{\hyperlink{class_i_noise_generator}{INoise\+Generator}} \&noise\+Generator, \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4f}{Noise\+Punderation\+Function}} \mbox{\hyperlink{class_bit_map}{e\+Function}}=\mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{IDENTITY}}, \mbox{\hyperlink{class_bit_map}{bool}}(\texorpdfstring{$\ast$}{*}predicate)(\mbox{\hyperlink{class_bit_map}{int}})=\mbox{[}$\,$\mbox{]}(\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{value}}) \{\mbox{\hyperlink{class_bit_map}{return}} \mbox{\hyperlink{class_bit_map}{true}};\})
 \item 
 \mbox{\hyperlink{class_bit_map}{const}} std\+::string \& \mbox{\hyperlink{class_terrain_a847e4f903ec5ee325c0ff4fde12860c6}{get\+Name}} () \mbox{\hyperlink{class_bit_map}{const}}
+\item 
+\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} \mbox{\hyperlink{class_terrain_a56abfa4abb0dbcaae297dcff68152e33}{get\+Seed}} () \mbox{\hyperlink{class_bit_map}{const}}
 \item 
 \mbox{\hyperlink{class_bit_map}{const}} std\+::vector$<$ \mbox{\hyperlink{struct_terrain_node}{Terrain\+Node}} $>$ \& \mbox{\hyperlink{class_terrain_afabde0ced51880ac96beec19a4df39c5}{get\+Terrain\+Nodes}} () \mbox{\hyperlink{class_bit_map}{const}}
 \item 
@@ -46,7 +48,7 @@ Definition at line \mbox{\hyperlink{_terrain_8h_source_l00046}{46}} of file \mbo
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00046\ :\ m\_name(\mbox{\hyperlink{class_bit_map}{name}}),\ m\_seed(\mbox{\hyperlink{class_bit_map}{seed}})\ \{\};}
+\DoxyCodeLine{00046\ :\ m\_name(name),\ m\_seed(\mbox{\hyperlink{class_bit_map}{seed}})\ \{\};}
 
 \end{DoxyCode}
 
@@ -135,6 +137,27 @@ Definition at line \mbox{\hyperlink{_terrain_8h_source_l00082}{82}} of file \mbo
 \DoxyCodeLine{00084\ \ \ \ \ \}}
 
 \end{DoxyCode}
+\Hypertarget{class_terrain_a56abfa4abb0dbcaae297dcff68152e33}\label{class_terrain_a56abfa4abb0dbcaae297dcff68152e33} 
+\index{Terrain@{Terrain}!getSeed@{getSeed}}
+\index{getSeed@{getSeed}!Terrain@{Terrain}}
+\doxysubsubsection{\texorpdfstring{getSeed()}{getSeed()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{size\+\_\+t}} Terrain\+::get\+Seed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_terrain_8h_source_l00086}{86}} of file \mbox{\hyperlink{_terrain_8h_source}{Terrain.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_seed;}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_environment_8h_source_l00031}{Environment\+::new\+Environment()}}.
+
 \Hypertarget{class_terrain_a003c8166e2422bd8be4ad988376acc99}\label{class_terrain_a003c8166e2422bd8be4ad988376acc99} 
 \index{Terrain@{Terrain}!getTerrain@{getTerrain}}
 \index{getTerrain@{getTerrain}!Terrain@{Terrain}}
@@ -159,27 +182,27 @@ the bitmap of the terrain
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_terrain_8h_source_l00097}{97}} of file \mbox{\hyperlink{_terrain_8h_source}{Terrain.\+h}}.
+Definition at line \mbox{\hyperlink{_terrain_8h_source_l00101}{101}} of file \mbox{\hyperlink{_terrain_8h_source}{Terrain.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{BitMap<int>}}\ \mbox{\hyperlink{class_bit_map}{bitmap}}(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 0);}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_terrain_node}{TerrainNode}}\ \&\mbox{\hyperlink{class_bit_map}{terrainNode}}\ :\ m\_terrainNodes)\ \{}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{noise}}\ =\ \mbox{\hyperlink{class_bit_map}{terrainNode}}.noiseGenerator.genNoise(m\_seed,\ \mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{frequency}});}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{h}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{h}}\ <\ \mbox{\hyperlink{class_bit_map}{height}};\ ++\mbox{\hyperlink{class_bit_map}{h}})\ \{}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{w}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{w}}\ <\ \mbox{\hyperlink{class_bit_map}{width}};\ ++\mbox{\hyperlink{class_bit_map}{w}})\ \{}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{v}}\ =\ \mbox{\hyperlink{class_bit_map}{bitmap}}.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(\mbox{\hyperlink{class_bit_map}{w}},\mbox{\hyperlink{class_bit_map}{h}});}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{terrainNode}}.predicate(\mbox{\hyperlink{class_bit_map}{v}})\ ==\ \textcolor{keyword}{false})\ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}}\ =\ \mbox{\hyperlink{class_bit_map}{noise}}.getBitmap().\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(\mbox{\hyperlink{class_bit_map}{w}},\ \mbox{\hyperlink{class_bit_map}{h}});}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{bitmap}}.\mbox{\hyperlink{class_bit_map_a7e25e51b212b4fd377df799df9369869}{put}}(\mbox{\hyperlink{class_bit_map}{w}},\ \mbox{\hyperlink{class_bit_map}{h}},\ \mbox{\hyperlink{class_bit_map}{bitmap}}.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(\mbox{\hyperlink{class_bit_map}{w}},\mbox{\hyperlink{class_bit_map}{h}})\ +\ \mbox{\hyperlink{class_bit_map}{terrainNode}}.mappingFunction.compute(\mbox{\hyperlink{class_bit_map}{value}}));}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_noise}{Noise}}(\mbox{\hyperlink{class_bit_map}{bitmap}},\ m\_seed,\ \mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{frequency}});}
-\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{BitMap<int>}}\ \mbox{\hyperlink{class_bit_map}{bitmap}}(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 0);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{struct_terrain_node}{TerrainNode}}\ \&\mbox{\hyperlink{class_bit_map}{terrainNode}}\ :\ m\_terrainNodes)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{noise}}\ =\ \mbox{\hyperlink{class_bit_map}{terrainNode}}.noiseGenerator.genNoise(m\_seed,\ \mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{frequency}});}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{h}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{h}}\ <\ \mbox{\hyperlink{class_bit_map}{height}};\ ++\mbox{\hyperlink{class_bit_map}{h}})\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{w}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{w}}\ <\ \mbox{\hyperlink{class_bit_map}{width}};\ ++\mbox{\hyperlink{class_bit_map}{w}})\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{v}}\ =\ \mbox{\hyperlink{class_bit_map}{bitmap}}.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(\mbox{\hyperlink{class_bit_map}{w}},\mbox{\hyperlink{class_bit_map}{h}});}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{terrainNode}}.predicate(\mbox{\hyperlink{class_bit_map}{v}})\ ==\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}}\ =\ \mbox{\hyperlink{class_bit_map}{noise}}.getBitmap().\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(\mbox{\hyperlink{class_bit_map}{w}},\ \mbox{\hyperlink{class_bit_map}{h}});}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{bitmap}}.\mbox{\hyperlink{class_bit_map_a7e25e51b212b4fd377df799df9369869}{put}}(\mbox{\hyperlink{class_bit_map}{w}},\ \mbox{\hyperlink{class_bit_map}{h}},\ \mbox{\hyperlink{class_bit_map}{bitmap}}.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(\mbox{\hyperlink{class_bit_map}{w}},\mbox{\hyperlink{class_bit_map}{h}})\ +\ \mbox{\hyperlink{class_bit_map}{terrainNode}}.mappingFunction.compute(\mbox{\hyperlink{class_bit_map}{value}}));}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_noise}{Noise}}(\mbox{\hyperlink{class_bit_map}{bitmap}},\ m\_seed,\ \mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{frequency}});}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -194,17 +217,17 @@ References \mbox{\hyperlink{_bit_map_8h_source_l00051}{Bit\+Map$<$ T $>$\+::get(
 
 
 
-Definition at line \mbox{\hyperlink{_terrain_8h_source_l00086}{86}} of file \mbox{\hyperlink{_terrain_8h_source}{Terrain.\+h}}.
+Definition at line \mbox{\hyperlink{_terrain_8h_source_l00090}{90}} of file \mbox{\hyperlink{_terrain_8h_source}{Terrain.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_terrainNodes;}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_terrainNodes;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-sources/inc/api/\mbox{\hyperlink{_terrain_8h}{Terrain.\+h}}\end{DoxyCompactItemize}
+sources/inc/api/\+Terrain/\mbox{\hyperlink{_terrain_8h}{Terrain.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,37 @@
+\doxysection{Default\+Generator.\+hpp}
+\hypertarget{_default_generator_8hpp_source}{}\label{_default_generator_8hpp_source}\index{sources/inc/api/Terrain/generators/biome/DefaultGenerator.hpp@{sources/inc/api/Terrain/generators/biome/DefaultGenerator.hpp}}
+\mbox{\hyperlink{_default_generator_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Antonin\ Jean\ on\ 23/03/2024}}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_environment_8hpp}{api/Terrain/Environment.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00007}\mbox{\hyperlink{class_default_generator}{00007}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_default_generator}{DefaultGenerator}}\ :\ \textcolor{keyword}{public}\ ITerrainGenerator\ \{}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00008}00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_terrain}{Terrain}}\ m\_heightTerrain;}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00010}00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{class_default_generator}{DefaultGenerator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_terrain}{Terrain}}\ heightTerrain)\ :\ m\_heightTerrain\{heightTerrain\}:\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00013}\mbox{\hyperlink{class_default_generator_afe9e5761aabc7e6483aba8080a9a24a0}{00013}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_default_generator_afe9e5761aabc7e6483aba8080a9a24a0}{generateBiome}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ the\ height\ map}}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{m\_heightGenerator}}.generate();}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ the\ biome\ map}}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{m\_biomeGenerator}}.generate();}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00020}\mbox{\hyperlink{class_default_generator_a6345c352a9ca0aeca8d50ba44631718d}{00020}}\ \ \ \ \ \mbox{\hyperlink{class_environment}{Environment}}\ \mbox{\hyperlink{class_default_generator_a6345c352a9ca0aeca8d50ba44631718d}{getEnvironment}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_environment_a86ec92fe6fddb899e2767986adced5a6}{Environment::newEnvironment}}(\textcolor{stringliteral}{"{}default"{}},\ \mbox{\hyperlink{class_bit_map}{m\_heightGenerator}}.getTerrain());}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00024}\mbox{\hyperlink{class_default_generator_a143bb3aeda004fc6ce047d27eeff89d9}{00024}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_default_generator_a143bb3aeda004fc6ce047d27eeff89d9}{setHeightGenerator}}(ITerrainGenerator\&\ \mbox{\hyperlink{class_bit_map}{heightGenerator}})\ \{}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{m\_heightGenerator}}\ =\ \mbox{\hyperlink{class_bit_map}{heightGenerator}};}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00028}\mbox{\hyperlink{class_default_generator_aa7f0a6185d6ee8ddee141dd20133389f}{00028}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_default_generator_aa7f0a6185d6ee8ddee141dd20133389f}{setBiomeGenerator}}(\mbox{\hyperlink{class_i_biome_generator}{IBiomeGenerator}}\&\ \mbox{\hyperlink{class_bit_map}{biomeGenerator}})\ \{}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{m\_biomeGenerator}}\ =\ \mbox{\hyperlink{class_bit_map}{biomeGenerator}};}
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00030}00030\ \ \ \ \ \}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_default_generator_8hpp_source_l00031}00031\ \}}
+
+\end{DoxyCode}

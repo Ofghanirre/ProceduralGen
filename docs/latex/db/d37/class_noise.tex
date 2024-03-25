@@ -195,13 +195,14 @@ Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00037}{37}} of file \mbo
 \DoxyCodeLine{00053\ \ \ \ \ }
 \DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ x\ =\ 0;\ x\ <\ m\_width;\ x++)\{}
 \DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ y\ =\ 0;\ y\ <\ m\_height;\ y++)\{}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\textcolor{stringliteral}{"{}\%d\ "{}},\ m\_bitmap.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(x,\ y));}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00059\ \ \ \ \ \}}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fclose}}(\mbox{\hyperlink{class_bit_map}{image}});}
-\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{pixel\_val}}\ =\ m\_bitmap.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(x,\ y);\ \textcolor{comment}{//\ Value\ of\ the\ pixel\ at\ coordinates\ (x,\ y)}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\textcolor{stringliteral}{"{}\%d\ "{}},\ \mbox{\hyperlink{class_bit_map}{pixel\_val}}\ <\ 0\ ?\ 0\ :\ \mbox{\hyperlink{class_bit_map}{pixel\_val}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fclose}}(\mbox{\hyperlink{class_bit_map}{image}});}
+\DoxyCodeLine{00063\ \}}
 
 \end{DoxyCode}
 
@@ -216,21 +217,21 @@ References \mbox{\hyperlink{_bit_map_8h_source_l00051}{Bit\+Map$<$ T $>$\+::get(
 
 
 
-Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00226}{226}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
+Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00227}{227}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_bit_map}{function}})\ \{}
-\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a572ae2317b5c81f10926f3f068bd1fcd}{HEATMAP}}:\ \mbox{\hyperlink{class_noise_a5c2243cfcb3cf30d9a4b085fc1df4327}{toPPM}}(\mbox{\hyperlink{class_bit_map}{filename}},\ \&\mbox{\hyperlink{_noise_8cpp_ae8d33472bdf8dd48f37246abece3e51c}{\_heatMap}},\ \mbox{\hyperlink{class_bit_map}{max}});\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a58c2bc22908015ec088d6cb81dd3112f}{TERRAIN}}:\ \mbox{\hyperlink{class_noise_a5c2243cfcb3cf30d9a4b085fc1df4327}{toPPM}}(\mbox{\hyperlink{class_bit_map}{filename}},\ \&\mbox{\hyperlink{_noise_8cpp_a66d59dc6b6694a8f1a4a22c284a7eb1a}{\_terrainTexture}},\ \mbox{\hyperlink{class_bit_map}{max}});\ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00230\ \ \ \ \ \}}
-\DoxyCodeLine{00231\ \}}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_bit_map}{function}})\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a572ae2317b5c81f10926f3f068bd1fcd}{HEATMAP}}:\ \mbox{\hyperlink{class_noise_a5c2243cfcb3cf30d9a4b085fc1df4327}{toPPM}}(\mbox{\hyperlink{class_bit_map}{filename}},\ \&\mbox{\hyperlink{_noise_8cpp_ae8d33472bdf8dd48f37246abece3e51c}{\_heatMap}},\ \mbox{\hyperlink{class_bit_map}{max}});\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a58c2bc22908015ec088d6cb81dd3112f}{TERRAIN}}:\ \mbox{\hyperlink{class_noise_a5c2243cfcb3cf30d9a4b085fc1df4327}{toPPM}}(\mbox{\hyperlink{class_bit_map}{filename}},\ \&\mbox{\hyperlink{_noise_8cpp_a66d59dc6b6694a8f1a4a22c284a7eb1a}{\_terrainTexture}},\ \mbox{\hyperlink{class_bit_map}{max}});\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00231\ \ \ \ \ \}}
+\DoxyCodeLine{00232\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{_noise_8cpp_source_l00098}{\+\_\+heat\+Map()}}, \mbox{\hyperlink{_noise_8cpp_source_l00150}{\+\_\+terrain\+Texture()}}, \mbox{\hyperlink{_noise_8h_source_l00012}{HEATMAP}}, \mbox{\hyperlink{_noise_8h_source_l00013}{TERRAIN}}, and \mbox{\hyperlink{_noise_8cpp_source_l00197}{to\+PPM()}}.
+References \mbox{\hyperlink{_noise_8cpp_source_l00099}{\+\_\+heat\+Map()}}, \mbox{\hyperlink{_noise_8cpp_source_l00151}{\+\_\+terrain\+Texture()}}, \mbox{\hyperlink{_noise_8h_source_l00012}{HEATMAP}}, \mbox{\hyperlink{_noise_8h_source_l00013}{TERRAIN}}, and \mbox{\hyperlink{_noise_8cpp_source_l00198}{to\+PPM()}}.
 
 \Hypertarget{class_noise_a5c2243cfcb3cf30d9a4b085fc1df4327}\label{class_noise_a5c2243cfcb3cf30d9a4b085fc1df4327} 
 \index{Noise@{Noise}!toPPM@{toPPM}}
@@ -240,38 +241,38 @@ References \mbox{\hyperlink{_noise_8cpp_source_l00098}{\+\_\+heat\+Map()}}, \mbo
 
 
 
-Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00197}{197}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
+Definition at line \mbox{\hyperlink{_noise_8cpp_source_l00198}{198}} of file \mbox{\hyperlink{_noise_8cpp_source}{Noise.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00198\ \ \textcolor{comment}{//\ Looking\ for\ the\ maximum\ value\ in\ the\ noise}}
-\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ x\ =\ 0;\ x\ <\ m\_width;\ x++)\{}
-\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ y\ =\ 0;\ y\ <\ m\_height;\ y++)\{}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{max}}\ <\ m\_bitmap.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(x,\ y))\{}
-\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{max}}\ =\ m\_bitmap.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(x,\ y);}
-\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00205\ \ \ \ \ \}}
-\DoxyCodeLine{00206\ }
-\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{FILE}}\ *\ \mbox{\hyperlink{class_bit_map}{image}};}
-\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_bit_map}{format}};}
-\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{image}}\ =\ \mbox{\hyperlink{class_bit_map}{fopen}}(\mbox{\hyperlink{class_bit_map}{filename}},\ \textcolor{stringliteral}{"{}wb"{}});}
-\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\ \textcolor{stringliteral}{"{}P3\(\backslash\)n"{}});}
-\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\ \textcolor{stringliteral}{"{}\%lu\ \%lu\(\backslash\)n"{}},\ m\_width,\ m\_height);}
-\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\ \textcolor{stringliteral}{"{}\%d\(\backslash\)n"{}},\ \mbox{\hyperlink{class_bit_map}{max}});}
-\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{blue}},\ \mbox{\hyperlink{class_bit_map}{green}};}
-\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ x\ =\ 0;\ x\ <\ m\_width;\ x++)\{}
-\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ y\ =\ 0;\ y\ <\ m\_height;\ y++)\{}
-\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}}\ =\ m\_bitmap.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(x,\ y);}
-\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{colorFunction}}(\mbox{\hyperlink{class_bit_map}{value}},\ \mbox{\hyperlink{class_bit_map}{max}},\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
-\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\textcolor{stringliteral}{"{}\%d\ \%d\ \%d\ "{}},\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
-\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{00221\ \ \ \ \ \}}
-\DoxyCodeLine{00222\ }
-\DoxyCodeLine{00223\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fclose}}(\mbox{\hyperlink{class_bit_map}{image}});}
-\DoxyCodeLine{00224\ \}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \textcolor{comment}{//\ Looking\ for\ the\ maximum\ value\ in\ the\ noise}}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ x\ =\ 0;\ x\ <\ m\_width;\ x++)\{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ y\ =\ 0;\ y\ <\ m\_height;\ y++)\{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_bit_map}{max}}\ <\ m\_bitmap.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(x,\ y))\{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{max}}\ =\ m\_bitmap.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(x,\ y);}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \ \ \ \ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{FILE}}\ *\ \mbox{\hyperlink{class_bit_map}{image}};}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_bit_map}{format}};}
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{image}}\ =\ \mbox{\hyperlink{class_bit_map}{fopen}}(\mbox{\hyperlink{class_bit_map}{filename}},\ \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\ \textcolor{stringliteral}{"{}P3\(\backslash\)n"{}});}
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\ \textcolor{stringliteral}{"{}\%lu\ \%lu\(\backslash\)n"{}},\ m\_width,\ m\_height);}
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\ \textcolor{stringliteral}{"{}\%d\(\backslash\)n"{}},\ \mbox{\hyperlink{class_bit_map}{max}});}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{blue}},\ \mbox{\hyperlink{class_bit_map}{green}};}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ x\ =\ 0;\ x\ <\ m\_width;\ x++)\{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ y\ =\ 0;\ y\ <\ m\_height;\ y++)\{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}}\ =\ m\_bitmap.\mbox{\hyperlink{class_bit_map_ab31146e49f2e2a4e7ee315775ee88bfc}{get}}(x,\ y);}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{colorFunction}}(\mbox{\hyperlink{class_bit_map}{value}},\ \mbox{\hyperlink{class_bit_map}{max}},\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\textcolor{stringliteral}{"{}\%d\ \%d\ \%d\ "{}},\ \mbox{\hyperlink{class_bit_map}{red}},\ \mbox{\hyperlink{class_bit_map}{green}},\ \mbox{\hyperlink{class_bit_map}{blue}});}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fprintf}}(\mbox{\hyperlink{class_bit_map}{image}},\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{fclose}}(\mbox{\hyperlink{class_bit_map}{image}});}
+\DoxyCodeLine{00225\ \}}
 
 \end{DoxyCode}
 
@@ -280,7 +281,7 @@ References \mbox{\hyperlink{_bit_map_8h_source_l00051}{Bit\+Map$<$ T $>$\+::get(
 
 
 
-Referenced by \mbox{\hyperlink{_noise_8cpp_source_l00226}{to\+PPM()}}.
+Referenced by \mbox{\hyperlink{_noise_8cpp_source_l00227}{to\+PPM()}}.
 
 
 
