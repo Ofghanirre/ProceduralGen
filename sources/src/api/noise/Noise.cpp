@@ -53,7 +53,8 @@ void Noise::toPGM(const char* filename, int max) const {
     
     for (size_t x = 0; x < m_width; x++){
         for (size_t y = 0; y < m_height; y++){
-            fprintf(image,"%d ", m_bitmap.get(x, y));
+            int pixel_val = m_bitmap.get(x, y); // Value of the pixel at coordinates (x, y)
+            fprintf(image,"%d ", pixel_val < 0 ? 0 : pixel_val);
         }
         fprintf(image, "\n");
     }

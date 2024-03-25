@@ -10,8 +10,8 @@
 #include <memory>
 #include <set>
 #include <map>
-#include "api/noise/BitMap.h"
-#include "api/noise/INoiseGenerator.h"
+#include <api/noise/BitMap.h>
+#include <api/noise/INoiseGenerator.h>
 #include <limits>
 
 class Worley_noise : public INoiseGenerator {

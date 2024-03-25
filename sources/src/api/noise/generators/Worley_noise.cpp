@@ -5,7 +5,7 @@
  *
  */
 
-#include "../inc/Worley_noise.hpp"
+#include <api/noise/generators/Worley_noise.hpp>
 
 
 Worley_noise::Worley_noise(int minRange, int maxRange) : _minRange(minRange), _maxRange(maxRange){};
@@ -253,7 +253,6 @@ std::vector<std::vector<int>> Worley_noise::worley_noise(size_t seed, size_t wid
 
 Noise Worley_noise::genNoise(size_t seed, size_t width, size_t height, size_t frequency) const {
     BitMap<int> bitmap(width,height, worley_noise(seed, width, height, frequency));
-
     return Noise(bitmap, seed, width, height, frequency);
 
 }
