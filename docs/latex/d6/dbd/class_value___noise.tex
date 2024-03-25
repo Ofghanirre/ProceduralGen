@@ -1,0 +1,185 @@
+\doxysection{Value\+\_\+\+Noise Class Reference}
+\hypertarget{class_value___noise}{}\label{class_value___noise}\index{Value\_Noise@{Value\_Noise}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_value___noise_a18949b5587c7c3b166296a50710cf4c2}{Value\+\_\+\+Noise}} (\mbox{\hyperlink{class_bit_map}{unsigned}} \mbox{\hyperlink{class_bit_map}{seed}}=2016)
+\item 
+\mbox{\hyperlink{class_bit_map}{float}} \mbox{\hyperlink{class_value___noise_a3cd5399eb8c6996067bd58411b5dd93d}{eval}} (\mbox{\hyperlink{_value_noise_8cpp_a5bba51046f8678fc315d18709ac24dab}{Vec2f}} \mbox{\hyperlink{class_bit_map}{p}}) \mbox{\hyperlink{class_bit_map}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_map}{float}} \mbox{\hyperlink{class_value___noise_a8bccee553d096429a8bd9a82797a273c}{r}} \mbox{[}\mbox{\hyperlink{class_value___noise_ae34b41324889974ba07f434fa8b41001}{k\+Max\+Table\+Size}}\mbox{]}
+\item 
+\mbox{\hyperlink{class_bit_map}{unsigned}} \mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutation\+Table}} \mbox{[}\mbox{\hyperlink{class_value___noise_ae34b41324889974ba07f434fa8b41001}{k\+Max\+Table\+Size}} \texorpdfstring{$\ast$}{*}2\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_map}{static}} \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{unsigned}} \mbox{\hyperlink{class_value___noise_ae34b41324889974ba07f434fa8b41001}{k\+Max\+Table\+Size}} = 256
+\item 
+\mbox{\hyperlink{class_bit_map}{static}} \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{unsigned}} \mbox{\hyperlink{class_value___noise_ac5b5996a5018b0da551eda1d473b461e}{k\+Max\+Table\+Size\+Mask}} = \mbox{\hyperlink{class_value___noise_ae34b41324889974ba07f434fa8b41001}{k\+Max\+Table\+Size}} -\/ 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_value_noise_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{_value_noise_8cpp_source}{Value\+Noise.\+cpp}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_value___noise_a18949b5587c7c3b166296a50710cf4c2}\label{class_value___noise_a18949b5587c7c3b166296a50710cf4c2} 
+\index{Value\_Noise@{Value\_Noise}!Value\_Noise@{Value\_Noise}}
+\index{Value\_Noise@{Value\_Noise}!Value\_Noise@{Value\_Noise}}
+\doxysubsubsection{\texorpdfstring{Value\_Noise()}{Value\_Noise()}}
+{\footnotesize\ttfamily Value\+\_\+\+Noise\+::\+Value\+\_\+\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{unsigned}}}]{seed = {\ttfamily 2016} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_value_noise_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{_value_noise_8cpp_source}{Value\+Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::mt19937\ \mbox{\hyperlink{class_bit_map}{gen}}(\mbox{\hyperlink{class_bit_map}{seed}});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::uniform\_real\_distribution<float>\ \mbox{\hyperlink{class_bit_map}{distrFloat}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{randFloat}}\ =\ std::bind(\mbox{\hyperlink{class_bit_map}{distrFloat}},\ \mbox{\hyperlink{class_bit_map}{gen}});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ create\ an\ array\ of\ random\ values\ and\ initialize\ permutation\ table}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{class_bit_map}{k}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{k}}\ <\ \mbox{\hyperlink{class_value___noise_ae34b41324889974ba07f434fa8b41001}{kMaxTableSize}};\ ++\mbox{\hyperlink{class_bit_map}{k}})\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_value___noise_a8bccee553d096429a8bd9a82797a273c}{r}}[\mbox{\hyperlink{class_bit_map}{k}}]\ =\ \mbox{\hyperlink{class_bit_map}{randFloat}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_bit_map}{k}}]\ =\ \mbox{\hyperlink{class_bit_map}{k}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ shuffle\ values\ of\ the\ permutation\ table}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::uniform\_int\_distribution<unsigned>\ \mbox{\hyperlink{class_bit_map}{distrUInt}};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{randUInt}}\ =\ std::bind(\mbox{\hyperlink{class_bit_map}{distrUInt}},\ \mbox{\hyperlink{class_bit_map}{gen}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{class_bit_map}{k}}\ =\ 0;\ \mbox{\hyperlink{class_bit_map}{k}}\ <\ \mbox{\hyperlink{class_value___noise_ae34b41324889974ba07f434fa8b41001}{kMaxTableSize}};\ ++\mbox{\hyperlink{class_bit_map}{k}})\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{class_bit_map}{i}}\ =\ \mbox{\hyperlink{class_bit_map}{randUInt}}()\ \&\ \mbox{\hyperlink{class_value___noise_ac5b5996a5018b0da551eda1d473b461e}{kMaxTableSizeMask}};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ std::swap(\mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_bit_map}{k}}],\ \mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_bit_map}{i}}]);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_bit_map}{k}}\ +\ \mbox{\hyperlink{class_value___noise_ae34b41324889974ba07f434fa8b41001}{kMaxTableSize}}]\ =\ \mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_bit_map}{k}}];}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_value_noise_8cpp_source_l00097}{k\+Max\+Table\+Size}}, \mbox{\hyperlink{_value_noise_8cpp_source_l00098}{k\+Max\+Table\+Size\+Mask}}, \mbox{\hyperlink{_value_noise_8cpp_source_l00100}{permutation\+Table}}, and \mbox{\hyperlink{_value_noise_8cpp_source_l00099}{r}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_value___noise_a3cd5399eb8c6996067bd58411b5dd93d}\label{class_value___noise_a3cd5399eb8c6996067bd58411b5dd93d} 
+\index{Value\_Noise@{Value\_Noise}!eval@{eval}}
+\index{eval@{eval}!Value\_Noise@{Value\_Noise}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{float}} Value\+\_\+\+Noise\+::eval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_value_noise_8cpp_a5bba51046f8678fc315d18709ac24dab}{Vec2f}}}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_value_noise_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{_value_noise_8cpp_source}{Value\+Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{xi}}\ =\ std::floor(\mbox{\hyperlink{class_bit_map}{p}}.x);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{yi}}\ =\ std::floor(\mbox{\hyperlink{class_bit_map}{p}}.y);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{tx}}\ =\ \mbox{\hyperlink{class_bit_map}{p}}.x\ -\/\ \mbox{\hyperlink{class_bit_map}{xi}};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{ty}}\ =\ \mbox{\hyperlink{class_bit_map}{p}}.y\ -\/\ \mbox{\hyperlink{class_bit_map}{yi}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{rx0}}\ =\ \mbox{\hyperlink{class_bit_map}{xi}}\ \&\ \mbox{\hyperlink{class_value___noise_ac5b5996a5018b0da551eda1d473b461e}{kMaxTableSizeMask}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{rx1}}\ =\ (\mbox{\hyperlink{class_bit_map}{rx0}}\ +\ 1)\ \&\ \mbox{\hyperlink{class_value___noise_ac5b5996a5018b0da551eda1d473b461e}{kMaxTableSizeMask}};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{ry0}}\ =\ \mbox{\hyperlink{class_bit_map}{yi}}\ \&\ \mbox{\hyperlink{class_value___noise_ac5b5996a5018b0da551eda1d473b461e}{kMaxTableSizeMask}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{ry1}}\ =\ (\mbox{\hyperlink{class_bit_map}{ry0}}\ +\ 1)\ \&\ \mbox{\hyperlink{class_value___noise_ac5b5996a5018b0da551eda1d473b461e}{kMaxTableSizeMask}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ random\ values\ at\ the\ corners\ of\ the\ cell\ using\ permutation\ table}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&\ \mbox{\hyperlink{class_bit_map}{c00}}\ =\ \mbox{\hyperlink{class_value___noise_a8bccee553d096429a8bd9a82797a273c}{r}}[\mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_bit_map}{rx0}}]\ +\ \mbox{\hyperlink{class_bit_map}{ry0}}]];}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&\ \mbox{\hyperlink{class_bit_map}{c10}}\ =\ \mbox{\hyperlink{class_value___noise_a8bccee553d096429a8bd9a82797a273c}{r}}[\mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_bit_map}{rx1}}]\ +\ \mbox{\hyperlink{class_bit_map}{ry0}}]];}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&\ \mbox{\hyperlink{class_bit_map}{c01}}\ =\ \mbox{\hyperlink{class_value___noise_a8bccee553d096429a8bd9a82797a273c}{r}}[\mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_bit_map}{rx0}}]\ +\ \mbox{\hyperlink{class_bit_map}{ry1}}]];}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&\ \mbox{\hyperlink{class_bit_map}{c11}}\ =\ \mbox{\hyperlink{class_value___noise_a8bccee553d096429a8bd9a82797a273c}{r}}[\mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_value___noise_ab9163271c0e68f62b055b370ef93170a}{permutationTable}}[\mbox{\hyperlink{class_bit_map}{rx1}}]\ +\ \mbox{\hyperlink{class_bit_map}{ry1}}]];}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ remapping\ of\ tx\ and\ ty\ using\ the\ Smoothstep\ function}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{sx}}\ =\ \mbox{\hyperlink{_value_noise_8cpp_a838066d4e1ffaa33cf3709f30100ddaa}{smoothstep}}(\mbox{\hyperlink{class_bit_map}{tx}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{sy}}\ =\ \mbox{\hyperlink{_value_noise_8cpp_a838066d4e1ffaa33cf3709f30100ddaa}{smoothstep}}(\mbox{\hyperlink{class_bit_map}{ty}});}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ linearly\ interpolate\ values\ along\ the\ x\ axis}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{nx0}}\ =\ \mbox{\hyperlink{_value_noise_8cpp_a6a314f42a8e9866c38df80a683d1c6b6}{lerp}}(\mbox{\hyperlink{class_bit_map}{c00}},\ \mbox{\hyperlink{class_bit_map}{c10}},\ \mbox{\hyperlink{class_bit_map}{sx}});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{nx1}}\ =\ \mbox{\hyperlink{_value_noise_8cpp_a6a314f42a8e9866c38df80a683d1c6b6}{lerp}}(\mbox{\hyperlink{class_bit_map}{c01}},\ \mbox{\hyperlink{class_bit_map}{c11}},\ \mbox{\hyperlink{class_bit_map}{sx}});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ linearly\ interpolate\ the\ nx0/nx1\ along\ they\ y\ axis}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_value_noise_8cpp_a6a314f42a8e9866c38df80a683d1c6b6}{lerp}}(\mbox{\hyperlink{class_bit_map}{nx0}},\ \mbox{\hyperlink{class_bit_map}{nx1}},\ \mbox{\hyperlink{class_bit_map}{sy}});}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_value_noise_8cpp_source_l00098}{k\+Max\+Table\+Size\+Mask}}, \mbox{\hyperlink{_value_noise_8cpp_source_l00029}{lerp()}}, \mbox{\hyperlink{_value_noise_8cpp_source_l00100}{permutation\+Table}}, \mbox{\hyperlink{_value_noise_8cpp_source_l00099}{r}}, and \mbox{\hyperlink{_value_noise_8cpp_source_l00035}{smoothstep()}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_value___noise_ae34b41324889974ba07f434fa8b41001}\label{class_value___noise_ae34b41324889974ba07f434fa8b41001} 
+\index{Value\_Noise@{Value\_Noise}!kMaxTableSize@{kMaxTableSize}}
+\index{kMaxTableSize@{kMaxTableSize}!Value\_Noise@{Value\_Noise}}
+\doxysubsubsection{\texorpdfstring{kMaxTableSize}{kMaxTableSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{unsigned}} Value\+\_\+\+Noise\+::k\+Max\+Table\+Size = 256\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_value_noise_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{_value_noise_8cpp_source}{Value\+Noise.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{_value_noise_8cpp_source_l00043}{Value\+\_\+\+Noise()}}.
+
+\Hypertarget{class_value___noise_ac5b5996a5018b0da551eda1d473b461e}\label{class_value___noise_ac5b5996a5018b0da551eda1d473b461e} 
+\index{Value\_Noise@{Value\_Noise}!kMaxTableSizeMask@{kMaxTableSizeMask}}
+\index{kMaxTableSizeMask@{kMaxTableSizeMask}!Value\_Noise@{Value\_Noise}}
+\doxysubsubsection{\texorpdfstring{kMaxTableSizeMask}{kMaxTableSizeMask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{unsigned}} Value\+\_\+\+Noise\+::k\+Max\+Table\+Size\+Mask = \mbox{\hyperlink{class_value___noise_ae34b41324889974ba07f434fa8b41001}{k\+Max\+Table\+Size}} -\/ 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_value_noise_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{_value_noise_8cpp_source}{Value\+Noise.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{_value_noise_8cpp_source_l00065}{eval()}}, and \mbox{\hyperlink{_value_noise_8cpp_source_l00043}{Value\+\_\+\+Noise()}}.
+
+\Hypertarget{class_value___noise_ab9163271c0e68f62b055b370ef93170a}\label{class_value___noise_ab9163271c0e68f62b055b370ef93170a} 
+\index{Value\_Noise@{Value\_Noise}!permutationTable@{permutationTable}}
+\index{permutationTable@{permutationTable}!Value\_Noise@{Value\_Noise}}
+\doxysubsubsection{\texorpdfstring{permutationTable}{permutationTable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{unsigned}} Value\+\_\+\+Noise\+::permutation\+Table\mbox{[}\mbox{\hyperlink{class_value___noise_ae34b41324889974ba07f434fa8b41001}{k\+Max\+Table\+Size}} \texorpdfstring{$\ast$}{*}2\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{_value_noise_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{_value_noise_8cpp_source}{Value\+Noise.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{_value_noise_8cpp_source_l00065}{eval()}}, and \mbox{\hyperlink{_value_noise_8cpp_source_l00043}{Value\+\_\+\+Noise()}}.
+
+\Hypertarget{class_value___noise_a8bccee553d096429a8bd9a82797a273c}\label{class_value___noise_a8bccee553d096429a8bd9a82797a273c} 
+\index{Value\_Noise@{Value\_Noise}!r@{r}}
+\index{r@{r}!Value\_Noise@{Value\_Noise}}
+\doxysubsubsection{\texorpdfstring{r}{r}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{float}} Value\+\_\+\+Noise\+::r\mbox{[}\mbox{\hyperlink{class_value___noise_ae34b41324889974ba07f434fa8b41001}{k\+Max\+Table\+Size}}\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{_value_noise_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{_value_noise_8cpp_source}{Value\+Noise.\+cpp}}.
+
+
+
+Referenced by \mbox{\hyperlink{_value_noise_8cpp_source_l00065}{eval()}}, and \mbox{\hyperlink{_value_noise_8cpp_source_l00043}{Value\+\_\+\+Noise()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sources/src/api/noise/generators/\mbox{\hyperlink{_value_noise_8cpp}{Value\+Noise.\+cpp}}\end{DoxyCompactItemize}

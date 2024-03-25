@@ -1,0 +1,40 @@
+\doxysection{Environment.\+h}
+\hypertarget{_environment_8h_source}{}\label{_environment_8h_source}\index{sources/inc/api/Terrain/Environment.h@{sources/inc/api/Terrain/Environment.h}}
+\mbox{\hyperlink{_environment_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Antonin\ Jean\ on\ 23/03/2024}}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00005}00005\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../Terrain/Terrain.h"{}}}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00008}\mbox{\hyperlink{class_environment}{00008}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_environment}{Environment}}\ \{}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00009}00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ heightTerrain;}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ biomeTerrain;}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00012}00012\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00013}00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00014}\mbox{\hyperlink{class_environment_a8a0c34e588726747948807c087af64b4}{00014}}\ \ \ \ \ \mbox{\hyperlink{class_environment_a8a0c34e588726747948807c087af64b4}{Environment}}(std::string\ name,\ \mbox{\hyperlink{class_terrain}{Terrain}}\ heightTerrain,\ \mbox{\hyperlink{class_terrain}{Terrain}}\ biomeTerrain):\ }
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ name(name),\ }
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ heightTerrain(heightTerrain),\ }
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ biomeTerrain(biomeTerrain)\ \{\};}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00019}\mbox{\hyperlink{class_environment_a257e8e7df28499958635af0ed1cbb4d2}{00019}}\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_environment_a257e8e7df28499958635af0ed1cbb4d2}{getHeightTerrain}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ heightTerrain;}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00023}\mbox{\hyperlink{class_environment_a45c4268137f9a99f970067dc4cdea027}{00023}}\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_environment_a45c4268137f9a99f970067dc4cdea027}{getBiomeTerrain}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ biomeTerrain;}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00027}\mbox{\hyperlink{class_environment_ac6f54d7cede14bacea4125fa013e7664}{00027}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_environment_ac6f54d7cede14bacea4125fa013e7664}{getName}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00031}\mbox{\hyperlink{class_environment_a86ec92fe6fddb899e2767986adced5a6}{00031}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_environment}{Environment}}\ \mbox{\hyperlink{class_environment_a86ec92fe6fddb899e2767986adced5a6}{newEnvironment}}(std::string\ name,\ \mbox{\hyperlink{class_terrain}{Terrain}}\ heightTerrain)\ \{}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_environment}{Environment}}(name,\ heightTerrain,\ \mbox{\hyperlink{class_terrain}{Terrain}}(name\ +\ \textcolor{stringliteral}{"{}\_biome"{}},\ heightTerrain.\mbox{\hyperlink{class_terrain_a56abfa4abb0dbcaae297dcff68152e33}{getSeed}}()));}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_environment_8h_source_l00034}00034\ \};}
+
+\end{DoxyCode}

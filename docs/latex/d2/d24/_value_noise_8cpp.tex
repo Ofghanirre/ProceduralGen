@@ -1,0 +1,87 @@
+\doxysection{sources/src/api/noise/generators/\+Value\+Noise.cpp File Reference}
+\hypertarget{_value_noise_8cpp}{}\label{_value_noise_8cpp}\index{sources/src/api/noise/generators/ValueNoise.cpp@{sources/src/api/noise/generators/ValueNoise.cpp}}
+{\ttfamily \#include $<$api/noise/generators/\+Value\+Noise.\+hpp$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_vec2}{Vec2$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{class_value___noise}{Value\+\_\+\+Noise}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bit_map}{typedef}} \mbox{\hyperlink{class_vec2}{Vec2}}$<$ \mbox{\hyperlink{class_bit_map}{float}} $>$ \mbox{\hyperlink{_value_noise_8cpp_a5bba51046f8678fc315d18709ac24dab}{Vec2f}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}}  = float$>$ }\\\mbox{\hyperlink{class_bit_map}{T}} \mbox{\hyperlink{_value_noise_8cpp_a6a314f42a8e9866c38df80a683d1c6b6}{lerp}} (\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{T}} \&\mbox{\hyperlink{class_bit_map}{lo}}, \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{T}} \&\mbox{\hyperlink{class_bit_map}{hi}}, \mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{T}} \&\mbox{\hyperlink{class_bit_map}{t}})
+\item 
+\mbox{\hyperlink{class_bit_map}{float}} \mbox{\hyperlink{_value_noise_8cpp_a838066d4e1ffaa33cf3709f30100ddaa}{smoothstep}} (\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{float}} \&\mbox{\hyperlink{class_bit_map}{t}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_value_noise_8cpp_a5bba51046f8678fc315d18709ac24dab}\label{_value_noise_8cpp_a5bba51046f8678fc315d18709ac24dab} 
+\index{ValueNoise.cpp@{ValueNoise.cpp}!Vec2f@{Vec2f}}
+\index{Vec2f@{Vec2f}!ValueNoise.cpp@{ValueNoise.cpp}}
+\doxysubsubsection{\texorpdfstring{Vec2f}{Vec2f}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{typedef}} \mbox{\hyperlink{class_vec2}{Vec2}}$<$\mbox{\hyperlink{class_bit_map}{float}}$>$ \mbox{\hyperlink{_value_noise_8cpp_a5bba51046f8678fc315d18709ac24dab}{Vec2f}}}
+
+
+
+Definition at line \mbox{\hyperlink{_value_noise_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_value_noise_8cpp_source}{Value\+Noise.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_value_noise_8cpp_a6a314f42a8e9866c38df80a683d1c6b6}\label{_value_noise_8cpp_a6a314f42a8e9866c38df80a683d1c6b6} 
+\index{ValueNoise.cpp@{ValueNoise.cpp}!lerp@{lerp}}
+\index{lerp@{lerp}!ValueNoise.cpp@{ValueNoise.cpp}}
+\doxysubsubsection{\texorpdfstring{lerp()}{lerp()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_bit_map}{typename}} \mbox{\hyperlink{class_bit_map}{T}}  = float$>$ \\
+\mbox{\hyperlink{class_bit_map}{T}} lerp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{T}} \&}]{lo,  }\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{T}} \&}]{hi,  }\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{T}} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_value_noise_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_value_noise_8cpp_source}{Value\+Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{lo}}\ *\ (1\ -\/\ \mbox{\hyperlink{class_bit_map}{t}})\ +\ \mbox{\hyperlink{class_bit_map}{hi}}\ *\ \mbox{\hyperlink{class_bit_map}{t}};}
+\DoxyCodeLine{00032\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_value_noise_8cpp_source_l00065}{Value\+\_\+\+Noise\+::eval()}}.
+
+\Hypertarget{_value_noise_8cpp_a838066d4e1ffaa33cf3709f30100ddaa}\label{_value_noise_8cpp_a838066d4e1ffaa33cf3709f30100ddaa} 
+\index{ValueNoise.cpp@{ValueNoise.cpp}!smoothstep@{smoothstep}}
+\index{smoothstep@{smoothstep}!ValueNoise.cpp@{ValueNoise.cpp}}
+\doxysubsubsection{\texorpdfstring{smoothstep()}{smoothstep()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{float}} smoothstep (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_bit_map}{float}} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_value_noise_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{_value_noise_8cpp_source}{Value\+Noise.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{t}}\ *\ \mbox{\hyperlink{class_bit_map}{t}}\ *\ (3\ -\/\ 2\ *\ \mbox{\hyperlink{class_bit_map}{t}});}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{_value_noise_8cpp_source_l00065}{Value\+\_\+\+Noise\+::eval()}}.
+

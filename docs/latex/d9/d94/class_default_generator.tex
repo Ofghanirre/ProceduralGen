@@ -1,0 +1,113 @@
+\doxysection{Default\+Generator Class Reference}
+\hypertarget{class_default_generator}{}\label{class_default_generator}\index{DefaultGenerator@{DefaultGenerator}}
+
+
+{\ttfamily \#include $<$Default\+Generator.\+hpp$>$}
+
+Inheritance diagram for Default\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d9/d94/class_default_generator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_default_generator}{Default\+Generator}}(\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_terrain}{Terrain}} height\+Terrain) \mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{class_default_generator_afe9e5761aabc7e6483aba8080a9a24a0}{generate\+Biome}} () \mbox{\hyperlink{class_bit_map}{override}}
+\item 
+\mbox{\hyperlink{class_environment}{Environment}} \mbox{\hyperlink{class_default_generator_a6345c352a9ca0aeca8d50ba44631718d}{get\+Environment}} () \mbox{\hyperlink{class_bit_map}{const}}
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{class_default_generator_a143bb3aeda004fc6ce047d27eeff89d9}{set\+Height\+Generator}} (ITerrain\+Generator \&\mbox{\hyperlink{class_bit_map}{height\+Generator}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{class_default_generator_aa7f0a6185d6ee8ddee141dd20133389f}{set\+Biome\+Generator}} (\mbox{\hyperlink{class_i_biome_generator}{IBiome\+Generator}} \&\mbox{\hyperlink{class_bit_map}{biome\+Generator}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_default_generator_8hpp_source_l00007}{7}} of file \mbox{\hyperlink{_default_generator_8hpp_source}{Default\+Generator.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_default_generator_afe9e5761aabc7e6483aba8080a9a24a0}\label{class_default_generator_afe9e5761aabc7e6483aba8080a9a24a0} 
+\index{DefaultGenerator@{DefaultGenerator}!generateBiome@{generateBiome}}
+\index{generateBiome@{generateBiome}!DefaultGenerator@{DefaultGenerator}}
+\doxysubsubsection{\texorpdfstring{generateBiome()}{generateBiome()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_default_generator}{Default\+Generator}}(\mbox{\hyperlink{class_bit_map}{const}} \mbox{\hyperlink{class_terrain}{Terrain}} height\+Terrain) \mbox{\hyperlink{class_bit_map}{void}} Default\+Generator\+::generate\+Biome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Definition at line \mbox{\hyperlink{_default_generator_8hpp_source_l00013}{13}} of file \mbox{\hyperlink{_default_generator_8hpp_source}{Default\+Generator.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ the\ height\ map}}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{m\_heightGenerator}}.generate();}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Generate\ the\ biome\ map}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{m\_biomeGenerator}}.generate();}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_default_generator_a6345c352a9ca0aeca8d50ba44631718d}\label{class_default_generator_a6345c352a9ca0aeca8d50ba44631718d} 
+\index{DefaultGenerator@{DefaultGenerator}!getEnvironment@{getEnvironment}}
+\index{getEnvironment@{getEnvironment}!DefaultGenerator@{DefaultGenerator}}
+\doxysubsubsection{\texorpdfstring{getEnvironment()}{getEnvironment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_environment}{Environment}} Default\+Generator\+::get\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_default_generator_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{_default_generator_8hpp_source}{Default\+Generator.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_environment_a86ec92fe6fddb899e2767986adced5a6}{Environment::newEnvironment}}(\textcolor{stringliteral}{"{}default"{}},\ \mbox{\hyperlink{class_bit_map}{m\_heightGenerator}}.getTerrain());}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_environment_8h_source_l00031}{Environment\+::new\+Environment()}}.
+
+\Hypertarget{class_default_generator_aa7f0a6185d6ee8ddee141dd20133389f}\label{class_default_generator_aa7f0a6185d6ee8ddee141dd20133389f} 
+\index{DefaultGenerator@{DefaultGenerator}!setBiomeGenerator@{setBiomeGenerator}}
+\index{setBiomeGenerator@{setBiomeGenerator}!DefaultGenerator@{DefaultGenerator}}
+\doxysubsubsection{\texorpdfstring{setBiomeGenerator()}{setBiomeGenerator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} Default\+Generator\+::set\+Biome\+Generator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_biome_generator}{IBiome\+Generator}} \&}]{biome\+Generator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_default_generator_8hpp_source_l00028}{28}} of file \mbox{\hyperlink{_default_generator_8hpp_source}{Default\+Generator.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{m\_biomeGenerator}}\ =\ \mbox{\hyperlink{class_bit_map}{biomeGenerator}};}
+\DoxyCodeLine{00030\ \ \ \ \ \}\ \ \ \ }
+
+\end{DoxyCode}
+\Hypertarget{class_default_generator_a143bb3aeda004fc6ce047d27eeff89d9}\label{class_default_generator_a143bb3aeda004fc6ce047d27eeff89d9} 
+\index{DefaultGenerator@{DefaultGenerator}!setHeightGenerator@{setHeightGenerator}}
+\index{setHeightGenerator@{setHeightGenerator}!DefaultGenerator@{DefaultGenerator}}
+\doxysubsubsection{\texorpdfstring{setHeightGenerator()}{setHeightGenerator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} Default\+Generator\+::set\+Height\+Generator (\begin{DoxyParamCaption}\item[{ITerrain\+Generator \&}]{height\+Generator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_default_generator_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{_default_generator_8hpp_source}{Default\+Generator.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_bit_map}{m\_heightGenerator}}\ =\ \mbox{\hyperlink{class_bit_map}{heightGenerator}};}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sources/inc/api/\+Terrain/generators/biome/\mbox{\hyperlink{_default_generator_8hpp}{Default\+Generator.\+hpp}}\end{DoxyCompactItemize}

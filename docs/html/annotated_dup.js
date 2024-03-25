@@ -2,7 +2,10 @@ var annotated_dup =
 [
     [ "AbsPunderationFunction", "d4/d8d/class_abs_punderation_function.html", "d4/d8d/class_abs_punderation_function" ],
     [ "BitMap", "d7/dad/class_bit_map.html", "d7/dad/class_bit_map" ],
+    [ "DefaultGenerator", "d9/d94/class_default_generator.html", "d9/d94/class_default_generator" ],
+    [ "Environment", "dc/d38/class_environment.html", "dc/d38/class_environment" ],
     [ "FilterPunderationFunction", "d4/d44/class_filter_punderation_function.html", "d4/d44/class_filter_punderation_function" ],
+    [ "IBiomeGenerator", "db/dd7/class_i_biome_generator.html", "db/dd7/class_i_biome_generator" ],
     [ "IdentityPunderationFunction", "d4/d02/class_identity_punderation_function.html", "d4/d02/class_identity_punderation_function" ],
     [ "INoiseGenerator", "d3/d22/class_i_noise_generator.html", "d3/d22/class_i_noise_generator" ],
     [ "InversePunderationFunction", "d4/de5/class_inverse_punderation_function.html", "d4/de5/class_inverse_punderation_function" ],
@@ -16,7 +19,10 @@ var annotated_dup =
     [ "Terrain", "d1/dee/class_terrain.html", "d1/dee/class_terrain" ],
     [ "TerrainNode", "d9/dfc/struct_terrain_node.html", "d9/dfc/struct_terrain_node" ],
     [ "ThresholdPunderationFunction", "d6/dae/class_threshold_punderation_function.html", "d6/dae/class_threshold_punderation_function" ],
+    [ "Value_Noise", "d6/dbd/class_value___noise.html", "d6/dbd/class_value___noise" ],
+    [ "ValueNoise", "da/d14/class_value_noise.html", "da/d14/class_value_noise" ],
     [ "vec2", "d4/df1/structvec2.html", "d4/df1/structvec2" ],
+    [ "Vec2", "d9/d7f/class_vec2.html", "d9/d7f/class_vec2" ],
     [ "Vector2", "da/df6/struct_vector2.html", "da/df6/struct_vector2" ],
     [ "Worley_noise", "d4/daf/class_worley__noise.html", "d4/daf/class_worley__noise" ]
 ];

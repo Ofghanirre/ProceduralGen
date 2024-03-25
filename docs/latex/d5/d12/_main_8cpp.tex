@@ -3,21 +3,33 @@
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$memory$>$}\newline
 {\ttfamily \#include $<$api/noise/\+Bit\+Map.\+h$>$}\newline
-{\ttfamily \#include $<$api/\+Terrain.\+h$>$}\newline
-{\ttfamily \#include $<$Perlin.\+hpp$>$}\newline
-{\ttfamily \#include $<$Worley\+\_\+noise.\+hpp$>$}\newline
+{\ttfamily \#include $<$api/\+Terrain/\+Terrain.\+h$>$}\newline
+{\ttfamily \#include $<$api/noise/generators/\+Perlin.\+hpp$>$}\newline
+{\ttfamily \#include $<$api/noise/generators/\+Worley\+\_\+noise.\+hpp$>$}\newline
 {\ttfamily \#include $<$time.\+h$>$}\newline
 {\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_main_8cpp_ad9a50131afa825b378a648e5ed28551a}{test\+Perlin}} ()
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_main_8cpp_abad3b0aeb0e8ef0b430dbbedb64298d5}{test\+Perlin2}} ()
 \item 
 \mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_main_8cpp_ae8a630556041b685858fe63fa54a0e8c}{test\+Worley}} ()
 \item 
 \mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_main_8cpp_a5814432993a14705b55f396e84b7d665}{test\+Terrain1}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{size}})
 \item 
 \mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_main_8cpp_ac15ca94b2001b9a8547963aeea58c506}{test\+Terrain2}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{size}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_main_8cpp_a6f25ef78515196c322b1b296dd3ee4a8}{test\+Archipellago}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{size}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_main_8cpp_a4d5a1e8b53857a5baaa2ef657808a725}{test\+Stain\+Pattern}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{size}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_main_8cpp_a68086d361bb9c5ced59fad7420f6dfd1}{test\+Minerals}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{size}})
+\item 
+\mbox{\hyperlink{class_bit_map}{void}} \mbox{\hyperlink{_main_8cpp_ac5aa84557c1d2ba16ab9762231febd58}{test\+Sea\+River}} (\mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{class_bit_map}{size}})
 \item 
 \mbox{\hyperlink{class_bit_map}{int}} \mbox{\hyperlink{_main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{class_bit_map}{void}})
 \end{DoxyCompactItemize}
@@ -32,24 +44,157 @@
 
 
 
-Definition at line \mbox{\hyperlink{_main_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
+Definition at line \mbox{\hyperlink{_main_8cpp_source_l00307}{307}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Test\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{size}}\ =\ 512;}
-\DoxyCodeLine{00089\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/\ Terrain\ 1\ -\/-\/-\/"{}}\ <<\ std::endl;}
-\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{_main_8cpp_a5814432993a14705b55f396e84b7d665}{testTerrain1}}(\mbox{\hyperlink{class_bit_map}{size}});}
-\DoxyCodeLine{00091\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/\ Terrain\ 2\ -\/-\/-\/"{}}\ <<\ std::endl;}
-\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{_main_8cpp_ac15ca94b2001b9a8547963aeea58c506}{testTerrain2}}(\mbox{\hyperlink{class_bit_map}{size}});}
-\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{00094\ \}}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Test\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{size}}\ =\ 512;}
+\DoxyCodeLine{00310\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/\ Test\ Perlin\ -\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00311\ \ \ \ \ \mbox{\hyperlink{_main_8cpp_abad3b0aeb0e8ef0b430dbbedb64298d5}{testPerlin2}}();}
+\DoxyCodeLine{00312\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/\ Terrain\ 1\ -\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00313\ \ \ \ \ \mbox{\hyperlink{_main_8cpp_a5814432993a14705b55f396e84b7d665}{testTerrain1}}(\mbox{\hyperlink{class_bit_map}{size}});}
+\DoxyCodeLine{00314\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/\ Terrain\ 2\ -\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00315\ \ \ \ \ \mbox{\hyperlink{_main_8cpp_ac15ca94b2001b9a8547963aeea58c506}{testTerrain2}}(\mbox{\hyperlink{class_bit_map}{size}});}
+\DoxyCodeLine{00316\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/\ Archipellago\ -\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00317\ \ \ \ \ \mbox{\hyperlink{_main_8cpp_a6f25ef78515196c322b1b296dd3ee4a8}{testArchipellago}}(\mbox{\hyperlink{class_bit_map}{size}});}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/\ Stain\ pattern\ -\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00320\ \ \ \ \ \mbox{\hyperlink{_main_8cpp_a4d5a1e8b53857a5baaa2ef657808a725}{testStainPattern}}(\mbox{\hyperlink{class_bit_map}{size}});}
+\DoxyCodeLine{00321\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/\ Minerals\ -\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00322\ \ \ \ \ \mbox{\hyperlink{_main_8cpp_a68086d361bb9c5ced59fad7420f6dfd1}{testMinerals}}(\mbox{\hyperlink{class_bit_map}{size}});}
+\DoxyCodeLine{00323\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/\ Sea\ River\ -\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00324\ \ \ \ \ \mbox{\hyperlink{_main_8cpp_ac5aa84557c1d2ba16ab9762231febd58}{testSeaRiver}}(\mbox{\hyperlink{class_bit_map}{size}});}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00326\ \}}
 
 \end{DoxyCode}
 
 
-References \mbox{\hyperlink{_main_8cpp_source_l00030}{test\+Terrain1()}}, and \mbox{\hyperlink{_main_8cpp_source_l00058}{test\+Terrain2()}}.
+References \mbox{\hyperlink{_main_8cpp_source_l00152}{test\+Archipellago()}}, \mbox{\hyperlink{_main_8cpp_source_l00231}{test\+Minerals()}}, \mbox{\hyperlink{_main_8cpp_source_l00027}{test\+Perlin2()}}, \mbox{\hyperlink{_main_8cpp_source_l00264}{test\+Sea\+River()}}, \mbox{\hyperlink{_main_8cpp_source_l00199}{test\+Stain\+Pattern()}}, \mbox{\hyperlink{_main_8cpp_source_l00095}{test\+Terrain1()}}, and \mbox{\hyperlink{_main_8cpp_source_l00123}{test\+Terrain2()}}.
+
+\Hypertarget{_main_8cpp_a6f25ef78515196c322b1b296dd3ee4a8}\label{_main_8cpp_a6f25ef78515196c322b1b296dd3ee4a8} 
+\index{Main.cpp@{Main.cpp}!testArchipellago@{testArchipellago}}
+\index{testArchipellago@{testArchipellago}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{testArchipellago()}{testArchipellago()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} test\+Archipellago (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_main_8cpp_source_l00152}{152}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Initialising\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain}}(\textcolor{stringliteral}{"{}Test\ Terrain\ 3"{}},\ \mbox{\hyperlink{class_bit_map}{time}}(\mbox{\hyperlink{class_bit_map}{NULL}}));}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{width}}\ =\ \mbox{\hyperlink{class_bit_map}{size}};}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{height}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{00157\ \ \ \ \ std::cout.precision(2);}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{scale}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{comment}{//\ Perlin\ globalShape\ =\ Perlin(0,\ 255,\ scale);}}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{w}}\ =\ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}(0,\ 255,\ 120);}
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{perlin1}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/2);}
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{perlin2}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/10);}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{perlin3}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/10);}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{comment}{//\ Perlin\ microShape\ =\ Perlin(0,\ 255,\ scale/34);\ }}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{punderation1}}\ =\ \mbox{\hyperlink{class_filter_punderation_function}{FilterPunderationFunction}}([](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \},\ std::make\_shared<ProductPunderationFunction<double>>(0.7));}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{punderation2}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.15);}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{punderation3}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.05);}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{globalFunction}}\ =\ \mbox{\hyperlink{class_inverse_punderation_function}{InversePunderationFunction}}(255);}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{//\ terrain.addTerrainNode(globalShape,\ globalFunction);}}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{w}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result\_inter1}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 83);}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result\_inter1}}.toPGM(\textcolor{stringliteral}{"{}./Archipellago\_step1.pgm"{}});}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{perlin1}},\ \mbox{\hyperlink{class_bit_map}{punderation1}},\ [](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \});}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result\_inter2}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 83);}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result\_inter2}}.toPGM(\textcolor{stringliteral}{"{}./Archipellago\_step2.pgm"{}});}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{perlin2}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fab1fefaf679ae9b0e48fea10cb3615c74}{NoisePunderationFunction::INVERSE}});}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result\_inter3}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 83);}
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result\_inter3}}.toPGM(\textcolor{stringliteral}{"{}./Archipellago\_step3.pgm"{}});}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{perlin3}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4fab1fefaf679ae9b0e48fea10cb3615c74}{NoisePunderationFunction::INVERSE}});}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{comment}{//\ terrain.addTerrainNode(microShape,\ microPunderation);}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Generating\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 83);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Exporting..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00192\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPGM(\textcolor{stringliteral}{"{}./Archipellago\_step4.pgm"{}});}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{comment}{//\ result.toPPM("{}./heatmap2.ppm"{},\ HEATMAP);}}
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPPM(\textcolor{stringliteral}{"{}./Archipellago.ppm"{}},\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a58c2bc22908015ec088d6cb81dd3112f}{TERRAIN}},\ 255);}
+\DoxyCodeLine{00195\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Done."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00196\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_terrain_8h_source_l00025}{IDENTITY}}, \mbox{\hyperlink{_terrain_8h_source_l00026}{INVERSE}}, and \mbox{\hyperlink{_noise_8h_source_l00013}{TERRAIN}}.
+
+
+
+Referenced by \mbox{\hyperlink{_main_8cpp_source_l00307}{main()}}.
+
+\Hypertarget{_main_8cpp_a68086d361bb9c5ced59fad7420f6dfd1}\label{_main_8cpp_a68086d361bb9c5ced59fad7420f6dfd1} 
+\index{Main.cpp@{Main.cpp}!testMinerals@{testMinerals}}
+\index{testMinerals@{testMinerals}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{testMinerals()}{testMinerals()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} test\+Minerals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_main_8cpp_source_l00231}{231}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00232\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Initialising\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00233\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain}}(\textcolor{stringliteral}{"{}Test\ Terrain\ 2"{}},\ \mbox{\hyperlink{class_bit_map}{time}}(\mbox{\hyperlink{class_bit_map}{NULL}}));}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{width}}\ =\ \mbox{\hyperlink{class_bit_map}{size}};}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{height}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{00236\ \ \ \ \ std::cout.precision(2);}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{scale}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{canyonShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/2);}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{w\_a}}\ =\ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}(0,\ 256,\ \mbox{\hyperlink{class_bit_map}{size}}/1.9);}
+\DoxyCodeLine{00240\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{w\_b}}\ =\ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}(0,\ 256,\ \mbox{\hyperlink{class_bit_map}{size}}/9.5,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00241\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{w\_c}}\ =\ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}(0,\ 700,\ \mbox{\hyperlink{class_bit_map}{size}}/16,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00242\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{w\_d}}\ =\ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}(0,\ 256,\ \mbox{\hyperlink{class_bit_map}{size}}/30,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}}\ =\ \mbox{\hyperlink{class_filter_punderation_function}{FilterPunderationFunction}}([](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \},\ std::make\_shared<ProductPunderationFunction<double>>(0.7));}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{microPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.05);}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{globalFunction}}\ =\ \mbox{\hyperlink{class_inverse_punderation_function}{InversePunderationFunction}}(255);}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keyword}{auto}\ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{class_identity_punderation_function}{IdentityPunderationFunction}}();}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{w\_a}},\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{canyonShape}},\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}},\ [](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \});}
+\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{w\_b}},\ \mbox{\hyperlink{class_bit_map}{microPunderation}});}
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{w\_c}},\ \mbox{\hyperlink{class_bit_map}{globalFunction}});}
+\DoxyCodeLine{00253\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{w\_d}},\ \mbox{\hyperlink{class_bit_map}{globalFunction}});}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Generating\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00257\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{size}}/0.9);}
+\DoxyCodeLine{00258\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Exporting..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00259\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPGM(\textcolor{stringliteral}{"{}./minerals.pgm"{}},\ 255);}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{comment}{//\ result.toPPM("{}./heatmap2.ppm"{},\ HEATMAP);}}
+\DoxyCodeLine{00261\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPPM(\textcolor{stringliteral}{"{}./minerals.ppm"{}},\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a58c2bc22908015ec088d6cb81dd3112f}{TERRAIN}},\ 255);}
+\DoxyCodeLine{00262\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Done."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00263\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_8h_source_l00013}{TERRAIN}}.
+
+
+
+Referenced by \mbox{\hyperlink{_main_8cpp_source_l00307}{main()}}.
 
 \Hypertarget{_main_8cpp_ad9a50131afa825b378a648e5ed28551a}\label{_main_8cpp_ad9a50131afa825b378a648e5ed28551a} 
 \index{Main.cpp@{Main.cpp}!testPerlin@{testPerlin}}
@@ -59,22 +204,219 @@ References \mbox{\hyperlink{_main_8cpp_source_l00030}{test\+Terrain1()}}, and \m
 
 
 
-Definition at line \mbox{\hyperlink{_main_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
+Definition at line \mbox{\hyperlink{_main_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain1}}(\textcolor{stringliteral}{"{}test"{}},\ 0);}
-\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{p}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ 30);}
-\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain1}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
-\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result1}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain1}}.getTerrain(256,\ 256,\ 42);}
-\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result1}}.toPGM(\textcolor{stringliteral}{"{}./perlin.pgm"{}});}
-\DoxyCodeLine{00020\ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain1}}(\textcolor{stringliteral}{"{}test"{}},\ 0);}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{p}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ 30,\ 1);}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain1}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result1}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain1}}.getTerrain(256,\ 256,\ 42);}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result1}}.toPGM(\textcolor{stringliteral}{"{}./perlin.pgm"{}});}
+\DoxyCodeLine{00025\ \}}
 
 \end{DoxyCode}
 
 
 References \mbox{\hyperlink{_terrain_8h_source_l00025}{IDENTITY}}.
+
+\Hypertarget{_main_8cpp_abad3b0aeb0e8ef0b430dbbedb64298d5}\label{_main_8cpp_abad3b0aeb0e8ef0b430dbbedb64298d5} 
+\index{Main.cpp@{Main.cpp}!testPerlin2@{testPerlin2}}
+\index{testPerlin2@{testPerlin2}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{testPerlin2()}{testPerlin2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} test\+Perlin2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_main_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ fs::create\_directory(\textcolor{stringliteral}{"{}./PerlinTest"{}});}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain}}(\textcolor{stringliteral}{"{}test"{}},\ 0);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{p}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ 200,\ 1);}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result1}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(800,\ 800,\ 42);}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result1}}.toPGM(\textcolor{stringliteral}{"{}./PerlinTest/Result1.pgm"{}});}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain1}}(\textcolor{stringliteral}{"{}test"{}},\ 0);}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain1}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{res1}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain1}}.getTerrain(800,\ 800,\ 42);}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{res1}}.toPGM(\textcolor{stringliteral}{"{}./PerlinTest/perlin1.pgm"{}});}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{p2}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ 100,\ 1.f/2.f);}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p2}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result2}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(800,\ 800,\ 42);}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result2}}.toPGM(\textcolor{stringliteral}{"{}./PerlinTest/Result2.pgm"{}});}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain2}}(\textcolor{stringliteral}{"{}test"{}},\ 0);}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain2}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p2}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{res2}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain2}}.getTerrain(800,\ 800,\ 42);}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{res2}}.toPGM(\textcolor{stringliteral}{"{}./PerlinTest/perlin2.pgm"{}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{p3}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ 50,\ 1.f/4.f);}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p3}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result3}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(800,\ 800,\ 42);}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result3}}.toPGM(\textcolor{stringliteral}{"{}./PerlinTest/Result3.pgm"{}});}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain3}}(\textcolor{stringliteral}{"{}test"{}},\ 0);}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain3}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p3}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{res3}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain3}}.getTerrain(800,\ 800,\ 42);}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{res3}}.toPGM(\textcolor{stringliteral}{"{}./PerlinTest/perlin3.pgm"{}});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{p4}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ 25,\ 1.f/8.f);}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p4}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result4}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(800,\ 800,\ 42);}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result4}}.toPGM(\textcolor{stringliteral}{"{}./PerlinTest/Result4.pgm"{}});}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain4}}(\textcolor{stringliteral}{"{}test"{}},\ 0);}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain4}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p4}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{res4}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain4}}.getTerrain(800,\ 800,\ 42);}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{res4}}.toPGM(\textcolor{stringliteral}{"{}./PerlinTest/perlin4.pgm"{}});}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{p5}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ 15,\ 1.f/16.f);}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p5}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result5}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(800,\ 800,\ 42);}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result5}}.toPGM(\textcolor{stringliteral}{"{}./PerlinTest/Result5.pgm"{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain5}}(\textcolor{stringliteral}{"{}test"{}},\ 0);}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain5}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p5}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{res5}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain5}}.getTerrain(800,\ 800,\ 42);}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{res5}}.toPGM(\textcolor{stringliteral}{"{}./PerlinTest/perlin5.pgm"{}});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{p6}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ 10,\ 1.f/32.f);}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p6}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result6}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(800,\ 800,\ 42);}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result6}}.toPGM(\textcolor{stringliteral}{"{}./PerlinTest/Result6.pgm"{}});}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain6}}(\textcolor{stringliteral}{"{}test"{}},\ 0);}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain6}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{p6}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{res6}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain6}}.getTerrain(800,\ 800,\ 42);}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{res6}}.toPGM(\textcolor{stringliteral}{"{}./PerlinTest/perlin6.pgm"{}});}
+\DoxyCodeLine{00085\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_terrain_8h_source_l00025}{IDENTITY}}.
+
+
+
+Referenced by \mbox{\hyperlink{_main_8cpp_source_l00307}{main()}}.
+
+\Hypertarget{_main_8cpp_ac5aa84557c1d2ba16ab9762231febd58}\label{_main_8cpp_ac5aa84557c1d2ba16ab9762231febd58} 
+\index{Main.cpp@{Main.cpp}!testSeaRiver@{testSeaRiver}}
+\index{testSeaRiver@{testSeaRiver}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{testSeaRiver()}{testSeaRiver()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} test\+Sea\+River (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_main_8cpp_source_l00264}{264}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00265\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Initialising\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00266\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain}}(\textcolor{stringliteral}{"{}Test\ Terrain\ 2"{}},\ \mbox{\hyperlink{class_bit_map}{time}}(\mbox{\hyperlink{class_bit_map}{NULL}}));}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{width}}\ =\ \mbox{\hyperlink{class_bit_map}{size}};}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{height}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{00269\ \ \ \ \ std::cout.precision(2);}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{scale}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{00271\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{canyonShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 256,\ \mbox{\hyperlink{class_bit_map}{scale}}/1.5);}
+\DoxyCodeLine{00272\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{detailShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/10);}
+\DoxyCodeLine{00273\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{terrainShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/6);}
+\DoxyCodeLine{00274\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{w\_a}}\ =\ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}(10,\ 24,\ \mbox{\hyperlink{class_bit_map}{size}}/26,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00275\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{w\_d}}\ =\ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}(0,\ 50,\ \mbox{\hyperlink{class_bit_map}{size}}/30);}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{detailPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(-\/0.05);}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{productPunderation}}\ =\ \ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.2);}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{subPunderation}}\ =\ \ \mbox{\hyperlink{class_sum_punderation_function}{SumPunderationFunction}}(-\/450);}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{globalFunction}}\ =\ \mbox{\hyperlink{class_inverse_punderation_function}{InversePunderationFunction}}(300);}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keyword}{auto}\ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{class_identity_punderation_function}{IdentityPunderationFunction}}();}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{w\_a}},\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00285\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{detailShape}},\ \mbox{\hyperlink{class_bit_map}{detailPunderation}});}
+\DoxyCodeLine{00286\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{terrainShape}},\ \mbox{\hyperlink{class_bit_map}{productPunderation}});}
+\DoxyCodeLine{00287\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result\_inter1}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 666);}
+\DoxyCodeLine{00288\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result\_inter1}}.toPGM(\textcolor{stringliteral}{"{}./NearSea\_step1.pgm"{}});}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{canyonShape}},\ \mbox{\hyperlink{class_bit_map}{globalFunction}});}
+\DoxyCodeLine{00291\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result\_inter2}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 666);}
+\DoxyCodeLine{00292\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result\_inter2}}.toPGM(\textcolor{stringliteral}{"{}./NearSea\_step2.pgm"{}});}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{detailShape}},\ \mbox{\hyperlink{class_bit_map}{subPunderation}},\ [](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 200;\}\ );}
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result\_inter3}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 666);}
+\DoxyCodeLine{00296\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result\_inter3}}.toPGM(\textcolor{stringliteral}{"{}./NearSea\_step3.pgm"{}});}
+\DoxyCodeLine{00297\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{w\_d}},\ \mbox{\hyperlink{class_bit_map}{productPunderation}});}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Generating\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00300\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{size}}/0.9);}
+\DoxyCodeLine{00301\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Exporting..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00302\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPGM(\textcolor{stringliteral}{"{}./NearSea\_step4.pgm"{}},\ 255);}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{comment}{//\ result.toPPM("{}./heatmap2.ppm"{},\ HEATMAP);}}
+\DoxyCodeLine{00304\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPPM(\textcolor{stringliteral}{"{}./NearSea\_step4.ppm"{}},\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a58c2bc22908015ec088d6cb81dd3112f}{TERRAIN}},\ 255);}
+\DoxyCodeLine{00305\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Done."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00306\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_8h_source_l00013}{TERRAIN}}.
+
+
+
+Referenced by \mbox{\hyperlink{_main_8cpp_source_l00307}{main()}}.
+
+\Hypertarget{_main_8cpp_a4d5a1e8b53857a5baaa2ef657808a725}\label{_main_8cpp_a4d5a1e8b53857a5baaa2ef657808a725} 
+\index{Main.cpp@{Main.cpp}!testStainPattern@{testStainPattern}}
+\index{testStainPattern@{testStainPattern}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{testStainPattern()}{testStainPattern()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bit_map}{void}} test\+Stain\+Pattern (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bit_map}{int}}}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_main_8cpp_source_l00199}{199}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Initialising\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain}}(\textcolor{stringliteral}{"{}Test\ Terrain\ 2"{}},\ \mbox{\hyperlink{class_bit_map}{time}}(\mbox{\hyperlink{class_bit_map}{NULL}}));}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{width}}\ =\ \mbox{\hyperlink{class_bit_map}{size}};}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{height}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{00204\ \ \ \ \ std::cout.precision(2);}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{scale}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{detailShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/10);}
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{microShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/34);}
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{w\_a}}\ =\ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}(0,\ 256,\ \mbox{\hyperlink{class_bit_map}{size}}/1.9);}
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{w\_b}}\ =\ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}(0,\ 256,\ \mbox{\hyperlink{class_bit_map}{size}}/1.5);}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{secnPunderation}}\ =\ \mbox{\hyperlink{class_filter_punderation_function}{FilterPunderationFunction}}([](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value\ <\ 126;\ \},\ std::make\_shared<ProductPunderationFunction<double>}}>(0.1));}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{detailPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.3);}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keyword}{auto}\ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{class_identity_punderation_function}{IdentityPunderationFunction}}();}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{w\_a}},\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{detailShape}},\ \mbox{\hyperlink{class_bit_map}{detailPunderation}});}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{microShape}},\ \mbox{\hyperlink{class_bit_map}{secnPunderation}});}
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{w\_b}},\ \mbox{\hyperlink{class_bit_map}{detailPunderation}});}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Generating\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ \mbox{\hyperlink{class_bit_map}{size}}/0.9);}
+\DoxyCodeLine{00222\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Exporting..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00223\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPGM(\textcolor{stringliteral}{"{}./stains.pgm"{}},\ 255);}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{comment}{//result.toPPM("{}./stains\_heatmap.ppm"{},\ HEATMAP);}}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPPM(\textcolor{stringliteral}{"{}./stains.ppm"{}},\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a58c2bc22908015ec088d6cb81dd3112f}{TERRAIN}},\ 255);}
+\DoxyCodeLine{00226\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Done."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00227\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{_noise_8h_source_l00013}{TERRAIN}}.
+
+
+
+Referenced by \mbox{\hyperlink{_main_8cpp_source_l00307}{main()}}.
 
 \Hypertarget{_main_8cpp_a5814432993a14705b55f396e84b7d665}\label{_main_8cpp_a5814432993a14705b55f396e84b7d665} 
 \index{Main.cpp@{Main.cpp}!testTerrain1@{testTerrain1}}
@@ -84,37 +426,37 @@ References \mbox{\hyperlink{_terrain_8h_source_l00025}{IDENTITY}}.
 
 
 
-Definition at line \mbox{\hyperlink{_main_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
+Definition at line \mbox{\hyperlink{_main_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00031\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Initialising\ Terrain..."{}}\ <<\ std::endl;}
-\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain}}(\textcolor{stringliteral}{"{}Test\ Terrain\ 1"{}},\ \mbox{\hyperlink{class_bit_map}{time}}(\mbox{\hyperlink{class_bit_map}{NULL}}));}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{width}}\ =\ \mbox{\hyperlink{class_bit_map}{size}};}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{height}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
-\DoxyCodeLine{00035\ \ \ \ \ std::cout.precision(2);}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{scale}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
-\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{globalShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}});}
-\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{canyonShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/2);}
-\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{detailShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/20);}
-\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{microShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/200);\ }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}}\ =\ \mbox{\hyperlink{class_filter_punderation_function}{FilterPunderationFunction}}([](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \},\ std::make\_shared<ProductPunderationFunction<double>>(0.7));}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{detailPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.15);}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{microPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.05);}
-\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{globalShape}});}
-\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{canyonShape}},\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}},\ [](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \});}
-\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{detailShape}},\ \mbox{\hyperlink{class_bit_map}{detailPunderation}});}
-\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{microShape}},\ \mbox{\hyperlink{class_bit_map}{microPunderation}});}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Generating\ Terrain..."{}}\ <<\ std::endl;}
-\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 2);}
-\DoxyCodeLine{00051\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Exporting..."{}}\ <<\ std::endl;}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{//\ result.toPGM("{}./values1.pgm"{},\ 255);}}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ result.toPPM("{}./heatmap1.ppm"{},\ HEATMAP);}}
-\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPPM(\textcolor{stringliteral}{"{}./terrain1.ppm"{}},\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a58c2bc22908015ec088d6cb81dd3112f}{TERRAIN}},\ 255);}
-\DoxyCodeLine{00055\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Done."{}}\ <<\ std::endl;}
-\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Initialising\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain}}(\textcolor{stringliteral}{"{}Test\ Terrain\ 1"{}},\ \mbox{\hyperlink{class_bit_map}{time}}(\mbox{\hyperlink{class_bit_map}{NULL}}));}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{width}}\ =\ \mbox{\hyperlink{class_bit_map}{size}};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{height}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{00100\ \ \ \ \ std::cout.precision(2);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{scale}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{globalShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}},\ 1);}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{canyonShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/2,\ 1);}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{detailShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/20,\ 1);}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{microShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/200,\ 1);\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}}\ =\ \mbox{\hyperlink{class_filter_punderation_function}{FilterPunderationFunction}}([](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \},\ std::make\_shared<ProductPunderationFunction<double>>(0.7));}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{detailPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.15);}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{microPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.05);}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{globalShape}});}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{canyonShape}},\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}},\ [](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \});}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{detailShape}},\ \mbox{\hyperlink{class_bit_map}{detailPunderation}});}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{microShape}},\ \mbox{\hyperlink{class_bit_map}{microPunderation}});}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Generating\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 2);}
+\DoxyCodeLine{00116\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Exporting..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//\ result.toPGM("{}./values1.pgm"{},\ 255);}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//\ result.toPPM("{}./heatmap1.ppm"{},\ HEATMAP);}}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPPM(\textcolor{stringliteral}{"{}./terrain1.ppm"{}},\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a58c2bc22908015ec088d6cb81dd3112f}{TERRAIN}},\ 255);}
+\DoxyCodeLine{00120\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Done."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00121\ \}}
 
 \end{DoxyCode}
 
@@ -123,7 +465,7 @@ References \mbox{\hyperlink{_noise_8h_source_l00013}{TERRAIN}}.
 
 
 
-Referenced by \mbox{\hyperlink{_main_8cpp_source_l00086}{main()}}.
+Referenced by \mbox{\hyperlink{_main_8cpp_source_l00307}{main()}}.
 
 \Hypertarget{_main_8cpp_ac15ca94b2001b9a8547963aeea58c506}\label{_main_8cpp_ac15ca94b2001b9a8547963aeea58c506} 
 \index{Main.cpp@{Main.cpp}!testTerrain2@{testTerrain2}}
@@ -133,38 +475,38 @@ Referenced by \mbox{\hyperlink{_main_8cpp_source_l00086}{main()}}.
 
 
 
-Definition at line \mbox{\hyperlink{_main_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
+Definition at line \mbox{\hyperlink{_main_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00059\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Initialising\ Terrain..."{}}\ <<\ std::endl;}
-\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain}}(\textcolor{stringliteral}{"{}Test\ Terrain\ 2"{}},\ \mbox{\hyperlink{class_bit_map}{time}}(\mbox{\hyperlink{class_bit_map}{NULL}}));}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{width}}\ =\ \mbox{\hyperlink{class_bit_map}{size}};}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{height}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
-\DoxyCodeLine{00063\ \ \ \ \ std::cout.precision(2);}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{scale}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
-\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{globalShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}});}
-\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{canyonShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/2);}
-\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{detailShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/10);}
-\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{microShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/34);\ }
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}}\ =\ \mbox{\hyperlink{class_filter_punderation_function}{FilterPunderationFunction}}([](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \},\ std::make\_shared<ProductPunderationFunction<double>>(0.7));}
-\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{detailPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.15);}
-\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{microPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.05);}
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{globalFunction}}\ =\ \mbox{\hyperlink{class_inverse_punderation_function}{InversePunderationFunction}}(255);}
-\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{globalShape}},\ \mbox{\hyperlink{class_bit_map}{globalFunction}});}
-\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{canyonShape}},\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}},\ [](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \});}
-\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{detailShape}},\ \mbox{\hyperlink{class_bit_map}{detailPunderation}});}
-\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{microShape}},\ \mbox{\hyperlink{class_bit_map}{microPunderation}});}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Generating\ Terrain..."{}}\ <<\ std::endl;}
-\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 2);}
-\DoxyCodeLine{00080\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Exporting..."{}}\ <<\ std::endl;}
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ result.toPGM("{}./values2.pgm"{},\ 255);}}
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ result.toPPM("{}./heatmap2.ppm"{},\ HEATMAP);}}
-\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPPM(\textcolor{stringliteral}{"{}./terrain2.ppm"{}},\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a58c2bc22908015ec088d6cb81dd3112f}{TERRAIN}},\ 255);}
-\DoxyCodeLine{00084\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Done."{}}\ <<\ std::endl;}
-\DoxyCodeLine{00085\ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Initialising\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain}}(\textcolor{stringliteral}{"{}Test\ Terrain\ 2"{}},\ \mbox{\hyperlink{class_bit_map}{time}}(\mbox{\hyperlink{class_bit_map}{NULL}}));}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{width}}\ =\ \mbox{\hyperlink{class_bit_map}{size}};}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{height}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{00128\ \ \ \ \ std::cout.precision(2);}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{scale}}\ =\ \mbox{\hyperlink{class_bit_map}{width}};}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{globalShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}},\ 1);}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{canyonShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/2,\ 1);}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{detailShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/10,\ 1);}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}\ \mbox{\hyperlink{class_bit_map}{microShape}}\ =\ \mbox{\hyperlink{class_perlin}{Perlin}}(0,\ 255,\ \mbox{\hyperlink{class_bit_map}{scale}}/34,\ 1);\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}}\ =\ \mbox{\hyperlink{class_filter_punderation_function}{FilterPunderationFunction}}([](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \},\ std::make\_shared<ProductPunderationFunction<double>>(0.7));}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{detailPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.15);}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{microPunderation}}\ =\ \mbox{\hyperlink{class_bit_map}{ProductPunderationFunction<double>}}(0.05);}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_bit_map}{globalFunction}}\ =\ \mbox{\hyperlink{class_inverse_punderation_function}{InversePunderationFunction}}(255);}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{globalShape}},\ \mbox{\hyperlink{class_bit_map}{globalFunction}});}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{canyonShape}},\ \mbox{\hyperlink{class_bit_map}{canyonPunderation}},\ [](\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{value}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bit_map}{value}}\ >\ 0;\ \});}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{detailShape}},\ \mbox{\hyperlink{class_bit_map}{detailPunderation}});}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{microShape}},\ \mbox{\hyperlink{class_bit_map}{microPunderation}});}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Generating\ Terrain..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain}}.getTerrain(\mbox{\hyperlink{class_bit_map}{width}},\ \mbox{\hyperlink{class_bit_map}{height}},\ 2);}
+\DoxyCodeLine{00145\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Exporting..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{comment}{//\ result.toPGM("{}./values2.pgm"{},\ 255);}}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{comment}{//\ result.toPPM("{}./heatmap2.ppm"{},\ HEATMAP);}}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result}}.toPPM(\textcolor{stringliteral}{"{}./terrain2.ppm"{}},\ \mbox{\hyperlink{_noise_8h_a74a3c1454880355541775e6c36cbffb3a58c2bc22908015ec088d6cb81dd3112f}{TERRAIN}},\ 255);}
+\DoxyCodeLine{00149\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Done."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00150\ \}}
 
 \end{DoxyCode}
 
@@ -173,7 +515,7 @@ References \mbox{\hyperlink{_noise_8h_source_l00013}{TERRAIN}}.
 
 
 
-Referenced by \mbox{\hyperlink{_main_8cpp_source_l00086}{main()}}.
+Referenced by \mbox{\hyperlink{_main_8cpp_source_l00307}{main()}}.
 
 \Hypertarget{_main_8cpp_ae8a630556041b685858fe63fa54a0e8c}\label{_main_8cpp_ae8a630556041b685858fe63fa54a0e8c} 
 \index{Main.cpp@{Main.cpp}!testWorley@{testWorley}}
@@ -183,17 +525,17 @@ Referenced by \mbox{\hyperlink{_main_8cpp_source_l00086}{main()}}.
 
 
 
-Definition at line \mbox{\hyperlink{_main_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
+Definition at line \mbox{\hyperlink{_main_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{_main_8cpp_source}{Main.\+cpp}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain2}}(\textcolor{stringliteral}{"{}test2"{}},\ 0);}
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{w}}\ =\ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}();}
-\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain2}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{w}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result2}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain2}}.getTerrain(1024,\ 1024,\ 42);}
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result2}}.toPGM(\textcolor{stringliteral}{"{}./worley.pgm"{}});}
-\DoxyCodeLine{00028\ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{class_terrain}{Terrain}}\ \mbox{\hyperlink{class_bit_map}{terrain2}}(\textcolor{stringliteral}{"{}test2"{}},\ 0);}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}\ \mbox{\hyperlink{class_bit_map}{w}}\ =\ \mbox{\hyperlink{class_worley__noise}{Worley\_noise}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{terrain2}}.addTerrainNode(\mbox{\hyperlink{class_bit_map}{w}},\ \mbox{\hyperlink{_terrain_8h_ad907ba90ae76d124975ec5e61f3a6b4faf235bf7b95ec64961eab8529ec59311d}{NoisePunderationFunction::IDENTITY}});}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_bit_map}{result2}}\ =\ \mbox{\hyperlink{class_bit_map}{terrain2}}.getTerrain(1024,\ 1024,\ 42);}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{class_bit_map}{result2}}.toPGM(\textcolor{stringliteral}{"{}./worley.pgm"{}});}
+\DoxyCodeLine{00093\ \}}
 
 \end{DoxyCode}
 

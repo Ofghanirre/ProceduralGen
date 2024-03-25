@@ -1,5 +1,5 @@
 \doxysection{Perlin.\+hpp}
-\hypertarget{_perlin_8hpp_source}{}\label{_perlin_8hpp_source}\index{sources/inc/Perlin.hpp@{sources/inc/Perlin.hpp}}
+\hypertarget{_perlin_8hpp_source}{}\label{_perlin_8hpp_source}\index{sources/inc/api/noise/generators/Perlin.hpp@{sources/inc/api/noise/generators/Perlin.hpp}}
 \mbox{\hyperlink{_perlin_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
@@ -7,7 +7,7 @@
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <random>}}
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <memory>}}
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_noise_generator_8h}{./api/noise/INoiseGenerator.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{_i_noise_generator_8h}{api/noise/INoiseGenerator.h}}>}}
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00007}00007\ }
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00008}00008\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00009}00009\ \textcolor{comment}{//\ using\ namespace\ glm;}}
@@ -23,27 +23,28 @@
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00019}00019\ }
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00020}\mbox{\hyperlink{class_perlin_af7f99e8b8b98a47b20480f0ba4f6db16}{00020}}\ \ \ \ \ \mbox{\hyperlink{class_perlin_af7f99e8b8b98a47b20480f0ba4f6db16}{\string~Perlin}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{minRange}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{maxRange}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{gridSize}});}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00025}00025\ \ \ \ \ \mbox{\hyperlink{class_perlin}{Perlin}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{minRange}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{maxRange}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{gridSize}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{amp}}\ =\ 1);}
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00036}00036\ \ \ \ \ std::vector<std::vector<int>>\ \mbox{\hyperlink{class_perlin_affcd767c51a8d6bad1141e8e98c9171f}{perlin\_noise}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{width}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{height}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{min\_range}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{max\_range}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{seed}})\ \textcolor{keyword}{const};\ }
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_perlin_afa2d7c38f0d62287f706ab62ea62f2cd}{genNoise}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{seed}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{width}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{height}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{frequency}})\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00038}00038\ \ \ \ \ std::vector<std::vector<int>>\ \mbox{\hyperlink{class_perlin_a622b3fb903f6bc5c102c47ff42df785e}{perlin\_noise}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{width}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{height}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{min\_range}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{max\_range}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{seed}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{amp}})\ \textcolor{keyword}{const};\ }
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00040}00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{class_noise}{Noise}}\ \mbox{\hyperlink{class_perlin_afa2d7c38f0d62287f706ab62ea62f2cd}{genNoise}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{seed}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{width}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{height}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_bit_map}{frequency}})\ \textcolor{keyword}{const\ override};}
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_vector2}{Vector2}}\ generate\_random\_vect();}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00042}00042\ \textcolor{keyword}{private}:}
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_vector2}{Vector2}}\ randomGradient(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{ix}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{iy}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{seed}});}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_vector2}{Vector2}}\ generate\_random\_vect();}
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ dotGridGradient(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{grid\_x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{grid\_y}},\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{seed}});}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_vector2}{Vector2}}\ randomGradient(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{ix}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{iy}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{seed}});}
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ interpolation(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{a0}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{a1}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{weight}});}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ dotGridGradient(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{grid\_x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{grid\_y}},\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{seed}});}
 \DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<std::vector<int>>\ normalize\_noise(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{min}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{max}},\ std::vector<std::vector<float>>\ \&\ \mbox{\hyperlink{class_bit_map}{pixels}});}
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \_minRange;\ \ \textcolor{comment}{//\ The\ minimum\ value\ of\ the\ range\ of\ number\ generated.}}
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \_maxRange;\ \ \textcolor{comment}{//\ The\ maximum\ value\ of\ the\ range\ of\ number\ generated.}}
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \_gridSize;\ \textcolor{comment}{//\ The\ size\ of\ the\ grid\ used\ to\ generate\ the\ Perlin\ noise.}}
-\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00060}00060\ \};}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ interpolation(\textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{a0}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{a1}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bit_map}{weight}});}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<std::vector<int>>\ normalize\_noise(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{min}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bit_map}{max}},\ std::vector<std::vector<float>>\ \&\ \mbox{\hyperlink{class_bit_map}{pixels}},\ \textcolor{keywordtype}{float}\ \_amp);}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \_minRange;\ \ \textcolor{comment}{//\ The\ minimum\ value\ of\ the\ range\ of\ number\ generated.}}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \_maxRange;\ \ \textcolor{comment}{//\ The\ maximum\ value\ of\ the\ range\ of\ number\ generated.}}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \_gridSize;\ \textcolor{comment}{//\ The\ size\ of\ the\ grid\ used\ to\ generate\ the\ Perlin\ noise.}}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{float}\ \_amp;\ \textcolor{comment}{//\ The\ amplitude\ of\ the\ noise,\ used\ to\ give\ a\ weight\ to\ the\ value\ of\ the\ noise.}}
+\DoxyCodeLine{\Hypertarget{_perlin_8hpp_source_l00063}00063\ \};}
 
 \end{DoxyCode}
