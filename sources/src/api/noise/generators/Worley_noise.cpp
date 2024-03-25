@@ -8,20 +8,22 @@
 #include <api/noise/generators/Worley_noise.hpp>
 
 
-Worley_noise::Worley_noise(int minRange, int maxRange) : _minRange(minRange), _maxRange(maxRange){};
+Worley_noise::Worley_noise(int minRange, int maxRange, size_t gridSize) : _minRange(minRange), _maxRange(maxRange), _gridSize(gridSize){};
+Worley_noise::Worley_noise(int minRange, int maxRange, size_t gridSize, bool isVoronoi) : _minRange(minRange), _maxRange(maxRange), _gridSize(gridSize), _isVoronoi(isVoronoi){};
 Worley_noise::Worley_noise(){};
 
 
 
-std::vector<std::vector<int>> Worley_noise::worley_noise(size_t seed, size_t width, size_t height, size_t gridSize) const{
+std::vector<std::vector<int>> Worley_noise::worley_noise(size_t seed, size_t width, size_t height) const{
 
     /*
      * 1 : Naive
      * 2 : BFS approach (flawed)
      * 3 : Check 2x the gridSize
-     * 4 : Check only the 9 nearest points (best)
+     * 4 : Check only the 9 nearest points (best) (Voronoi supported)
      */
     int algo_choice = 4;
+    int gridSize = _gridSize;
 
     // Init a 2D Vector with zeros
     int height_padding = (height%gridSize);
@@ -34,18 +36,23 @@ std::vector<std::vector<int>> Worley_noise::worley_noise(size_t seed, size_t wid
     std::default_random_engine generator(seed);
     std::uniform_int_distribution<int> distrib_width(0, gridSize);
     std::uniform_int_distribution<int> distrib_height(0, gridSize);
+    std::uniform_int_distribution<int> distrib_value(_minRange, _maxRange);
 
     // Generate random points in grid
     std::vector<vec2<float>> points;
+    std::vector<int> points_value;
     std::queue<int> toVisitQueue;
     for (int gridX = 0; gridX < height+height_padding - gridSize+1; gridX+= gridSize) {
 
     for (int gridY = 0; gridY < width+width_padding - gridSize+1; gridY+= gridSize) {
             int x = distrib_height(generator);
             int y = distrib_width(generator);
+            int val = distrib_value(generator);
+            //std::cout << val << std::endl;
             points.emplace_back(static_cast<float>(x+gridX),static_cast<float>(y+gridY));
             toVisitQueue.emplace((x+gridX)*height+y+gridY);
             visited[x][y] = true;
+            points_value.push_back(val);
         }
     }
     float max = 0;
@@ -192,14 +199,20 @@ std::vector<std::vector<int>> Worley_noise::worley_noise(size_t seed, size_t wid
 
                             pointIndex = (gridX + xOffset) * nbPointsHeight + (gridY + yOffset);
 
-                            if (0 <= gridX && gridX <= nbPointsHeight && 0 <= gridY && gridY <= nbPointsWidth) {
+                            if (0 <= pointIndex && pointIndex < points.size() ) {
                                 //std::cout << pointIndex <<std::endl;
                                 dist = distance(points[pointIndex], {static_cast<float>(x), static_cast<float>(y)});
-                                minDist = dist < minDist ? dist : minDist;
+                                //minDist = dist < minDist ? dist : minDist;
+                                if (dist < minDist) {
+                                    minDist =  dist;
+                                    pixels[x][y] = points_value[pointIndex];
+                                }
                             }
                         }
                     }
-                    pixels[x][y] = minDist;
+                    if (!_isVoronoi) {
+                        pixels[x][y] = minDist;
+                    }
                     if (max < minDist) {
                         max = minDist;
                     }
@@ -252,7 +265,8 @@ std::vector<std::vector<int>> Worley_noise::worley_noise(size_t seed, size_t wid
 }
 
 Noise Worley_noise::genNoise(size_t seed, size_t width, size_t height, size_t frequency) const {
-    BitMap<int> bitmap(width,height, worley_noise(seed, width, height, frequency));
+    BitMap<int> bitmap(width,height, worley_noise(seed, width, height));
+
     return Noise(bitmap, seed, width, height, frequency);
 
 }
@@ -260,7 +274,7 @@ Noise Worley_noise::genNoise(size_t seed, size_t width, size_t height, size_t fr
 void Worley_noise::test(size_t width, size_t height, size_t seed, size_t gridSize, size_t minRange, size_t maxRange) {
     //Worley_noise::test(24,8,5,7,5,10);
     std::cout << "Worley noise test" << std::endl;
-    Worley_noise worleyNoiseGenerator = Worley_noise(minRange,maxRange);
+    Worley_noise worleyNoiseGenerator = Worley_noise(minRange,maxRange, gridSize);
     Noise worleyNoise = worleyNoiseGenerator.genNoise(seed, width, height, gridSize);
     BitMap img = worleyNoise.getBitmap();
 
@@ -271,7 +285,7 @@ void Worley_noise::test(size_t width, size_t height, size_t seed, size_t gridSiz
         std::cout << std::endl;
     }
     std::vector<std::unique_ptr<INoiseGenerator>> genVector;
-    genVector.emplace_back(std::make_unique<Worley_noise>(minRange,maxRange));
+    genVector.emplace_back(std::make_unique<Worley_noise>(minRange,maxRange, gridSize));
 
     for (const auto &noise_gen: genVector) {
         Noise testNoise = noise_gen->genNoise(seed, width, height, gridSize);
