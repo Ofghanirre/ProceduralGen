@@ -10,6 +10,11 @@
 #include <api/noise/generators/Worley_noise.hpp>
 #include <time.h>
 #include <chrono>
+#include <filesystem>
+#include <fstream>
+
+namespace fs = std::filesystem;
+
 
 void testPerlin() {
     Terrain terrain1("test", 0);
@@ -17,6 +22,66 @@ void testPerlin() {
     terrain1.addTerrainNode(p, NoisePunderationFunction::IDENTITY);
     Noise result1 = terrain1.getTerrain(256, 256, 42);
     result1.toPGM("./perlin.pgm");
+}
+
+void testPerlin2(){
+    fs::create_directory("./PerlinTest");
+
+    Terrain terrain("test", 0);
+
+    Perlin p = Perlin(0, 255, 200, 1);
+    terrain.addTerrainNode(p, NoisePunderationFunction::IDENTITY);
+    Noise result1 = terrain.getTerrain(800, 800, 42);
+    result1.toPGM("./PerlinTest/Result1.pgm");
+    Terrain terrain1("test", 0);
+    terrain1.addTerrainNode(p, NoisePunderationFunction::IDENTITY);
+    Noise res1 = terrain1.getTerrain(800, 800, 42);
+    res1.toPGM("./PerlinTest/perlin1.pgm");
+
+    Perlin p2 = Perlin(0, 255, 100, 1.f/2.f);
+    terrain.addTerrainNode(p2, NoisePunderationFunction::IDENTITY);
+    Noise result2 = terrain.getTerrain(800, 800, 42);
+    result2.toPGM("./PerlinTest/Result2.pgm");
+    Terrain terrain2("test", 0);
+    terrain2.addTerrainNode(p2, NoisePunderationFunction::IDENTITY);
+    Noise res2 = terrain2.getTerrain(800, 800, 42);
+    res2.toPGM("./PerlinTest/perlin2.pgm");
+
+    Perlin p3 = Perlin(0, 255, 50, 1.f/4.f);
+    terrain.addTerrainNode(p3, NoisePunderationFunction::IDENTITY);
+    Noise result3 = terrain.getTerrain(800, 800, 42);
+    result3.toPGM("./PerlinTest/Result3.pgm");
+    Terrain terrain3("test", 0);
+    terrain3.addTerrainNode(p3, NoisePunderationFunction::IDENTITY);
+    Noise res3 = terrain3.getTerrain(800, 800, 42);
+    res3.toPGM("./PerlinTest/perlin3.pgm");
+
+    Perlin p4 = Perlin(0, 255, 25, 1.f/8.f);
+    terrain.addTerrainNode(p4, NoisePunderationFunction::IDENTITY);
+    Noise result4 = terrain.getTerrain(800, 800, 42);
+    result4.toPGM("./PerlinTest/Result4.pgm");
+    Terrain terrain4("test", 0);
+    terrain4.addTerrainNode(p4, NoisePunderationFunction::IDENTITY);
+    Noise res4 = terrain4.getTerrain(800, 800, 42);
+    res4.toPGM("./PerlinTest/perlin4.pgm");
+
+    Perlin p5 = Perlin(0, 255, 15, 1.f/16.f);
+    terrain.addTerrainNode(p5, NoisePunderationFunction::IDENTITY);
+    Noise result5 = terrain.getTerrain(800, 800, 42);
+    result5.toPGM("./PerlinTest/Result5.pgm");
+    Terrain terrain5("test", 0);
+    terrain5.addTerrainNode(p5, NoisePunderationFunction::IDENTITY);
+    Noise res5 = terrain5.getTerrain(800, 800, 42);
+    res5.toPGM("./PerlinTest/perlin5.pgm");
+
+    Perlin p6 = Perlin(0, 255, 10, 1.f/32.f);
+    terrain.addTerrainNode(p6, NoisePunderationFunction::IDENTITY);
+    Noise result6 = terrain.getTerrain(800, 800, 42);
+    result6.toPGM("./PerlinTest/Result6.pgm");
+    Terrain terrain6("test", 0);
+    terrain6.addTerrainNode(p6, NoisePunderationFunction::IDENTITY);
+    Noise res6 = terrain6.getTerrain(800, 800, 42);
+    res6.toPGM("./PerlinTest/perlin6.pgm");
 }
 
 void testWorley() {
@@ -133,71 +198,14 @@ void testArchipellago(int size) {
 int main(void) {
     // ---------------------- Test ---------------------------
     int size = 512;
+    std::cout << "--- Test Perlin ---" << std::endl;
+    testPerlin2();
     std::cout << "--- Terrain 1 ---" << std::endl;
     testTerrain1(size);
     std::cout << "--- Terrain 2 ---" << std::endl;
     testTerrain2(size);
     std::cout << "--- Archipellago ---" << std::endl;
     testArchipellago(size);
-
-    Terrain terrain("test", 0);
-
-    Perlin p = Perlin(0, 255, 200, 1);
-    terrain.addTerrainNode(p, NoisePunderationFunction::IDENTITY);
-    Noise result1 = terrain.getTerrain(800, 800, 42);
-    result1.toPGM("./PerlinTest/perlinTEST1.pgm");
-    Terrain terrain1("test", 0);
-    terrain1.addTerrainNode(p, NoisePunderationFunction::IDENTITY);
-    Noise res1 = terrain1.getTerrain(800, 800, 42);
-    res1.toPGM("./PerlinTest/map1.pgm");
-
-    Perlin p2 = Perlin(0, 255, 100, 1.f/2.f);
-    terrain.addTerrainNode(p2, NoisePunderationFunction::IDENTITY);
-    Noise result2 = terrain.getTerrain(800, 800, 42);
-    result2.toPGM("./PerlinTest/perlinTEST2.pgm");
-    Terrain terrain2("test", 0);
-    terrain2.addTerrainNode(p2, NoisePunderationFunction::IDENTITY);
-    Noise res2 = terrain2.getTerrain(800, 800, 42);
-    res2.toPGM("./PerlinTest/map2.pgm");
-
-    Perlin p3 = Perlin(0, 255, 50, 1.f/4.f);
-    terrain.addTerrainNode(p3, NoisePunderationFunction::IDENTITY);
-    Noise result3 = terrain.getTerrain(800, 800, 42);
-    result3.toPGM("./PerlinTest/perlinTEST3.pgm");
-    Terrain terrain3("test", 0);
-    terrain3.addTerrainNode(p3, NoisePunderationFunction::IDENTITY);
-    Noise res3 = terrain3.getTerrain(800, 800, 42);
-    res3.toPGM("./PerlinTest/map3.pgm");
-
-    Perlin p4 = Perlin(0, 255, 25, 1.f/8.f);
-    terrain.addTerrainNode(p4, NoisePunderationFunction::IDENTITY);
-    Noise result4 = terrain.getTerrain(800, 800, 42);
-    result4.toPGM("./PerlinTest/perlinTEST4.pgm");
-    Terrain terrain4("test", 0);
-    terrain4.addTerrainNode(p4, NoisePunderationFunction::IDENTITY);
-    Noise res4 = terrain4.getTerrain(800, 800, 42);
-    res4.toPGM("./PerlinTest/map4.pgm");
-
-    Perlin p5 = Perlin(0, 255, 15, 1.f/16.f);
-    terrain.addTerrainNode(p5, NoisePunderationFunction::IDENTITY);
-    Noise result5 = terrain.getTerrain(800, 800, 42);
-    result5.toPGM("./PerlinTest/perlinTEST5.pgm");
-    Terrain terrain5("test", 0);
-    terrain5.addTerrainNode(p5, NoisePunderationFunction::IDENTITY);
-    Noise res5 = terrain5.getTerrain(800, 800, 42);
-    res5.toPGM("./PerlinTest/map5.pgm");
-
-    Perlin p6 = Perlin(0, 255, 10, 1.f/32.f);
-    terrain.addTerrainNode(p6, NoisePunderationFunction::IDENTITY);
-    Noise result6 = terrain.getTerrain(800, 800, 42);
-    result6.toPGM("./PerlinTest/perlinTEST6.pgm");
-    Terrain terrain6("test", 0);
-    terrain6.addTerrainNode(p6, NoisePunderationFunction::IDENTITY);
-    Noise res6 = terrain6.getTerrain(800, 800, 42);
-    res6.toPGM("./PerlinTest/map6.pgm");
-
-    Noise result = terrain.getTerrain(800, 800, 42);
-    result.toPGM("./PerlinTest/perlinTESTRES.pgm");
 
     return 0;
 }
