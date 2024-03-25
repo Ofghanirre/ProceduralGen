@@ -10,13 +10,78 @@
 #include <api/noise/generators/Worley_noise.hpp>
 #include <time.h>
 #include <chrono>
+#include <filesystem>
+#include <fstream>
+
+namespace fs = std::filesystem;
+
 
 void testPerlin() {
     Terrain terrain1("test", 0);
-    Perlin p = Perlin(0, 255, 30);
+    Perlin p = Perlin(0, 255, 30, 1);
     terrain1.addTerrainNode(p, NoisePunderationFunction::IDENTITY);
     Noise result1 = terrain1.getTerrain(256, 256, 42);
     result1.toPGM("./perlin.pgm");
+}
+
+void testPerlin2(){
+    fs::create_directory("./PerlinTest");
+
+    Terrain terrain("test", 0);
+
+    Perlin p = Perlin(0, 255, 200, 1);
+    terrain.addTerrainNode(p, NoisePunderationFunction::IDENTITY);
+    Noise result1 = terrain.getTerrain(800, 800, 42);
+    result1.toPGM("./PerlinTest/Result1.pgm");
+    Terrain terrain1("test", 0);
+    terrain1.addTerrainNode(p, NoisePunderationFunction::IDENTITY);
+    Noise res1 = terrain1.getTerrain(800, 800, 42);
+    res1.toPGM("./PerlinTest/perlin1.pgm");
+
+    Perlin p2 = Perlin(0, 255, 100, 1.f/2.f);
+    terrain.addTerrainNode(p2, NoisePunderationFunction::IDENTITY);
+    Noise result2 = terrain.getTerrain(800, 800, 42);
+    result2.toPGM("./PerlinTest/Result2.pgm");
+    Terrain terrain2("test", 0);
+    terrain2.addTerrainNode(p2, NoisePunderationFunction::IDENTITY);
+    Noise res2 = terrain2.getTerrain(800, 800, 42);
+    res2.toPGM("./PerlinTest/perlin2.pgm");
+
+    Perlin p3 = Perlin(0, 255, 50, 1.f/4.f);
+    terrain.addTerrainNode(p3, NoisePunderationFunction::IDENTITY);
+    Noise result3 = terrain.getTerrain(800, 800, 42);
+    result3.toPGM("./PerlinTest/Result3.pgm");
+    Terrain terrain3("test", 0);
+    terrain3.addTerrainNode(p3, NoisePunderationFunction::IDENTITY);
+    Noise res3 = terrain3.getTerrain(800, 800, 42);
+    res3.toPGM("./PerlinTest/perlin3.pgm");
+
+    Perlin p4 = Perlin(0, 255, 25, 1.f/8.f);
+    terrain.addTerrainNode(p4, NoisePunderationFunction::IDENTITY);
+    Noise result4 = terrain.getTerrain(800, 800, 42);
+    result4.toPGM("./PerlinTest/Result4.pgm");
+    Terrain terrain4("test", 0);
+    terrain4.addTerrainNode(p4, NoisePunderationFunction::IDENTITY);
+    Noise res4 = terrain4.getTerrain(800, 800, 42);
+    res4.toPGM("./PerlinTest/perlin4.pgm");
+
+    Perlin p5 = Perlin(0, 255, 15, 1.f/16.f);
+    terrain.addTerrainNode(p5, NoisePunderationFunction::IDENTITY);
+    Noise result5 = terrain.getTerrain(800, 800, 42);
+    result5.toPGM("./PerlinTest/Result5.pgm");
+    Terrain terrain5("test", 0);
+    terrain5.addTerrainNode(p5, NoisePunderationFunction::IDENTITY);
+    Noise res5 = terrain5.getTerrain(800, 800, 42);
+    res5.toPGM("./PerlinTest/perlin5.pgm");
+
+    Perlin p6 = Perlin(0, 255, 10, 1.f/32.f);
+    terrain.addTerrainNode(p6, NoisePunderationFunction::IDENTITY);
+    Noise result6 = terrain.getTerrain(800, 800, 42);
+    result6.toPGM("./PerlinTest/Result6.pgm");
+    Terrain terrain6("test", 0);
+    terrain6.addTerrainNode(p6, NoisePunderationFunction::IDENTITY);
+    Noise res6 = terrain6.getTerrain(800, 800, 42);
+    res6.toPGM("./PerlinTest/perlin6.pgm");
 }
 
 void testWorley() {
@@ -34,10 +99,10 @@ void testTerrain1(int size) {
     int height = width;
     std::cout.precision(2);
     int scale = width;
-    Perlin globalShape = Perlin(0, 255, scale);
-    Perlin canyonShape = Perlin(0, 255, scale/2);
-    Perlin detailShape = Perlin(0, 255, scale/20);
-    Perlin microShape = Perlin(0, 255, scale/200); 
+    Perlin globalShape = Perlin(0, 255, scale, 1);
+    Perlin canyonShape = Perlin(0, 255, scale/2, 1);
+    Perlin detailShape = Perlin(0, 255, scale/20, 1);
+    Perlin microShape = Perlin(0, 255, scale/200, 1); 
     auto canyonPunderation = FilterPunderationFunction([](int value) { return value > 0; }, std::make_shared<ProductPunderationFunction<double>>(0.7));
     auto detailPunderation = ProductPunderationFunction<double>(0.15);
     auto microPunderation = ProductPunderationFunction<double>(0.05);
@@ -62,10 +127,10 @@ void testTerrain2(int size) {
     int height = width;
     std::cout.precision(2);
     int scale = width;
-    Perlin globalShape = Perlin(0, 255, scale);
-    Perlin canyonShape = Perlin(0, 255, scale/2);
-    Perlin detailShape = Perlin(0, 255, scale/10);
-    Perlin microShape = Perlin(0, 255, scale/34); 
+    Perlin globalShape = Perlin(0, 255, scale, 1);
+    Perlin canyonShape = Perlin(0, 255, scale/2, 1);
+    Perlin detailShape = Perlin(0, 255, scale/10, 1);
+    Perlin microShape = Perlin(0, 255, scale/34, 1); 
     auto canyonPunderation = FilterPunderationFunction([](int value) { return value > 0; }, std::make_shared<ProductPunderationFunction<double>>(0.7));
     auto detailPunderation = ProductPunderationFunction<double>(0.15);
     auto microPunderation = ProductPunderationFunction<double>(0.05);
@@ -242,6 +307,8 @@ void testSeaRiver(int size) {
 int main(void) {
     // ---------------------- Test ---------------------------
     int size = 512;
+    std::cout << "--- Test Perlin ---" << std::endl;
+    testPerlin2();
     std::cout << "--- Terrain 1 ---" << std::endl;
     testTerrain1(size);
     std::cout << "--- Terrain 2 ---" << std::endl;

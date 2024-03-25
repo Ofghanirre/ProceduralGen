@@ -9,10 +9,11 @@
 
 #include <api/noise/generators/Perlin.hpp>
 
-Perlin::Perlin(int minRange, int maxRange, size_t gridSize)
+Perlin::Perlin(int minRange, int maxRange, size_t gridSize, float amp)
     : _minRange {minRange}
     , _maxRange {maxRange}
     , _gridSize {gridSize}
+    , _amp {amp}
     {}
 
 Vector2 Perlin::generate_random_vect()
@@ -82,7 +83,7 @@ float Perlin::interpolation(float a0, float a1, float weight)
  * @param min the minimum int value of the normalized range
  * @param max the maximum int value of the normalized range
 */ 
-std::vector<std::vector<int>> Perlin::normalize_noise(int min, int max, std::vector<std::vector<float>> & pixels){
+std::vector<std::vector<int>> Perlin::normalize_noise(int min, int max, std::vector<std::vector<float>> & pixels, float amp){
 
     std::vector<std::vector<int>> normalized_pixels;
 
@@ -107,7 +108,7 @@ std::vector<std::vector<int>> Perlin::normalize_noise(int min, int max, std::vec
     for (size_t i = 0; i < pixels.size(); i++){
         vector<int> line;
         for (size_t j = 0; j < pixels[i].size(); j++){
-            line.push_back((pixels[i][j] - min_value) * convertion_factor);
+            line.push_back(((pixels[i][j] - min_value) * convertion_factor) * amp);
         }
         normalized_pixels.push_back(line);
     }
@@ -123,8 +124,10 @@ std::vector<std::vector<int>> Perlin::normalize_noise(int min, int max, std::vec
  * @param height the height of the resulting noise
  * @param min_range the minimum value of the range
  * @param max_range the maximum value of the range
+ * @param seed the seed used to generate random numbers
+ * @param amp the amplitude of the noise
 */
-std::vector<std::vector<int>> Perlin::perlin_noise(size_t width, size_t height, int min_range, int max_range, size_t seed) const
+std::vector<std::vector<int>> Perlin::perlin_noise(size_t width, size_t height, int min_range, int max_range, size_t seed, float amp) const
 {
     std::vector<std::vector<float>> pixels;
 
@@ -164,13 +167,13 @@ std::vector<std::vector<int>> Perlin::perlin_noise(size_t width, size_t height, 
         }
         pixels.push_back(line);
     }
-    return normalize_noise(_minRange, _maxRange, pixels);
+    return normalize_noise(_minRange, _maxRange, pixels, _amp);
 }
 
 Noise Perlin::genNoise(size_t seed, size_t width, size_t height, size_t frequency) const {
 
     // Creates a BitMap of size width * height filled with the generated values
-    BitMap bitmap = BitMap(width, height, perlin_noise(width, height, _minRange, _maxRange, seed));
+    BitMap bitmap = BitMap(width, height, perlin_noise(width, height, _minRange, _maxRange, seed, _amp));
 
     return Noise(bitmap, seed, width, height, frequency);
 }
