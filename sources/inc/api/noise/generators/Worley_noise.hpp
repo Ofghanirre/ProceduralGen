@@ -16,10 +16,11 @@
 
 class Worley_noise : public INoiseGenerator {
 public:
-    Worley_noise(int minRange, int maxRange);
+    Worley_noise(int minRange, int maxRange, size_t gridSize);
+    Worley_noise(int minRange, int maxRange, size_t gridSize, bool isVoronoi);
     Worley_noise();
 
-    std::vector<std::vector<int>> worley_noise(size_t seed, size_t width, size_t height, size_t gridSize) const;
+    std::vector<std::vector<int>> worley_noise(size_t seed, size_t width, size_t height) const;
 
     Noise genNoise(size_t seed, size_t width, size_t height, size_t frequency) const;
 
@@ -27,6 +28,8 @@ public:
 private :
     int _minRange = 0;
     int _maxRange = 255;
+    int _gridSize = 1;
+    bool _isVoronoi = false;
 };
 
 #endif // PROCEDURALGEN_WORLEY_NOISE_HPP

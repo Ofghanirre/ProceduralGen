@@ -92,7 +92,7 @@ void testArchipellago(int size) {
     std::cout.precision(2);
     int scale = width;
     // Perlin globalShape = Perlin(0, 255, scale);
-    Worley_noise w = Worley_noise(0, 255);
+    Worley_noise w = Worley_noise(0, 255, 120);
     Perlin perlin1 = Perlin(0, 255, scale/2);
     Perlin perlin2 = Perlin(0, 255, scale/10);
     Perlin perlin3 = Perlin(0, 255, scale/10);
@@ -130,6 +130,115 @@ void testArchipellago(int size) {
     std::cout << "Done." << std::endl;
 }
 
+
+void testStainPattern(int size) {
+    std::cout << "Initialising Terrain..." << std::endl;
+    Terrain terrain("Test Terrain 2", time(NULL));
+    int width = size;
+    int height = width;
+    std::cout.precision(2);
+    int scale = width;
+    Perlin detailShape = Perlin(0, 255, scale/10);
+    Perlin microShape = Perlin(0, 255, scale/34);
+    Worley_noise w_a = Worley_noise(0, 256, size/1.9);
+    Worley_noise w_b = Worley_noise(0, 256, size/1.5);
+    auto secnPunderation = FilterPunderationFunction([](int value) { return value < 126; }, std::make_shared<ProductPunderationFunction<double>>(0.1));
+
+    auto detailPunderation = ProductPunderationFunction<double>(0.3);
+    auto id = IdentityPunderationFunction();
+
+    terrain.addTerrainNode(w_a, id);
+    terrain.addTerrainNode(detailShape, detailPunderation);
+    terrain.addTerrainNode(microShape, secnPunderation);
+    terrain.addTerrainNode(w_b, detailPunderation);
+
+    std::cout << "Generating Terrain..." << std::endl;
+    Noise result = terrain.getTerrain(width, height, size/0.9);
+    std::cout << "Exporting..." << std::endl;
+    result.toPGM("./stains.pgm", 255);
+    //result.toPPM("./stains_heatmap.ppm", HEATMAP);
+    result.toPPM("./stains.ppm", TERRAIN, 255);
+    std::cout << "Done." << std::endl;
+}
+
+
+
+void testMinerals(int size) {
+    std::cout << "Initialising Terrain..." << std::endl;
+    Terrain terrain("Test Terrain 2", time(NULL));
+    int width = size;
+    int height = width;
+    std::cout.precision(2);
+    int scale = width;
+    Perlin canyonShape = Perlin(0, 255, scale/2);
+    Worley_noise w_a = Worley_noise(0, 256, size/1.9);
+    Worley_noise w_b = Worley_noise(0, 256, size/9.5, true);
+    Worley_noise w_c = Worley_noise(0, 700, size/16, true);
+    Worley_noise w_d = Worley_noise(0, 256, size/30, true);
+    auto canyonPunderation = FilterPunderationFunction([](int value) { return value > 0; }, std::make_shared<ProductPunderationFunction<double>>(0.7));
+
+    auto microPunderation = ProductPunderationFunction<double>(0.05);
+    auto globalFunction = InversePunderationFunction(255);
+    auto id = IdentityPunderationFunction();
+
+    terrain.addTerrainNode(w_a, id);
+    terrain.addTerrainNode(canyonShape, canyonPunderation, [](int value) { return value > 0; });
+    terrain.addTerrainNode(w_b, microPunderation);
+    terrain.addTerrainNode(w_c, globalFunction);
+    terrain.addTerrainNode(w_d, globalFunction);
+
+
+    std::cout << "Generating Terrain..." << std::endl;
+    Noise result = terrain.getTerrain(width, height, size/0.9);
+    std::cout << "Exporting..." << std::endl;
+    result.toPGM("./minerals.pgm", 255);
+    // result.toPPM("./heatmap2.ppm", HEATMAP);
+    result.toPPM("./minerals.ppm", TERRAIN, 255);
+    std::cout << "Done." << std::endl;
+}
+void testSeaRiver(int size) {
+    std::cout << "Initialising Terrain..." << std::endl;
+    Terrain terrain("Test Terrain 2", time(NULL));
+    int width = size;
+    int height = width;
+    std::cout.precision(2);
+    int scale = width;
+    Perlin canyonShape = Perlin(0, 256, scale/1.5);
+    Perlin detailShape = Perlin(0, 255, scale/10);
+    Perlin terrainShape = Perlin(0, 255, scale/6);
+    Worley_noise w_a = Worley_noise(10, 24, size/26, true);
+    Worley_noise w_d = Worley_noise(0, 50, size/30);
+
+    auto detailPunderation = ProductPunderationFunction<double>(-0.05);
+    auto productPunderation =  ProductPunderationFunction<double>(0.2);
+    auto subPunderation =  SumPunderationFunction(-450);
+
+    auto globalFunction = InversePunderationFunction(300);
+    auto id = IdentityPunderationFunction();
+
+    terrain.addTerrainNode(w_a, id);
+    terrain.addTerrainNode(detailShape, detailPunderation);
+    terrain.addTerrainNode(terrainShape, productPunderation);
+    Noise result_inter1 = terrain.getTerrain(width, height, 666);
+    result_inter1.toPGM("./NearSea_step1.pgm");
+
+    terrain.addTerrainNode(canyonShape, globalFunction);
+    Noise result_inter2 = terrain.getTerrain(width, height, 666);
+    result_inter2.toPGM("./NearSea_step2.pgm");
+
+    terrain.addTerrainNode(detailShape, subPunderation, [](int value) { return value > 200;} );
+    Noise result_inter3 = terrain.getTerrain(width, height, 666);
+    result_inter3.toPGM("./NearSea_step3.pgm");
+    terrain.addTerrainNode(w_d, productPunderation);
+
+    std::cout << "Generating Terrain..." << std::endl;
+    Noise result = terrain.getTerrain(width, height, size/0.9);
+    std::cout << "Exporting..." << std::endl;
+    result.toPGM("./NearSea_step4.pgm", 255);
+    // result.toPPM("./heatmap2.ppm", HEATMAP);
+    result.toPPM("./NearSea_step4.ppm", TERRAIN, 255);
+    std::cout << "Done." << std::endl;
+}
 int main(void) {
     // ---------------------- Test ---------------------------
     int size = 512;
@@ -139,6 +248,13 @@ int main(void) {
     testTerrain2(size);
     std::cout << "--- Archipellago ---" << std::endl;
     testArchipellago(size);
+
+    std::cout << "--- Stain pattern ---" << std::endl;
+    testStainPattern(size);
+    std::cout << "--- Minerals ---" << std::endl;
+    testMinerals(size);
+    std::cout << "--- Sea River ---" << std::endl;
+    testSeaRiver(size);
     return 0;
 }
 
