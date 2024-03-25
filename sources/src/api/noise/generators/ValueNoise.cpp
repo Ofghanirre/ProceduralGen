@@ -3,7 +3,7 @@
 //
 
 
-#include "../inc/ValueNoise.hpp"
+#include <api/noise/generators/ValueNoise.hpp>
 
 #include <cstdio>
 #include <random>
