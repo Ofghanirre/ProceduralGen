@@ -22,7 +22,7 @@ public:
     /**
      * @brief Constructor of the class
     */
-    Perlin(int minRange, int maxRange, size_t gridSize);
+    Perlin(int minRange, int maxRange, size_t gridSize, float amp = 1);
 
     /**
      * @brief The generator of perlin noise.
@@ -32,8 +32,10 @@ public:
      * @param height the height of the resulting noise
      * @param min_range the minimum value of the range
      * @param max_range the maximum value of the range
+     * @param seed the seed used to generate random numbers
+     * @param amp the amplitude of the noise
     */
-    std::vector<std::vector<int>> perlin_noise(size_t width, size_t height, int min_range, int max_range, size_t seed) const; 
+    std::vector<std::vector<int>> perlin_noise(size_t width, size_t height, int min_range, int max_range, size_t seed, float amp) const; 
 
     Noise genNoise(size_t seed, size_t width, size_t height, size_t frequency) const override;
 
@@ -52,9 +54,10 @@ private:
      * @param min the minimum int value of the normalized range
      * @param max the maximum int value of the normalized range
     */ 
-    static std::vector<std::vector<int>> normalize_noise(int min, int max, std::vector<std::vector<float>> & pixels);
+    static std::vector<std::vector<int>> normalize_noise(int min, int max, std::vector<std::vector<float>> & pixels, float _amp);
 
     int _minRange;  // The minimum value of the range of number generated.
     int _maxRange;  // The maximum value of the range of number generated.
     size_t _gridSize; // The size of the grid used to generate the Perlin noise.
+    float _amp; // The amplitude of the noise, used to give a weight to the value of the noise.
 };
