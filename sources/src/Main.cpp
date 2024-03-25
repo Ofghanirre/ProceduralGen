@@ -138,27 +138,16 @@ void testStainPattern(int size) {
     int height = width;
     std::cout.precision(2);
     int scale = width;
-    Perlin globalShape = Perlin(0, 255, scale);
-    Perlin canyonShape = Perlin(0, 255, scale/2);
     Perlin detailShape = Perlin(0, 255, scale/10);
     Perlin microShape = Perlin(0, 255, scale/34);
     Worley_noise w_a = Worley_noise(0, 256, size/1.9);
     Worley_noise w_b = Worley_noise(0, 256, size/1.5);
-    auto canyonPunderation = FilterPunderationFunction([](int value) { return value > 0; }, std::make_shared<ProductPunderationFunction<double>>(0.7));
     auto secnPunderation = FilterPunderationFunction([](int value) { return value < 126; }, std::make_shared<ProductPunderationFunction<double>>(0.1));
 
     auto detailPunderation = ProductPunderationFunction<double>(0.3);
-    auto microPunderation = ProductPunderationFunction<double>(0.05);
-    auto productPunderation =  ProductPunderationFunction<double>(1);
-    auto subPunderation =  SumPunderationFunction(126);
-    auto globalFunction = InversePunderationFunction(255);
     auto id = IdentityPunderationFunction();
-    auto invert = FilterPunderationFunction([](int value) { return  value > 0; });
 
     terrain.addTerrainNode(w_a, id);
-    //terrain.addTerrainNode(w_a, detailPunderation);
-
-    //terrain.addTerrainNode(canyonShape, canyonPunderation, [](int value) { return value > 0; });
     terrain.addTerrainNode(detailShape, detailPunderation);
     terrain.addTerrainNode(microShape, secnPunderation);
     terrain.addTerrainNode(w_b, detailPunderation);
@@ -181,35 +170,22 @@ void testMinerals(int size) {
     int height = width;
     std::cout.precision(2);
     int scale = width;
-    Perlin globalShape = Perlin(0, 255, scale);
     Perlin canyonShape = Perlin(0, 255, scale/2);
-    Perlin detailShape = Perlin(0, 255, scale/10);
-    Perlin microShape = Perlin(0, 255, scale/34);
     Worley_noise w_a = Worley_noise(0, 256, size/1.9);
     Worley_noise w_b = Worley_noise(0, 256, size/9.5, true);
     Worley_noise w_c = Worley_noise(0, 700, size/16, true);
     Worley_noise w_d = Worley_noise(0, 256, size/30, true);
     auto canyonPunderation = FilterPunderationFunction([](int value) { return value > 0; }, std::make_shared<ProductPunderationFunction<double>>(0.7));
-    auto secnPunderation = FilterPunderationFunction([](int value) { return value < 126; }, std::make_shared<ProductPunderationFunction<double>>(0.1));
 
-    auto detailPunderation = ProductPunderationFunction<double>(0.3);
     auto microPunderation = ProductPunderationFunction<double>(0.05);
-    auto productPunderation =  ProductPunderationFunction<double>(1);
-    auto subPunderation =  SumPunderationFunction(126);
     auto globalFunction = InversePunderationFunction(255);
     auto id = IdentityPunderationFunction();
-    auto invert = FilterPunderationFunction([](int value) { return  value > 0; });
 
     terrain.addTerrainNode(w_a, id);
-    //terrain.addTerrainNode(w_a, detailPunderation);
-
     terrain.addTerrainNode(canyonShape, canyonPunderation, [](int value) { return value > 0; });
-    //terrain.addTerrainNode(detailShape, detailPunderation);
-    //terrain.addTerrainNode(microShape, secnPunderation);
     terrain.addTerrainNode(w_b, microPunderation);
     terrain.addTerrainNode(w_c, globalFunction);
     terrain.addTerrainNode(w_d, globalFunction);
-    //terrain.addTerrainNode(w_e, detailPunderation);
 
 
     std::cout << "Generating Terrain..." << std::endl;
@@ -227,36 +203,25 @@ void testSeaRiver(int size) {
     int height = width;
     std::cout.precision(2);
     int scale = width;
-    Perlin globalShape = Perlin(0, 255, scale);
     Perlin canyonShape = Perlin(0, 256, scale/1.5);
     Perlin detailShape = Perlin(0, 255, scale/10);
     Perlin terrainShape = Perlin(0, 255, scale/6);
     Worley_noise w_a = Worley_noise(10, 24, size/26, true);
-    Worley_noise w_b = Worley_noise(0, 256, size/9.5, true);
-    Worley_noise w_c = Worley_noise(0, 256, size/16, true);
     Worley_noise w_d = Worley_noise(0, 50, size/30);
-    auto canyonPunderation = FilterPunderationFunction([](int value) { return value > 0; }, std::make_shared<ProductPunderationFunction<double>>(0.7));
-    auto secnPunderation = FilterPunderationFunction([](int value) { return value < 230; }, std::make_shared<ProductPunderationFunction<double>>(0.1));
 
     auto detailPunderation = ProductPunderationFunction<double>(-0.05);
-    auto microPunderation = ProductPunderationFunction<double>(0.05);
     auto productPunderation =  ProductPunderationFunction<double>(0.2);
     auto subPunderation =  SumPunderationFunction(-450);
-    auto subPunderation2 =  SumPunderationFunction(-100);
 
     auto globalFunction = InversePunderationFunction(300);
     auto id = IdentityPunderationFunction();
-    auto invert = FilterPunderationFunction([](int value) { return  value > 0; });
-    auto detailPunderation2 = ProductPunderationFunction<double>(0.3);
-    auto microPunderation2 = ProductPunderationFunction<double>(0.6);
 
     terrain.addTerrainNode(w_a, id);
     terrain.addTerrainNode(detailShape, detailPunderation);
     terrain.addTerrainNode(terrainShape, productPunderation);
-
     Noise result_inter1 = terrain.getTerrain(width, height, 666);
-
     result_inter1.toPGM("./NearSea_step1.pgm");
+
     terrain.addTerrainNode(canyonShape, globalFunction);
     Noise result_inter2 = terrain.getTerrain(width, height, 666);
     result_inter2.toPGM("./NearSea_step2.pgm");
